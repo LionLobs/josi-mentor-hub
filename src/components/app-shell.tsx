@@ -46,7 +46,7 @@ export function AppShell({ items, area }: { items: NavItem[]; area: string }) {
             return (
               <Link
                 key={item.to}
-                to={item.to}
+                to={item.to as never}
                 className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors ${
                   active ? "bg-white/15 text-gold" : "text-white/70 hover:bg-white/10"
                 }`}
