@@ -84,23 +84,40 @@ function Landing() {
           height={1024}
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45"
         />
-        <div className="relative mx-auto max-w-6xl px-5 py-24 text-center sm:py-32">
-          <span className="hairline-gold inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs tracking-[0.2em] text-gold">
-            <Sparkles className="h-3.5 w-3.5" /> MÉTODO IMPACTO
-          </span>
-          <h1 className="font-display mx-auto mt-7 max-w-3xl text-4xl leading-tight sm:text-6xl">
-            Aulas guiadas pelo meu <span className="text-gradient-gold">método IMPACTO</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-xl text-base text-white/75 sm:text-lg">
-            Menos dúvidas. Mais técnica. Mais confiança para dominar cada passo, cada pose e cada
-            palco.
-          </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" variant="gold">
-              <Link to="/auth">
-                Começar minha mentoria <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 sm:py-28 lg:grid-cols-2">
+          <div className="text-center lg:text-left">
+            <img
+              src={logoAsset.url}
+              alt="Josi Nascimento — Massoterapia Avançada"
+              className="mx-auto h-12 w-auto lg:mx-0 lg:h-14"
+            />
+            <span className="hairline-gold mt-7 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs tracking-[0.2em] text-gold">
+              <Sparkles className="h-3.5 w-3.5" /> MENTORIA EXCLUSIVA
+            </span>
+            <h1 className="font-display mt-6 text-4xl leading-tight sm:text-5xl">
+              Uma mentoria guiada pelo meu{" "}
+              <span className="text-gradient-gold">método de massoterapia avançada</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-base text-white/75 sm:text-lg lg:mx-0">
+              Menos dúvidas. Mais técnica. Mais confiança para atender com excelência e viver da sua
+              profissão.
+            </p>
+            <div className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start">
+              <Button asChild size="lg" variant="gold">
+                <Link to="/auth">
+                  Começar minha mentoria <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+          <div className="relative mx-auto w-full max-w-sm">
+            <div className="hairline-gold overflow-hidden rounded-2xl">
+              <img
+                src={josiHero.url}
+                alt="Josi Nascimento, mentora em massoterapia avançada"
+                className="aspect-[3/4] w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
