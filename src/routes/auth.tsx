@@ -73,7 +73,11 @@ function AuthPage() {
     <div className="surface-ink flex min-h-screen items-center justify-center px-4 py-12">
       <div className="w-full max-w-md rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
         <Link to="/" className="block text-center">
-          <p className="font-display text-2xl">Josi Nascimento</p>
+          <img
+            src={logoAsset.url}
+            alt="Josi Nascimento — Massoterapia Avançada"
+            className="mx-auto h-10 w-auto"
+          />
           <p className="text-[11px] tracking-[0.3em] text-gold-soft/80">PLATAFORMA DE MENTORIAS</p>
         </Link>
 
