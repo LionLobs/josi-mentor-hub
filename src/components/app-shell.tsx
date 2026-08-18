@@ -5,6 +5,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useAuth } from "@/lib/auth";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/logo-horiz.png.asset.json";
 
 export type NavItem = { to: string; label: string; icon: LucideIcon };
 
