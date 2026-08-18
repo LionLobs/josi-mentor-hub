@@ -165,19 +165,20 @@ function Landing() {
             <img
               src={josiSobre.url}
               alt="Josi Nascimento em seu espaço de atendimento"
-              className="col-span-2 aspect-[16/10] w-full rounded-xl object-cover shadow-elegant"
-            />
-            <img
-              src={josiPremio.url}
-              alt="Josi Nascimento com certificação internacional em massoterapia"
-              className="aspect-square w-full rounded-xl object-cover shadow-elegant"
+              className="col-span-2 aspect-[3/2] w-full rounded-xl object-cover shadow-elegant"
             />
             <img
               src={josiSorriso.url}
               alt="Josi Nascimento sorrindo durante atendimento"
-              className="aspect-square w-full rounded-xl object-cover shadow-elegant"
+              className="aspect-[2/3] w-full rounded-xl object-cover shadow-elegant"
+            />
+            <img
+              src={josiPremio.url}
+              alt="Josi Nascimento com certificação internacional em massoterapia"
+              className="aspect-[2/3] w-full rounded-xl object-cover object-top shadow-elegant"
             />
           </div>
+
           <div>
             <p className="text-xs tracking-[0.35em] text-gold">QUEM CONDUZ</p>
             <h2 className="font-display mt-3 text-3xl sm:text-4xl">Josi Nascimento</h2>
