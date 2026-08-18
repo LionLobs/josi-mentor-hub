@@ -21,6 +21,7 @@ import { Route as AdminFinanceiroRouteImport } from './routes/admin.financeiro'
 import { Route as AdminMateriaisRouteImport } from './routes/admin.materiais'
 import { Route as AdminMentoriasRouteImport } from './routes/admin.mentorias'
 import { Route as AdminRelatoriosRouteImport } from './routes/admin.relatorios'
+import { Route as AlunoIndexRouteImport } from './routes/aluno.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -82,11 +83,16 @@ const AdminRelatoriosRoute = AdminRelatoriosRouteImport.update({
   path: '/relatorios',
   getParentRoute: () => AdminRoute,
 } as any)
+const AlunoIndexRoute = AlunoIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AlunoRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteWithChildren
-  '/aluno': typeof AlunoRoute
+  '/aluno': typeof AlunoRouteWithChildren
   '/auth': typeof AuthRoute
   '/admin/agenda': typeof AdminAgendaRoute
   '/admin/alunos': typeof AdminAlunosRoute
@@ -96,10 +102,10 @@ export interface FileRoutesByFullPath {
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
   '/admin/': typeof AdminIndexRoute
+  '/aluno/': typeof AlunoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/aluno': typeof AlunoRoute
   '/auth': typeof AuthRoute
   '/admin/agenda': typeof AdminAgendaRoute
   '/admin/alunos': typeof AdminAlunosRoute
@@ -109,12 +115,13 @@ export interface FileRoutesByTo {
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
   '/admin': typeof AdminIndexRoute
+  '/aluno': typeof AlunoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteWithChildren
-  '/aluno': typeof AlunoRoute
+  '/aluno': typeof AlunoRouteWithChildren
   '/auth': typeof AuthRoute
   '/admin/agenda': typeof AdminAgendaRoute
   '/admin/alunos': typeof AdminAlunosRoute
@@ -124,6 +131,7 @@ export interface FileRoutesById {
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
   '/admin/': typeof AdminIndexRoute
+  '/aluno/': typeof AlunoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -140,10 +148,10 @@ export interface FileRouteTypes {
     | '/admin/mentorias'
     | '/admin/relatorios'
     | '/admin/'
+    | '/aluno/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/aluno'
     | '/auth'
     | '/admin/agenda'
     | '/admin/alunos'
@@ -153,6 +161,7 @@ export interface FileRouteTypes {
     | '/admin/mentorias'
     | '/admin/relatorios'
     | '/admin'
+    | '/aluno'
   id:
     | '__root__'
     | '/'
@@ -167,12 +176,13 @@ export interface FileRouteTypes {
     | '/admin/mentorias'
     | '/admin/relatorios'
     | '/admin/'
+    | '/aluno/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRouteWithChildren
-  AlunoRoute: typeof AlunoRoute
+  AlunoRoute: typeof AlunoRouteWithChildren
   AuthRoute: typeof AuthRoute
 }
 
@@ -262,6 +272,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRelatoriosRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/aluno/': {
+      id: '/aluno/'
+      path: '/'
+      fullPath: '/aluno/'
+      preLoaderRoute: typeof AlunoIndexRouteImport
+      parentRoute: typeof AlunoRoute
+    }
   }
 }
 
@@ -289,10 +306,20 @@ const AdminRouteChildren: AdminRouteChildren = {
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
+interface AlunoRouteChildren {
+  AlunoIndexRoute: typeof AlunoIndexRoute
+}
+
+const AlunoRouteChildren: AlunoRouteChildren = {
+  AlunoIndexRoute: AlunoIndexRoute,
+}
+
+const AlunoRouteWithChildren = AlunoRoute._addFileChildren(AlunoRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRouteWithChildren,
-  AlunoRoute: AlunoRoute,
+  AlunoRoute: AlunoRouteWithChildren,
   AuthRoute: AuthRoute,
 }
 export const routeTree = rootRouteImport
