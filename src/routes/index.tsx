@@ -59,10 +59,11 @@ function Landing() {
       <header className="surface-ink sticky top-0 z-40 border-b border-white/10">
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:flex sm:justify-between">
           <div className="min-w-0">
-            <p className="font-display truncate text-lg leading-none tracking-wide">
-              Josi Nascimento
-            </p>
-            <p className="text-[11px] tracking-[0.3em] text-gold-soft/80">MENTORIA</p>
+            <img
+              src={logoAsset.url}
+              alt="Josi Nascimento — Massoterapia Avançada"
+              className="h-8 w-auto sm:h-9"
+            />
           </div>
           <div className="flex shrink-0 items-center gap-2">
             <Button asChild variant="ghost" size="sm" className="text-white hover:bg-white/10">
