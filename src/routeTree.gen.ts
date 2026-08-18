@@ -17,6 +17,7 @@ import { Route as AdminAgendaRouteImport } from './routes/admin.agenda'
 import { Route as AdminAlunosRouteImport } from './routes/admin.alunos'
 import { Route as AdminCursosRouteImport } from './routes/admin.cursos'
 import { Route as AdminFinanceiroRouteImport } from './routes/admin.financeiro'
+import { Route as AdminMateriaisRouteImport } from './routes/admin.materiais'
 import { Route as AdminMentoriasRouteImport } from './routes/admin.mentorias'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const AdminFinanceiroRoute = AdminFinanceiroRouteImport.update({
   path: '/financeiro',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminMateriaisRoute = AdminMateriaisRouteImport.update({
+  id: '/materiais',
+  path: '/materiais',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminMentoriasRoute = AdminMentoriasRouteImport.update({
   id: '/mentorias',
   path: '/mentorias',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
   '/admin/financeiro': typeof AdminFinanceiroRoute
+  '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/': typeof AdminIndexRoute
 }
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
   '/admin/financeiro': typeof AdminFinanceiroRoute
+  '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin': typeof AdminIndexRoute
 }
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
   '/admin/financeiro': typeof AdminFinanceiroRoute
+  '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/': typeof AdminIndexRoute
 }
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/admin/alunos'
     | '/admin/cursos'
     | '/admin/financeiro'
+    | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/'
   fileRoutesByTo: FileRoutesByTo
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/admin/alunos'
     | '/admin/cursos'
     | '/admin/financeiro'
+    | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin'
   id:
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/admin/alunos'
     | '/admin/cursos'
     | '/admin/financeiro'
+    | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/'
   fileRoutesById: FileRoutesById
@@ -197,6 +209,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminFinanceiroRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/materiais': {
+      id: '/admin/materiais'
+      path: '/materiais'
+      fullPath: '/admin/materiais'
+      preLoaderRoute: typeof AdminMateriaisRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/mentorias': {
       id: '/admin/mentorias'
       path: '/mentorias'
@@ -212,6 +231,7 @@ interface AdminRouteChildren {
   AdminAlunosRoute: typeof AdminAlunosRoute
   AdminCursosRoute: typeof AdminCursosRoute
   AdminFinanceiroRoute: typeof AdminFinanceiroRoute
+  AdminMateriaisRoute: typeof AdminMateriaisRoute
   AdminMentoriasRoute: typeof AdminMentoriasRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
@@ -221,6 +241,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminAlunosRoute: AdminAlunosRoute,
   AdminCursosRoute: AdminCursosRoute,
   AdminFinanceiroRoute: AdminFinanceiroRoute,
+  AdminMateriaisRoute: AdminMateriaisRoute,
   AdminMentoriasRoute: AdminMentoriasRoute,
   AdminIndexRoute: AdminIndexRoute,
 }
