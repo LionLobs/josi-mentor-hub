@@ -115,10 +115,11 @@ function Landing() {
               <img
                 src={josiHero.url}
                 alt="Josi Nascimento, mentora em massoterapia avançada"
-                className="aspect-[3/4] w-full object-cover"
+                className="aspect-[2/3] w-full object-cover object-top"
               />
             </div>
           </div>
+
         </div>
       </section>
 
