@@ -161,23 +161,26 @@ function Landing() {
 
       <section className="mx-auto max-w-6xl px-5 py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src={josiSobre.url}
-              alt="Josi Nascimento em seu espaço de atendimento"
-              className="col-span-2 aspect-[3/2] w-full rounded-xl object-cover shadow-elegant"
-            />
+          <div className="grid grid-cols-2 items-start gap-4">
             <img
               src={josiSorriso.url}
               alt="Josi Nascimento sorrindo durante atendimento"
               className="aspect-[2/3] w-full rounded-xl object-cover shadow-elegant"
             />
-            <img
-              src={josiPremio.url}
-              alt="Josi Nascimento com certificação internacional em massoterapia"
-              className="aspect-[2/3] w-full rounded-xl object-cover object-top shadow-elegant"
-            />
+            <div className="grid gap-4">
+              <img
+                src={josiSobre.url}
+                alt="Josi Nascimento em seu espaço de atendimento"
+                className="aspect-[3/2] w-full rounded-xl object-cover shadow-elegant"
+              />
+              <img
+                src={josiPremio.url}
+                alt="Josi Nascimento com certificação internacional em massoterapia"
+                className="aspect-[3/2] w-full rounded-xl object-cover shadow-elegant"
+              />
+            </div>
           </div>
+
 
           <div>
             <p className="text-xs tracking-[0.35em] text-gold">QUEM CONDUZ</p>
