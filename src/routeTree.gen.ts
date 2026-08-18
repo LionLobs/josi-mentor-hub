@@ -24,6 +24,7 @@ import { Route as AdminRelatoriosRouteImport } from './routes/admin.relatorios'
 import { Route as AlunoIndexRouteImport } from './routes/aluno.index'
 import { Route as AlunoAgendaRouteImport } from './routes/aluno.agenda'
 import { Route as AlunoCursosRouteImport } from './routes/aluno.cursos'
+import { Route as AlunoPagamentosRouteImport } from './routes/aluno.pagamentos'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -100,6 +101,11 @@ const AlunoCursosRoute = AlunoCursosRouteImport.update({
   path: '/cursos',
   getParentRoute: () => AlunoRoute,
 } as any)
+const AlunoPagamentosRoute = AlunoPagamentosRouteImport.update({
+  id: '/pagamentos',
+  path: '/pagamentos',
+  getParentRoute: () => AlunoRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -115,6 +121,7 @@ export interface FileRoutesByFullPath {
   '/admin/relatorios': typeof AdminRelatoriosRoute
   '/aluno/agenda': typeof AlunoAgendaRoute
   '/aluno/cursos': typeof AlunoCursosRoute
+  '/aluno/pagamentos': typeof AlunoPagamentosRoute
   '/admin/': typeof AdminIndexRoute
   '/aluno/': typeof AlunoIndexRoute
 }
@@ -130,6 +137,7 @@ export interface FileRoutesByTo {
   '/admin/relatorios': typeof AdminRelatoriosRoute
   '/aluno/agenda': typeof AlunoAgendaRoute
   '/aluno/cursos': typeof AlunoCursosRoute
+  '/aluno/pagamentos': typeof AlunoPagamentosRoute
   '/admin': typeof AdminIndexRoute
   '/aluno': typeof AlunoIndexRoute
 }
@@ -148,6 +156,7 @@ export interface FileRoutesById {
   '/admin/relatorios': typeof AdminRelatoriosRoute
   '/aluno/agenda': typeof AlunoAgendaRoute
   '/aluno/cursos': typeof AlunoCursosRoute
+  '/aluno/pagamentos': typeof AlunoPagamentosRoute
   '/admin/': typeof AdminIndexRoute
   '/aluno/': typeof AlunoIndexRoute
 }
@@ -167,6 +176,7 @@ export interface FileRouteTypes {
     | '/admin/relatorios'
     | '/aluno/agenda'
     | '/aluno/cursos'
+    | '/aluno/pagamentos'
     | '/admin/'
     | '/aluno/'
   fileRoutesByTo: FileRoutesByTo
@@ -182,6 +192,7 @@ export interface FileRouteTypes {
     | '/admin/relatorios'
     | '/aluno/agenda'
     | '/aluno/cursos'
+    | '/aluno/pagamentos'
     | '/admin'
     | '/aluno'
   id:
@@ -199,6 +210,7 @@ export interface FileRouteTypes {
     | '/admin/relatorios'
     | '/aluno/agenda'
     | '/aluno/cursos'
+    | '/aluno/pagamentos'
     | '/admin/'
     | '/aluno/'
   fileRoutesById: FileRoutesById
@@ -317,6 +329,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlunoCursosRouteImport
       parentRoute: typeof AlunoRoute
     }
+    '/aluno/pagamentos': {
+      id: '/aluno/pagamentos'
+      path: '/pagamentos'
+      fullPath: '/aluno/pagamentos'
+      preLoaderRoute: typeof AlunoPagamentosRouteImport
+      parentRoute: typeof AlunoRoute
+    }
   }
 }
 
@@ -347,12 +366,14 @@ const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 interface AlunoRouteChildren {
   AlunoAgendaRoute: typeof AlunoAgendaRoute
   AlunoCursosRoute: typeof AlunoCursosRoute
+  AlunoPagamentosRoute: typeof AlunoPagamentosRoute
   AlunoIndexRoute: typeof AlunoIndexRoute
 }
 
 const AlunoRouteChildren: AlunoRouteChildren = {
   AlunoAgendaRoute: AlunoAgendaRoute,
   AlunoCursosRoute: AlunoCursosRoute,
+  AlunoPagamentosRoute: AlunoPagamentosRoute,
   AlunoIndexRoute: AlunoIndexRoute,
 }
 
