@@ -104,7 +104,7 @@ export function CrudPage({
           .from(f.optionsFrom!.table as any)
           .select(`id, ${f.optionsFrom!.labelKey}`);
         result[f.name] = ((data ?? []) as Row[]).map((r) => ({
-          value: r.id,
+          value: r['id'],
           label: r[f.optionsFrom!.labelKey] ?? "—",
         }));
       }
@@ -118,7 +118,7 @@ export function CrudPage({
         const { error } = await supabase
           .from(table as any)
           .update(payload)
-          .eq("id", editing.id);
+          .eq("id", editing['id']);
         if (error) throw error;
       } else {
         const { error } = await supabase.from(table as any).insert(payload);
@@ -282,7 +282,7 @@ export function CrudPage({
               </TableRow>
             )}
             {rows.map((row) => (
-              <TableRow key={row.id}>
+              <TableRow key={row['id']}>
                 {columns.map((c) => (
                   <TableCell key={c.key}>
                     {c.render ? c.render(row) : (row[c.key] ?? "—")}
@@ -296,7 +296,7 @@ export function CrudPage({
                     <Button
                       size="icon"
                       variant="ghost"
-                      onClick={() => remove.mutate(row.id)}
+                      onClick={() => remove.mutate(row['id'])}
                       aria-label="Excluir"
                     >
                       <Trash2 className="h-4 w-4 text-destructive" />
