@@ -115,10 +115,11 @@ function Landing() {
               <img
                 src={josiHero.url}
                 alt="Josi Nascimento, mentora em massoterapia avançada"
-                className="aspect-[3/4] w-full object-cover"
+                className="aspect-[2/3] w-full object-cover object-top"
               />
             </div>
           </div>
+
         </div>
       </section>
 
@@ -160,23 +161,27 @@ function Landing() {
 
       <section className="mx-auto max-w-6xl px-5 py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src={josiSobre.url}
-              alt="Josi Nascimento em seu espaço de atendimento"
-              className="col-span-2 aspect-[16/10] w-full rounded-xl object-cover shadow-elegant"
-            />
-            <img
-              src={josiPremio.url}
-              alt="Josi Nascimento com certificação internacional em massoterapia"
-              className="aspect-square w-full rounded-xl object-cover shadow-elegant"
-            />
+          <div className="grid grid-cols-2 items-start gap-4">
             <img
               src={josiSorriso.url}
               alt="Josi Nascimento sorrindo durante atendimento"
-              className="aspect-square w-full rounded-xl object-cover shadow-elegant"
+              className="aspect-[2/3] w-full rounded-xl object-cover shadow-elegant"
             />
+            <div className="grid gap-4">
+              <img
+                src={josiSobre.url}
+                alt="Josi Nascimento em seu espaço de atendimento"
+                className="aspect-[3/2] w-full rounded-xl object-cover shadow-elegant"
+              />
+              <img
+                src={josiPremio.url}
+                alt="Josi Nascimento com certificação internacional em massoterapia"
+                className="aspect-[3/2] w-full rounded-xl object-cover shadow-elegant"
+              />
+            </div>
           </div>
+
+
           <div>
             <p className="text-xs tracking-[0.35em] text-gold">QUEM CONDUZ</p>
             <h2 className="font-display mt-3 text-3xl sm:text-4xl">Josi Nascimento</h2>
