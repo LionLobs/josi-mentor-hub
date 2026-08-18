@@ -22,6 +22,7 @@ import { Route as AdminMateriaisRouteImport } from './routes/admin.materiais'
 import { Route as AdminMentoriasRouteImport } from './routes/admin.mentorias'
 import { Route as AdminRelatoriosRouteImport } from './routes/admin.relatorios'
 import { Route as AlunoIndexRouteImport } from './routes/aluno.index'
+import { Route as AlunoCursosRouteImport } from './routes/aluno.cursos'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -88,6 +89,11 @@ const AlunoIndexRoute = AlunoIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AlunoRoute,
 } as any)
+const AlunoCursosRoute = AlunoCursosRouteImport.update({
+  id: '/cursos',
+  path: '/cursos',
+  getParentRoute: () => AlunoRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -101,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
+  '/aluno/cursos': typeof AlunoCursosRoute
   '/admin/': typeof AdminIndexRoute
   '/aluno/': typeof AlunoIndexRoute
 }
@@ -114,6 +121,7 @@ export interface FileRoutesByTo {
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
+  '/aluno/cursos': typeof AlunoCursosRoute
   '/admin': typeof AdminIndexRoute
   '/aluno': typeof AlunoIndexRoute
 }
@@ -130,6 +138,7 @@ export interface FileRoutesById {
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
+  '/aluno/cursos': typeof AlunoCursosRoute
   '/admin/': typeof AdminIndexRoute
   '/aluno/': typeof AlunoIndexRoute
 }
@@ -147,6 +156,7 @@ export interface FileRouteTypes {
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
+    | '/aluno/cursos'
     | '/admin/'
     | '/aluno/'
   fileRoutesByTo: FileRoutesByTo
@@ -160,6 +170,7 @@ export interface FileRouteTypes {
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
+    | '/aluno/cursos'
     | '/admin'
     | '/aluno'
   id:
@@ -175,6 +186,7 @@ export interface FileRouteTypes {
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
+    | '/aluno/cursos'
     | '/admin/'
     | '/aluno/'
   fileRoutesById: FileRoutesById
@@ -279,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlunoIndexRouteImport
       parentRoute: typeof AlunoRoute
     }
+    '/aluno/cursos': {
+      id: '/aluno/cursos'
+      path: '/cursos'
+      fullPath: '/aluno/cursos'
+      preLoaderRoute: typeof AlunoCursosRouteImport
+      parentRoute: typeof AlunoRoute
+    }
   }
 }
 
@@ -307,10 +326,12 @@ const AdminRouteChildren: AdminRouteChildren = {
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface AlunoRouteChildren {
+  AlunoCursosRoute: typeof AlunoCursosRoute
   AlunoIndexRoute: typeof AlunoIndexRoute
 }
 
 const AlunoRouteChildren: AlunoRouteChildren = {
+  AlunoCursosRoute: AlunoCursosRoute,
   AlunoIndexRoute: AlunoIndexRoute,
 }
 
