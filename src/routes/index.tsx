@@ -10,6 +10,11 @@ import {
   ArrowRight,
 } from "lucide-react";
 import heroImg from "@/assets/hero-mentoria.jpg";
+import logoAsset from "@/assets/logo-horiz.png.asset.json";
+import josiHero from "@/assets/josi-42.jpg.asset.json";
+import josiSobre from "@/assets/josi-10.jpg.asset.json";
+import josiPremio from "@/assets/josi-25.jpg.asset.json";
+import josiSorriso from "@/assets/josi-6.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -54,10 +59,11 @@ function Landing() {
       <header className="surface-ink sticky top-0 z-40 border-b border-white/10">
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:flex sm:justify-between">
           <div className="min-w-0">
-            <p className="font-display truncate text-lg leading-none tracking-wide">
-              Josi Nascimento
-            </p>
-            <p className="text-[11px] tracking-[0.3em] text-gold-soft/80">MENTORIA</p>
+            <img
+              src={logoAsset.url}
+              alt="Josi Nascimento — Massoterapia Avançada"
+              className="h-8 w-auto sm:h-9"
+            />
           </div>
           <div className="flex shrink-0 items-center gap-2">
             <Button asChild variant="ghost" size="sm" className="text-white hover:bg-white/10">
@@ -78,23 +84,40 @@ function Landing() {
           height={1024}
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45"
         />
-        <div className="relative mx-auto max-w-6xl px-5 py-24 text-center sm:py-32">
-          <span className="hairline-gold inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs tracking-[0.2em] text-gold">
-            <Sparkles className="h-3.5 w-3.5" /> MÉTODO IMPACTO
-          </span>
-          <h1 className="font-display mx-auto mt-7 max-w-3xl text-4xl leading-tight sm:text-6xl">
-            Aulas guiadas pelo meu <span className="text-gradient-gold">método IMPACTO</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-xl text-base text-white/75 sm:text-lg">
-            Menos dúvidas. Mais técnica. Mais confiança para dominar cada passo, cada pose e cada
-            palco.
-          </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" variant="gold">
-              <Link to="/auth">
-                Começar minha mentoria <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 sm:py-28 lg:grid-cols-2">
+          <div className="text-center lg:text-left">
+            <img
+              src={logoAsset.url}
+              alt="Josi Nascimento — Massoterapia Avançada"
+              className="mx-auto h-12 w-auto lg:mx-0 lg:h-14"
+            />
+            <span className="hairline-gold mt-7 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs tracking-[0.2em] text-gold">
+              <Sparkles className="h-3.5 w-3.5" /> MENTORIA EXCLUSIVA
+            </span>
+            <h1 className="font-display mt-6 text-4xl leading-tight sm:text-5xl">
+              Uma mentoria guiada pelo meu{" "}
+              <span className="text-gradient-gold">método de massoterapia avançada</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-base text-white/75 sm:text-lg lg:mx-0">
+              Menos dúvidas. Mais técnica. Mais confiança para atender com excelência e viver da sua
+              profissão.
+            </p>
+            <div className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start">
+              <Button asChild size="lg" variant="gold">
+                <Link to="/auth">
+                  Começar minha mentoria <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+          <div className="relative mx-auto w-full max-w-sm">
+            <div className="hairline-gold overflow-hidden rounded-2xl">
+              <img
+                src={josiHero.url}
+                alt="Josi Nascimento, mentora em massoterapia avançada"
+                className="aspect-[3/4] w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -135,6 +158,41 @@ function Landing() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-5 py-20">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src={josiSobre.url}
+              alt="Josi Nascimento em seu espaço de atendimento"
+              className="col-span-2 aspect-[16/10] w-full rounded-xl object-cover shadow-elegant"
+            />
+            <img
+              src={josiPremio.url}
+              alt="Josi Nascimento com certificação internacional em massoterapia"
+              className="aspect-square w-full rounded-xl object-cover shadow-elegant"
+            />
+            <img
+              src={josiSorriso.url}
+              alt="Josi Nascimento sorrindo durante atendimento"
+              className="aspect-square w-full rounded-xl object-cover shadow-elegant"
+            />
+          </div>
+          <div>
+            <p className="text-xs tracking-[0.35em] text-gold">QUEM CONDUZ</p>
+            <h2 className="font-display mt-3 text-3xl sm:text-4xl">Josi Nascimento</h2>
+            <p className="mt-5 text-muted-foreground">
+              Massoterapeuta premiada e reconhecida internacionalmente, Josi transformou anos de
+              prática clínica em um método claro e replicável. Nesta mentoria, ela conduz você passo
+              a passo — da técnica ao posicionamento profissional.
+            </p>
+            <p className="mt-4 text-muted-foreground">
+              Você recebe acompanhamento individual, aulas gravadas, materiais de apoio e uma agenda
+              organizada para evoluir sem se perder no caminho.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-3xl px-5 py-24 text-center">
         <h2 className="font-display text-3xl sm:text-4xl">Sua vaga na próxima turma</h2>
         <p className="mt-4 text-muted-foreground">
@@ -146,7 +204,12 @@ function Landing() {
         </Button>
       </section>
 
-      <footer className="surface-ink py-8 text-center text-sm text-white/60">
+      <footer className="surface-ink py-10 text-center text-sm text-white/60">
+        <img
+          src={logoAsset.url}
+          alt="Josi Nascimento — Massoterapia Avançada"
+          className="mx-auto mb-4 h-9 w-auto"
+        />
         © {new Date().getFullYear()} Josi Nascimento · Plataforma de Mentorias
       </footer>
     </div>
