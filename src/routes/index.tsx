@@ -158,6 +158,41 @@ function Landing() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-5 py-20">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src={josiSobre.url}
+              alt="Josi Nascimento em seu espaço de atendimento"
+              className="col-span-2 aspect-[16/10] w-full rounded-xl object-cover shadow-elegant"
+            />
+            <img
+              src={josiPremio.url}
+              alt="Josi Nascimento com certificação internacional em massoterapia"
+              className="aspect-square w-full rounded-xl object-cover shadow-elegant"
+            />
+            <img
+              src={josiSorriso.url}
+              alt="Josi Nascimento sorrindo durante atendimento"
+              className="aspect-square w-full rounded-xl object-cover shadow-elegant"
+            />
+          </div>
+          <div>
+            <p className="text-xs tracking-[0.35em] text-gold">QUEM CONDUZ</p>
+            <h2 className="font-display mt-3 text-3xl sm:text-4xl">Josi Nascimento</h2>
+            <p className="mt-5 text-muted-foreground">
+              Massoterapeuta premiada e reconhecida internacionalmente, Josi transformou anos de
+              prática clínica em um método claro e replicável. Nesta mentoria, ela conduz você passo
+              a passo — da técnica ao posicionamento profissional.
+            </p>
+            <p className="mt-4 text-muted-foreground">
+              Você recebe acompanhamento individual, aulas gravadas, materiais de apoio e uma agenda
+              organizada para evoluir sem se perder no caminho.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-3xl px-5 py-24 text-center">
         <h2 className="font-display text-3xl sm:text-4xl">Sua vaga na próxima turma</h2>
         <p className="mt-4 text-muted-foreground">
@@ -169,7 +204,12 @@ function Landing() {
         </Button>
       </section>
 
-      <footer className="surface-ink py-8 text-center text-sm text-white/60">
+      <footer className="surface-ink py-10 text-center text-sm text-white/60">
+        <img
+          src={logoAsset.url}
+          alt="Josi Nascimento — Massoterapia Avançada"
+          className="mx-auto mb-4 h-9 w-auto"
+        />
         © {new Date().getFullYear()} Josi Nascimento · Plataforma de Mentorias
       </footer>
     </div>
