@@ -37,7 +37,11 @@ export function AppShell({ items, area }: { items: NavItem[]; area: string }) {
     <div className="flex min-h-screen w-full flex-col md:flex-row">
       <aside className="surface-ink w-full shrink-0 md:min-h-screen md:w-64">
         <div className="px-5 py-5">
-          <p className="font-display text-lg">Josi Nascimento</p>
+          <img
+            src={logoAsset.url}
+            alt="Josi Nascimento — Massoterapia Avançada"
+            className="h-8 w-auto"
+          />
           <p className="text-[10px] tracking-[0.3em] text-gold-soft/80">{area}</p>
         </div>
         <nav className="flex flex-wrap gap-1 px-3 pb-4 md:flex-col md:flex-nowrap">
