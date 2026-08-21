@@ -520,7 +520,7 @@ function Landing() {
               </div>
 
               <p>
-                Nesta mentoria, ela conduz você passo a passo — da excelência técnica ao posicionamento 
+                Nesta mentoria, ela conduz você passo a passo, da excelência técnica ao posicionamento 
                 de mercado que atrai clientes de alto valor, garantindo sua independência financeira.
               </p>
             </div>
