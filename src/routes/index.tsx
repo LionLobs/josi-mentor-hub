@@ -264,9 +264,9 @@ function Landing() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-8"
+            className="grid grid-cols-2 gap-4 sm:gap-8"
           >
-            <div className="space-y-8">
+            <div className="space-y-4 sm:space-y-8">
               <div className="relative group overflow-hidden rounded-[2rem]">
                 <img
                   src={josiSorriso.url}
