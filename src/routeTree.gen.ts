@@ -18,6 +18,7 @@ import { Route as AdminAgendaRouteImport } from './routes/admin.agenda'
 import { Route as AdminAlunosRouteImport } from './routes/admin.alunos'
 import { Route as AdminCursosRouteImport } from './routes/admin.cursos'
 import { Route as AdminFinanceiroRouteImport } from './routes/admin.financeiro'
+import { Route as AdminIntegracoesRouteImport } from './routes/admin.integracoes'
 import { Route as AdminMateriaisRouteImport } from './routes/admin.materiais'
 import { Route as AdminMentoriasRouteImport } from './routes/admin.mentorias'
 import { Route as AdminRelatoriosRouteImport } from './routes/admin.relatorios'
@@ -26,6 +27,7 @@ import { Route as AlunoAgendaRouteImport } from './routes/aluno.agenda'
 import { Route as AlunoCursosRouteImport } from './routes/aluno.cursos'
 import { Route as AlunoMateriaisRouteImport } from './routes/aluno.materiais'
 import { Route as AlunoPagamentosRouteImport } from './routes/aluno.pagamentos'
+import { Route as ApiPublicKiwifyRouteImport } from './routes/api/public/kiwify'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -72,6 +74,11 @@ const AdminFinanceiroRoute = AdminFinanceiroRouteImport.update({
   path: '/financeiro',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminIntegracoesRoute = AdminIntegracoesRouteImport.update({
+  id: '/integracoes',
+  path: '/integracoes',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminMateriaisRoute = AdminMateriaisRouteImport.update({
   id: '/materiais',
   path: '/materiais',
@@ -112,6 +119,11 @@ const AlunoPagamentosRoute = AlunoPagamentosRouteImport.update({
   path: '/pagamentos',
   getParentRoute: () => AlunoRoute,
 } as any)
+const ApiPublicKiwifyRoute = ApiPublicKiwifyRouteImport.update({
+  id: '/api/public/kiwify',
+  path: '/api/public/kiwify',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -122,6 +134,7 @@ export interface FileRoutesByFullPath {
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
   '/admin/financeiro': typeof AdminFinanceiroRoute
+  '/admin/integracoes': typeof AdminIntegracoesRoute
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
@@ -131,6 +144,7 @@ export interface FileRoutesByFullPath {
   '/aluno/pagamentos': typeof AlunoPagamentosRoute
   '/admin/': typeof AdminIndexRoute
   '/aluno/': typeof AlunoIndexRoute
+  '/api/public/kiwify': typeof ApiPublicKiwifyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -139,6 +153,7 @@ export interface FileRoutesByTo {
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
   '/admin/financeiro': typeof AdminFinanceiroRoute
+  '/admin/integracoes': typeof AdminIntegracoesRoute
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
@@ -148,6 +163,7 @@ export interface FileRoutesByTo {
   '/aluno/pagamentos': typeof AlunoPagamentosRoute
   '/admin': typeof AdminIndexRoute
   '/aluno': typeof AlunoIndexRoute
+  '/api/public/kiwify': typeof ApiPublicKiwifyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -159,6 +175,7 @@ export interface FileRoutesById {
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
   '/admin/financeiro': typeof AdminFinanceiroRoute
+  '/admin/integracoes': typeof AdminIntegracoesRoute
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
@@ -168,6 +185,7 @@ export interface FileRoutesById {
   '/aluno/pagamentos': typeof AlunoPagamentosRoute
   '/admin/': typeof AdminIndexRoute
   '/aluno/': typeof AlunoIndexRoute
+  '/api/public/kiwify': typeof ApiPublicKiwifyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -180,6 +198,7 @@ export interface FileRouteTypes {
     | '/admin/alunos'
     | '/admin/cursos'
     | '/admin/financeiro'
+    | '/admin/integracoes'
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
@@ -189,6 +208,7 @@ export interface FileRouteTypes {
     | '/aluno/pagamentos'
     | '/admin/'
     | '/aluno/'
+    | '/api/public/kiwify'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -197,6 +217,7 @@ export interface FileRouteTypes {
     | '/admin/alunos'
     | '/admin/cursos'
     | '/admin/financeiro'
+    | '/admin/integracoes'
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
@@ -206,6 +227,7 @@ export interface FileRouteTypes {
     | '/aluno/pagamentos'
     | '/admin'
     | '/aluno'
+    | '/api/public/kiwify'
   id:
     | '__root__'
     | '/'
@@ -216,6 +238,7 @@ export interface FileRouteTypes {
     | '/admin/alunos'
     | '/admin/cursos'
     | '/admin/financeiro'
+    | '/admin/integracoes'
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
@@ -225,6 +248,7 @@ export interface FileRouteTypes {
     | '/aluno/pagamentos'
     | '/admin/'
     | '/aluno/'
+    | '/api/public/kiwify'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -232,6 +256,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRouteWithChildren
   AlunoRoute: typeof AlunoRouteWithChildren
   AuthRoute: typeof AuthRoute
+  ApiPublicKiwifyRoute: typeof ApiPublicKiwifyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -299,6 +324,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminFinanceiroRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/integracoes': {
+      id: '/admin/integracoes'
+      path: '/integracoes'
+      fullPath: '/admin/integracoes'
+      preLoaderRoute: typeof AdminIntegracoesRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/materiais': {
       id: '/admin/materiais'
       path: '/materiais'
@@ -355,6 +387,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlunoPagamentosRouteImport
       parentRoute: typeof AlunoRoute
     }
+    '/api/public/kiwify': {
+      id: '/api/public/kiwify'
+      path: '/api/public/kiwify'
+      fullPath: '/api/public/kiwify'
+      preLoaderRoute: typeof ApiPublicKiwifyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -363,6 +402,7 @@ interface AdminRouteChildren {
   AdminAlunosRoute: typeof AdminAlunosRoute
   AdminCursosRoute: typeof AdminCursosRoute
   AdminFinanceiroRoute: typeof AdminFinanceiroRoute
+  AdminIntegracoesRoute: typeof AdminIntegracoesRoute
   AdminMateriaisRoute: typeof AdminMateriaisRoute
   AdminMentoriasRoute: typeof AdminMentoriasRoute
   AdminRelatoriosRoute: typeof AdminRelatoriosRoute
@@ -374,6 +414,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminAlunosRoute: AdminAlunosRoute,
   AdminCursosRoute: AdminCursosRoute,
   AdminFinanceiroRoute: AdminFinanceiroRoute,
+  AdminIntegracoesRoute: AdminIntegracoesRoute,
   AdminMateriaisRoute: AdminMateriaisRoute,
   AdminMentoriasRoute: AdminMentoriasRoute,
   AdminRelatoriosRoute: AdminRelatoriosRoute,
@@ -405,6 +446,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRouteWithChildren,
   AlunoRoute: AlunoRouteWithChildren,
   AuthRoute: AuthRoute,
+  ApiPublicKiwifyRoute: ApiPublicKiwifyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

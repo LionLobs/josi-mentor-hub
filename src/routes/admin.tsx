@@ -8,6 +8,7 @@ import {
   GraduationCap,
   Download,
   BarChart3,
+  Settings,
 } from "lucide-react";
 import { AppShell, type NavItem } from "@/components/app-shell";
 import { useAuth } from "@/lib/auth";
@@ -22,6 +23,7 @@ const items: NavItem[] = [
   { to: "/admin/cursos", label: "Cursos", icon: GraduationCap },
   { to: "/admin/materiais", label: "Materiais", icon: Download },
   { to: "/admin/relatorios", label: "Relatórios", icon: BarChart3 },
+  { to: "/admin/integracoes", label: "Integrações", icon: Settings },
 ];
 
 export const Route = createFileRoute("/admin")({
