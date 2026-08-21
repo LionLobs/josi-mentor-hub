@@ -42,7 +42,28 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-const pilares = [
+const pilaresDestaque = [
+  { 
+    n: "01", 
+    title: "Excelência Técnica", 
+    text: "Domine movimentos com precisão, fluidez e propósito. Aperfeiçoe sua prática através de cursos e experiências práticas.",
+    icon: ShieldCheck
+  },
+  { 
+    n: "02", 
+    title: "Presença Profissional", 
+    text: "Sua postura, comunicação e segurança comunicam seu nível profissional antes mesmo do primeiro toque.",
+    icon: Crown
+  },
+  { 
+    n: "03", 
+    title: "Mentalidade Estratégica", 
+    text: "Aprenda a transformar cada atendimento e desafio em oportunidade real de crescimento.",
+    icon: Sparkles
+  },
+];
+
+const pilaresApp = [
   { icon: Crown, title: "Método guiado", text: "Módulos em sequência, do fundamento ao palco." },
   { icon: CalendarCheck, title: "Agenda online", text: "Sessões individuais marcadas em segundos." },
   { icon: GraduationCap, title: "Área do aluno", text: "Aulas, materiais e evolução em um só lugar." },
@@ -154,12 +175,11 @@ function Landing() {
               <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
             </motion.div>
             <h1 className="font-display text-4xl leading-[1.1] sm:text-6xl lg:text-7xl font-medium tracking-tight">
-              Elevando a sua{" "}
-              <span className="text-gradient-gold block mt-2 drop-shadow-[0_4px_20px_rgba(212,175,55,0.3)] italic">Arte do Toque</span>
+              Destaque-se na{" "}
+              <span className="text-gradient-gold block mt-2 drop-shadow-[0_4px_20px_rgba(212,175,55,0.3)] italic uppercase">Massoterapia</span>
             </h1>
             <p className="mt-6 max-w-xl text-base text-white/70 leading-relaxed sm:text-lg">
-              Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
-              Domine técnicas exclusivas e conquiste o posicionamento que você merece.
+              Transforme sua técnica em reconhecimento, confiança e uma carreira de destaque com a mentoria exclusiva de <span className="text-white font-medium">Josi Nascimento</span>.
             </p>
             <div className="mt-10 flex flex-wrap justify-start gap-5">
               <Button asChild size="xl" variant="gold" className="h-14 px-10 text-base shadow-gold group">
@@ -221,7 +241,7 @@ function Landing() {
             onMouseLeave={() => setIsExperienceHovered(false)}
             className="flex gap-6 w-fit"
           >
-            {[...pilares, ...pilares].map((p, idx) => (
+            {[...pilaresApp, ...pilaresApp].map((p, idx) => (
               <div
                 key={`${p.title}-${idx}`}
                  className="group relative w-[350px] shrink-0 rounded-[2rem] border border-gold/10 bg-off-white/80 backdrop-blur-md p-8 transition-all duration-500 hover:bg-white hover:shadow-gold hover:-translate-y-2 overflow-hidden"
@@ -245,6 +265,125 @@ function Landing() {
         
         <div className="mx-auto max-w-7xl px-6">
           <motion.div {...fadeInUp} className="text-center mb-20">
+            <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Os 3 Pilares</p>
+            <h2 className="font-display text-3xl sm:text-5xl text-white font-medium tracking-tight">
+              Sua Transformação Começa Agora
+            </h2>
+            <p className="mt-6 text-white/60 max-w-2xl mx-auto">O destaque não depende apenas de técnica. Ele nasce da combinação entre excelência, presença e mentalidade.</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {pilaresDestaque.map((p, idx) => (
+              <motion.div
+                key={p.n}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.2 }}
+                className="glass-ink p-10 rounded-[2.5rem] border border-white/5 hover:border-gold/30 transition-all group relative overflow-hidden"
+              >
+                <div className="absolute -right-8 -top-8 text-8xl font-display font-black text-white/5 group-hover:text-gold/5 transition-colors">{p.n}</div>
+                <div className="h-14 w-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-8">
+                  <p.icon className="h-7 w-7 text-gold" />
+                </div>
+                <h3 className="text-2xl font-display text-white mb-4 italic">{p.title}</h3>
+                <p className="text-white/60 leading-relaxed">{p.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mentalidade de Campeão Section */}
+      <section className="py-24 relative overflow-hidden bg-off-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="bg-ink rounded-[3rem] p-12 lg:p-24 relative overflow-hidden shadow-elegant border border-gold/10">
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.05]" />
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gold/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            
+            <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div {...fadeInUp}>
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 mb-8">
+                  <ShieldCheck className="h-4 w-4 text-gold" />
+                  <span className="text-gold text-[10px] font-bold tracking-[0.2em] uppercase">Mentalidade de Campeão</span>
+                </div>
+                <h2 className="font-display text-3xl sm:text-5xl text-white font-medium mb-8 leading-tight">
+                  Do Medo à <span className="italic text-gradient-gold">Vitória</span>
+                </h2>
+                <p className="text-white/70 text-lg mb-10 leading-relaxed">
+                  O medo faz parte da jornada. A diferença está em como você reage a ele. A preparação mental e o foco no processo transformam insegurança em performance de elite.
+                </p>
+                
+                <div className="space-y-6">
+                  {[
+                    { t: "Preparação Mental", d: "Visualização, respiração e afirmações." },
+                    { t: "Preparação Técnica", d: "Prática com cronômetro e refinamento." },
+                    { t: "Preparação Final", d: "Revisão mental e confiança no processo." }
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4 group">
+                      <div className="h-10 w-10 shrink-0 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/50 transition-colors">
+                        <div className="h-1.5 w-1.5 rounded-full bg-gold" />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium mb-1">{item.t}</h4>
+                        <p className="text-white/50 text-sm">{item.d}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                {/* Ebook Suspense Element */}
+                <div className="relative group perspective-1000">
+                  <div className="absolute inset-0 bg-gold/20 blur-[100px] rounded-full opacity-50 animate-pulse" />
+                  <div className="relative glass-ink rounded-[2rem] p-1 border border-white/10 shadow-2xl overflow-hidden transform group-hover:rotate-y-12 transition-transform duration-700">
+                    <div className="aspect-[3/4] bg-gradient-to-br from-ink to-ink/90 relative overflow-hidden">
+                      {/* Book Cover Simulation */}
+                      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
+                      <div className="absolute top-0 left-0 w-2 h-full bg-gold/30 blur-sm" />
+                      <div className="p-12 h-full flex flex-col justify-between items-center text-center">
+                        <div className="space-y-4">
+                          <p className="text-gold text-[10px] font-bold tracking-[0.5em] uppercase">Exclusivo</p>
+                          <h3 className="font-display text-4xl text-white italic leading-tight">Destaque-se na Massoterapia</h3>
+                        </div>
+                        <div className="relative w-full h-px bg-gold/20">
+                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-ink text-[10px] text-gold uppercase tracking-[0.2em]">Josi Nascimento</div>
+                        </div>
+                        <div className="glass-ink px-6 py-3 rounded-full border border-gold/30">
+                          <div className="flex items-center gap-2">
+                            <ShieldCheck className="h-4 w-4 text-gold" />
+                            <span className="text-xs text-white/90">Conteúdo Protegido</span>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Suspense Blur Overlay */}
+                      <div className="absolute inset-0 backdrop-blur-[8px] bg-ink/40 flex items-center justify-center group-hover:backdrop-blur-0 transition-all duration-700">
+                         <div className="text-center p-8">
+                            <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gold/20 border border-gold/40 mb-4 group-hover:scale-110 transition-transform">
+                              <ShieldCheck className="h-8 w-8 text-gold" />
+                            </div>
+                            <p className="text-white font-display text-xl italic mb-2">Ebook Exclusivo</p>
+                            <p className="text-white/60 text-sm">Disponível apenas para alunas da mentoria.</p>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="surface-ink py-24 relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6">
+          <motion.div {...fadeInUp} className="text-center mb-20">
             <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Cronograma</p>
             <h2 className="font-display text-3xl sm:text-5xl text-white font-medium tracking-tight">
               A jornada completa da mentoria
@@ -252,9 +391,6 @@ function Landing() {
           </motion.div>
 
           <div className="relative overflow-hidden py-10">
-            {/* Removed gradients for cleaner look */}
-
-
             <motion.div 
               animate={isJourneyHovered ? {} : { x: ["0%", "-50%"] }}
               transition={{ 
