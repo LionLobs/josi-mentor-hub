@@ -169,7 +169,7 @@ function Landing() {
               <img
                 src={josiHero.url}
                 alt="Josi Nascimento, mentora em massoterapia avançada"
-                className="relative z-10 h-full w-full object-contain object-bottom opacity-60 mix-blend-lighten drop-shadow-[0_20px_50px_rgba(212,175,55,0.3)] transition-opacity duration-700 hover:opacity-80"
+                className="relative z-10 h-full w-full object-contain object-bottom opacity-70 mix-blend-lighten drop-shadow-[0_20px_50px_rgba(212,175,55,0.4)] transition-opacity duration-700 hover:opacity-90"
               />
               
               {/* Subtle mask at the bottom to blend with background */}
@@ -181,7 +181,7 @@ function Landing() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1 }}
-              className="absolute -bottom-6 -right-6 glass-ink p-6 rounded-2xl shadow-lux z-30 hidden sm:block"
+              className="absolute bottom-10 -right-6 glass-ink p-6 rounded-2xl shadow-lux z-30 hidden sm:block"
             >
               <div className="flex items-center gap-4">
                 <div className="h-12 w-12 rounded-full bg-gold/20 flex items-center justify-center">
