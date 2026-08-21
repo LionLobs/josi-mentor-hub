@@ -426,7 +426,7 @@ function Landing() {
             className="grid grid-cols-2 gap-4 sm:gap-8"
           >
             <div className="space-y-4 sm:space-y-8">
-              <div className="relative group overflow-hidden rounded-[2rem]">
+              <div className="relative group overflow-hidden rounded-[1.5rem]">
                 <img
                   src={josiSorriso.url}
                   alt="Josi Nascimento sorrindo"
