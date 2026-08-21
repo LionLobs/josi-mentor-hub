@@ -119,7 +119,7 @@ function Landing() {
               <img
                 src={josiNovoHero.url}
                 alt="Josi Nascimento — Massoterapia Avançada"
-                className="h-full w-full object-cover object-[80%_center] lg:object-center mix-blend-luminosity filter brightness-110 contrast-125 translate-x-12 lg:translate-x-0"
+                className="h-full w-full object-cover object-[90%_center] lg:object-center mix-blend-luminosity filter brightness-110 contrast-125 translate-x-32 lg:translate-x-0"
               />
             </div>
           </motion.div>
