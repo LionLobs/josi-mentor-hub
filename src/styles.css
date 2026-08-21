@@ -107,7 +107,7 @@
   --shadow-lux: 0 0 60px -10px color-mix(in oklab, var(--gold) 25%, transparent);
   --bg-grain: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
 }
-}
+
 
 .dark {
   --background: oklch(0.18 0.025 165);
