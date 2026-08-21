@@ -541,7 +541,7 @@ function Landing() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-white relative overflow-hidden rounded-[3rem] p-10 sm:p-16 text-center shadow-gold border border-gold/20"
+          className="bg-white relative overflow-hidden rounded-[2rem] p-8 sm:p-12 text-center shadow-gold border border-gold/20"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--gold-soft)_0%,_transparent_50%)] opacity-20" />
           <div className="relative z-10 max-w-3xl mx-auto">
