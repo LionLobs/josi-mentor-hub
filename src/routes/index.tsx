@@ -251,47 +251,54 @@ function Landing() {
         </motion.div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 relative bg-white rounded-[2.5rem] my-8 shadow-elegant border border-gold/10 overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[100px] -z-10" />
-        <div className="absolute -top-24 -left-24 w-64 h-64 bg-gold/5 blur-[120px] rounded-full" />
+      <section id="o-método" className="mx-auto max-w-6xl px-6 py-24 relative bg-white rounded-[3rem] my-12 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-gold/5 overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gold/5 blur-[120px] -z-10" />
+        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-primary/5 blur-[120px] rounded-full" />
         
         <motion.div 
           {...fadeInUp}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Experiência</p>
-          <h2 className="font-display text-2xl sm:text-4xl font-medium tracking-tight text-ink">
-            Tudo o que você recebe por dentro
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-[1px] w-12 bg-gold/30" />
+            <p className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">Ecossistema de Elite</p>
+            <div className="h-[1px] w-12 bg-gold/30" />
+          </div>
+          <h2 className="font-display text-3xl sm:text-5xl font-medium tracking-tight text-ink">
+            A Experiência Completa
           </h2>
+          <p className="mt-6 text-ink/50 max-w-xl mx-auto font-light text-base leading-relaxed">
+            Uma plataforma desenhada para transformar sua jornada em um processo fluido, profissional e tecnológico.
+          </p>
         </motion.div>
 
-        <div className="relative overflow-hidden py-10">
-          {/* Removed gradients for cleaner look */}
-
-          
+        <div className="relative overflow-hidden py-4">
           <motion.div 
             animate={isExperienceHovered ? {} : { x: ["0%", "-50%"] }}
             transition={{ 
-              duration: 30, 
+              duration: 40, 
               repeat: Infinity, 
               ease: "linear" 
             }}
             onMouseEnter={() => setIsExperienceHovered(true)}
             onMouseLeave={() => setIsExperienceHovered(false)}
-            className="flex gap-6 w-fit"
+            className="flex gap-8 w-fit"
           >
             {[...pilaresApp, ...pilaresApp].map((p, idx) => (
               <div
                 key={`${p.title}-${idx}`}
-                 className="group relative w-[300px] shrink-0 rounded-[1.5rem] border border-gold/10 bg-off-white/80 backdrop-blur-md p-6 transition-all duration-500 hover:bg-white hover:shadow-gold hover:-translate-y-2 overflow-hidden"
+                 className="group relative w-[320px] shrink-0 rounded-[2rem] border border-gold/10 bg-off-white/50 backdrop-blur-sm p-8 transition-all duration-700 hover:bg-white hover:shadow-2xl hover:-translate-y-3 overflow-hidden"
               >
-                <div className="absolute -top-10 -right-10 h-32 w-32 bg-gold/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-gold/20" />
+                <div className="absolute -top-12 -right-12 h-40 w-40 bg-gold/5 blur-3xl rounded-full transition-all duration-1000 group-hover:scale-150 group-hover:bg-gold/15" />
                 <div className="relative">
-                  <div className="h-12 w-12 rounded-2xl bg-primary/5 flex items-center justify-center transition-colors group-hover:bg-gold/10 mb-6">
-                    <p.icon className="h-6 w-6 text-gold" />
+                  <div className="h-14 w-14 rounded-2xl bg-primary/5 flex items-center justify-center transition-all duration-500 group-hover:bg-gold group-hover:shadow-gold-sm mb-8">
+                    <p.icon className="h-7 w-7 text-gold transition-colors duration-500 group-hover:text-white" />
                   </div>
-                  <h3 className="text-xl font-display mb-3 text-ink">{p.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed text-ink/70">{p.text}</p>
+                  <h3 className="text-xl font-display mb-4 text-ink font-bold">{p.title}</h3>
+                  <p className="text-[13px] text-ink/60 leading-relaxed font-light">{p.text}</p>
+                </div>
+                <div className="absolute bottom-4 right-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0">
+                  <ChevronRight className="h-5 w-5 text-gold/30" />
                 </div>
               </div>
             ))}
@@ -299,34 +306,42 @@ function Landing() {
         </div>
       </section>
 
-      <section className="surface-ink py-20 relative overflow-hidden">
+      <section id="pilares" className="surface-ink py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--gold-soft)_0%,_transparent_100%)] opacity-5" />
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         
         <div className="mx-auto max-w-6xl px-6">
-          <motion.div {...fadeInUp} className="text-center mb-20">
-            <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Os 3 Pilares</p>
-            <h2 className="font-display text-2xl sm:text-4xl text-white font-medium tracking-tight">
-              Sua Transformação Começa Agora
+          <motion.div {...fadeInUp} className="text-center mb-24">
+            <span className="text-gold text-[10px] font-bold tracking-[0.5em] uppercase mb-4 block">Fundamentos da Vitória</span>
+            <h2 className="font-display text-4xl sm:text-6xl text-white font-medium tracking-tight">
+              Os 3 Pilares do Sucesso
             </h2>
-            <p className="mt-6 text-white/60 max-w-2xl mx-auto">O destaque não depende apenas de técnica. Ele nasce da combinação entre excelência, presença e mentalidade.</p>
+            <div className="h-1 w-20 bg-gold mx-auto mt-8 rounded-full opacity-50" />
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {pilaresDestaque.map((p, idx) => (
               <motion.div
                 key={p.n}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
-                className="glass-ink p-8 rounded-[2rem] border border-white/5 hover:border-gold/30 transition-all group relative overflow-hidden"
+                transition={{ delay: idx * 0.2, duration: 0.8 }}
+                className="group relative p-10 rounded-[2.5rem] bg-white/5 border border-white/5 hover:border-gold/30 transition-all duration-700 hover:bg-white/[0.07]"
               >
-                <div className="absolute -right-8 -top-8 text-8xl font-display font-black text-white/5 group-hover:text-gold/5 transition-colors">{p.n}</div>
-                <div className="h-14 w-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-8">
-                  <p.icon className="h-7 w-7 text-gold" />
+                <div className="absolute -right-6 -top-6 text-9xl font-display font-black text-white/[0.03] group-hover:text-gold/[0.03] transition-colors">{p.n}</div>
+                <div className="h-16 w-16 rounded-2xl bg-gold/10 flex items-center justify-center mb-10 border border-gold/20 relative">
+                  <div className="absolute inset-0 bg-gold/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <p.icon className="h-8 w-8 text-gold relative z-10" />
                 </div>
-                <h3 className="text-xl font-display text-white mb-3 italic">{p.title}</h3>
-                <p className="text-sm text-white/60 leading-relaxed">{p.text}</p>
+                <h3 className="text-2xl font-display text-white mb-5 italic font-medium">{p.title}</h3>
+                <p className="text-[14px] text-white/50 leading-relaxed font-light">{p.text}</p>
+                
+                <div className="mt-8 pt-8 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-all duration-700">
+                  <span className="text-[10px] font-bold text-gold tracking-widest uppercase flex items-center gap-2">
+                    Ver detalhes <ArrowRight className="h-3 w-3" />
+                  </span>
+                </div>
               </motion.div>
             ))}
           </div>
