@@ -14,8 +14,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-2xl: calc(var(--radius) + 6px);
+  --radius-3xl: calc(var(--radius) + 8px);
   --font-display: "Cormorant Garamond", serif;
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
