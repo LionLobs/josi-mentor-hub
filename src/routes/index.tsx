@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router"; // troque a letra , essa ta horrivel e deu erro no site
+import { createFileRoute, Link } from "@tanstack/react-router"; // ta cortando a foto da josi na aba inicial,
 import {
   Sparkles,
   Crown,
@@ -105,15 +105,15 @@ function Landing() {
         {/* Background Effects */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, scale: 1.15, filter: "blur(10px)" }}
-            animate={{ opacity: 0.4, scale: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
+            animate={{ opacity: 0.6, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 2.5, ease: "easeOut" }}
-            className="absolute inset-0"
+            className="absolute inset-0 flex justify-end"
           >
             <img
               src={josiHeroBg.url}
               alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-full w-full object-cover object-[center_15%] mix-blend-luminosity filter brightness-125 contrast-125"
+              className="h-full w-full object-cover object-[center_10%] lg:object-[80%_15%] mix-blend-luminosity filter brightness-110 contrast-125"
             />
           </motion.div>
           
