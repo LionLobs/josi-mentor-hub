@@ -201,9 +201,8 @@ function Landing() {
         </motion.div>
 
         <div className="relative overflow-hidden py-10">
-          {/* Gradients for mask effect */}
-          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-ink to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-ink to-transparent z-10" />
+          {/* Removed gradients for cleaner look */}
+
           
           <motion.div 
             animate={isExperienceHovered ? {} : { x: ["0%", "-50%"] }}
