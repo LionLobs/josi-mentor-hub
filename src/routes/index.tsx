@@ -240,7 +240,7 @@ function Landing() {
                 ))}
               </div>
               <div className="text-left">
-                <p className="text-[10px] text-white/40 font-bold uppercase tracking-widest">+2.5k Alunas</p>
+                <p className="text-[10px] text-white/40 font-bold uppercase tracking-widest">MASSOTERAPIA DE ALTA PERFORMANCE</p>
                 <p className="text-sm font-display text-gold italic">Comunidade de Elite</p>
               </div>
             </motion.div>
