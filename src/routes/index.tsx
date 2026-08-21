@@ -400,8 +400,8 @@ function Landing() {
                   <p className="font-display text-4xl text-gradient-gold opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 origin-left italic leading-none">{m.n}</p>
                   <div className="mt-6 relative">
                     <div className="absolute -left-4 top-0 w-1 h-0 bg-gold/50 group-hover:h-full transition-all duration-700" />
-                    <h4 className="text-xl font-display tracking-tight text-white mb-2 italic">{m.nome}</h4>
-                    <p className="text-base text-white/50 leading-relaxed font-light">{m.desc}</p>
+                    <h4 className="text-lg font-display tracking-tight text-white mb-2 italic">{m.nome}</h4>
+                    <p className="text-sm text-white/50 leading-relaxed font-light">{m.desc}</p>
                   </div>
                 </div>
               ))}
