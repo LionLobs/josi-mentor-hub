@@ -572,7 +572,7 @@ function Landing() {
             <a href="#" className="hover:text-gold transition-colors">Suporte</a>
           </div>
           <p className="text-white/30 text-xs tracking-widest">
-            © {new Date().getFullYear()} JOSI NASCIMENTO · DESIGNED FOR EXCELLENCE
+            © {new Date().getFullYear()} JOSI NASCIMENTO · CRIADO POR LIONLOBS
           </p>
         </div>
       </footer>
