@@ -148,89 +148,107 @@ function Landing() {
         </div>
       </header>
 
-      <section className="surface-ink relative min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden">
+      <section id="hero" className="surface-ink relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.5, scale: 1 }}
-            transition={{ duration: 2.5, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 0.6, scale: 1 }}
+            transition={{ duration: 3, ease: [0.22, 1, 0.36, 1] }}
             className="absolute inset-0 flex"
           >
-            <div className="relative w-full h-full lg:w-[60%] ml-auto">
+            <div className="relative w-full h-full lg:w-[65%] ml-auto">
               <img
                 src={josiNovoHero.url}
-                alt="Josi Nascimento — Massoterapia Avançada"
-                className="h-full w-full object-cover object-[center_20%] lg:object-[center_top] mix-blend-luminosity filter brightness-110 contrast-125"
+                alt="Josi Nascimento"
+                className="h-full w-full object-cover object-[center_20%] lg:object-[center_top] mix-blend-luminosity filter brightness-110 contrast-125 saturate-[0.8]"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/20 to-transparent lg:hidden" />
-              <div className="absolute inset-y-0 -left-1 w-64 bg-gradient-to-r from-ink via-ink/40 to-transparent hidden lg:block" />
+              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/30 to-transparent lg:hidden" />
+              <div className="absolute inset-y-0 -left-1 w-[400px] bg-gradient-to-r from-ink via-ink/60 to-transparent hidden lg:block" />
             </div>
           </motion.div>
           
-          {/* Enhanced Overlay Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,_var(--gold)_0%,_transparent_60%)] opacity-15" />
+          {/* Light Rays / Glows */}
+          <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-gold/10 blur-[150px] rounded-full mix-blend-screen animate-pulse" />
+          <div className="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] bg-primary/20 blur-[120px] rounded-full mix-blend-screen" />
           
-          {/* Animated Glows */}
-          <div className="absolute top-1/4 -left-20 h-[500px] w-[500px] bg-gold/15 blur-[140px] rounded-full animate-pulse" />
-          <div className="absolute bottom-1/4 -right-20 h-[500px] w-[500px] bg-gold/10 blur-[140px] rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-          
-          {/* Grain Texture */}
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-transparent to-ink" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-10 pt-24 pb-16 lg:py-16 flex justify-start items-center">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-20 pt-32 lg:pt-20 lg:pb-16">
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-left max-w-2xl"
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="text-left max-w-3xl"
           >
             <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="hairline-gold mb-6 lg:mb-8 inline-flex items-center gap-2 rounded-full bg-white/5 px-5 py-2 text-[10px] font-medium tracking-[0.3em] text-gold uppercase"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="inline-flex items-center gap-3 rounded-full bg-white/5 border border-white/10 px-6 py-2.5 mb-10 backdrop-blur-md"
             >
-              <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
+              </span>
+              <span className="text-[10px] font-bold tracking-[0.4em] text-gold uppercase">Inscrições Abertas</span>
             </motion.div>
-            <h1 className="font-display text-3xl leading-[1.1] sm:text-5xl lg:text-6xl font-medium tracking-tight">
-              Destaque-se na{" "}
-              <span className="text-gradient-gold block mt-2 drop-shadow-[0_4px_20px_rgba(212,175,55,0.3)] italic uppercase">Massoterapia</span>
+
+            <h1 className="font-display text-4xl leading-[1.05] sm:text-6xl lg:text-7xl font-medium tracking-tight">
+              <span className="block opacity-90">DOMINE A ARTE DA</span>
+              <span className="text-gradient-gold block mt-3 drop-shadow-[0_10px_30px_rgba(212,175,55,0.4)] italic uppercase font-black">Massoterapia</span>
+              <span className="block text-2xl sm:text-3xl mt-4 text-white/80 font-sans tracking-wide">DE ALTA PERFORMANCE</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base text-white/70 leading-relaxed sm:text-lg">
-              Transforme sua técnica em reconhecimento, confiança e uma carreira de destaque com a mentoria exclusiva de <span className="text-white font-medium">Josi Nascimento</span>.
+
+            <p className="mt-8 max-w-xl text-base text-white/60 leading-relaxed sm:text-lg font-light">
+              Eleve seu nível profissional através de um método exclusivo que une <span className="text-white font-medium italic underline decoration-gold/40 underline-offset-4">excelência técnica</span> e visão estratégica de mercado.
             </p>
-            <div className="mt-10 flex flex-wrap justify-start gap-5">
-              <Button asChild size="lg" variant="gold" className="h-12 px-8 text-sm shadow-gold group">
+
+            <div className="mt-12 flex flex-wrap justify-start gap-6 items-center">
+              <Button asChild size="lg" variant="gold" className="h-14 px-10 text-[11px] font-bold tracking-widest uppercase shadow-gold group relative overflow-hidden">
                 <Link to="/auth">
-                  Começar minha mentoria 
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <span className="relative z-10 flex items-center">
+                    Quero me destacar
+                    <ArrowRight className="ml-3 h-4 w-4 transition-transform group-hover:translate-x-2" />
+                  </span>
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="h-12 px-8 text-sm border-white/40 bg-white text-ink hover:bg-white/90 backdrop-blur-sm shadow-lux">
-                <Link to="/auth">Conhecer meu método</Link>
+              <Button asChild variant="ghost" size="lg" className="h-14 px-8 text-[11px] font-bold tracking-widest uppercase text-white/70 hover:text-white border border-white/10 hover:border-gold/30 hover:bg-gold/5 transition-all">
+                <Link to="/auth">Ver Módulos</Link>
               </Button>
             </div>
             
-            {/* Certificação Badge - repositioned since portrait is gone */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-              className="mt-12 flex items-center gap-4 justify-start"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+              className="mt-16 flex items-center gap-6"
             >
-              <div className="h-12 w-12 rounded-full bg-gold/20 flex items-center justify-center">
-                <Crown className="h-6 w-6 text-gold" />
+              <div className="flex -space-x-3">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="h-10 w-10 rounded-full border-2 border-ink bg-white/10 backdrop-blur-md flex items-center justify-center overflow-hidden">
+                    <div className="h-full w-full bg-gradient-to-br from-gold/40 to-primary/40" />
+                  </div>
+                ))}
               </div>
               <div className="text-left">
-                <p className="text-xs text-gold font-medium uppercase tracking-wider">Certificação</p>
-                <p className="text-lg font-display text-white italic">Internacional Mar del Plata</p>
+                <p className="text-[10px] text-white/40 font-bold uppercase tracking-widest">+2.5k Alunas</p>
+                <p className="text-sm font-display text-gold italic">Comunidade de Elite</p>
               </div>
             </motion.div>
           </motion.div>
         </div>
+        
+        {/* Scroll Indicator */}
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 opacity-30 hidden lg:block"
+        >
+          <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
+        </motion.div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 relative bg-white rounded-[2.5rem] my-8 shadow-elegant border border-gold/10 overflow-hidden">
