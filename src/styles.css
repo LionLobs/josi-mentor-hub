@@ -108,7 +108,7 @@
   --shadow-gold: 0 20px 50px -15px color-mix(in oklab, var(--gold) 50%, transparent);
   --shadow-gold-sm: 0 8px 30px -10px color-mix(in oklab, var(--gold) 60%, transparent);
   --shadow-lux: 0 0 60px -10px color-mix(in oklab, var(--gold) 25%, transparent);
-  --bg-grain: url("https://www.transparenttextures.com/patterns/stardust.png");
+  --bg-grain: none;
 }
 
 
