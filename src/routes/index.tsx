@@ -440,7 +440,7 @@ function Landing() {
                   alt="Josi Nascimento no consultório"
                   className="aspect-square w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[1.5rem]" />
               </div>
             </div>
             <div className="pt-16 relative">
