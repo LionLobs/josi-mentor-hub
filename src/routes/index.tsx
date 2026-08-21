@@ -42,7 +42,28 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-const pilares = [
+const pilaresDestaque = [
+  { 
+    n: "01", 
+    title: "Excelência Técnica", 
+    text: "Domine movimentos com precisão, fluidez e propósito. Aperfeiçoe sua prática através de cursos e experiências práticas.",
+    icon: ShieldCheck
+  },
+  { 
+    n: "02", 
+    title: "Presença Profissional", 
+    text: "Sua postura, comunicação e segurança comunicam seu nível profissional antes mesmo do primeiro toque.",
+    icon: Crown
+  },
+  { 
+    n: "03", 
+    title: "Mentalidade Estratégica", 
+    text: "Aprenda a transformar cada atendimento e desafio em oportunidade real de crescimento.",
+    icon: Sparkles
+  },
+];
+
+const pilaresApp = [
   { icon: Crown, title: "Método guiado", text: "Módulos em sequência, do fundamento ao palco." },
   { icon: CalendarCheck, title: "Agenda online", text: "Sessões individuais marcadas em segundos." },
   { icon: GraduationCap, title: "Área do aluno", text: "Aulas, materiais e evolução em um só lugar." },
