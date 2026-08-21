@@ -115,14 +115,15 @@ function Landing() {
             transition={{ duration: 2.5, ease: "easeOut" }}
             className="absolute inset-0 flex"
           >
-            <div className="relative w-full h-full lg:w-1/2 ml-auto">
+            <div className="relative w-full h-full lg:w-2/3 ml-auto">
               <img
                 src={josiNovoHero.url}
                 alt="Josi Nascimento — Massoterapia Avançada"
                 className="h-full w-full object-cover object-[90%_center] lg:object-center brightness-110 contrast-125 translate-x-32 lg:translate-x-0"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/50 to-transparent lg:hidden" />
-              <div className="absolute inset-y-0 -left-1 w-32 bg-gradient-to-r from-ink to-transparent hidden lg:block" />
+              {/* Transitions to hide "corte seco" */}
+              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/60 to-transparent lg:hidden" />
+              <div className="absolute inset-y-0 -left-px w-full bg-gradient-to-r from-ink via-ink/30 to-transparent hidden lg:block" />
             </div>
           </motion.div>
           
