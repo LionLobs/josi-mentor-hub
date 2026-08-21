@@ -19,6 +19,7 @@ import josiSobre from "@/assets/josi-10.jpg.asset.json";
 import josiPremio from "@/assets/josi-25.jpg.asset.json";
 import josiSorriso from "@/assets/josi-6.jpg.asset.json";
 import josiHeroBg from "@/assets/josi-17.jpg.asset.json";
+import josiNovoHero from "@/assets/josi-25.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -105,19 +106,19 @@ function Landing() {
         </div>
       </header>
 
-      <section className="surface-ink relative min-h-[95vh] flex items-center overflow-hidden">
+      <section className="surface-ink relative min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
-            animate={{ opacity: 0.6, scale: 1, filter: "blur(0px)" }}
+            animate={{ opacity: 0.7, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 2.5, ease: "easeOut" }}
             className="absolute inset-0 flex justify-end"
           >
             <img
-              src={josiHeroBg.url}
+              src={josiNovoHero.url}
               alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-full w-full object-cover object-[center_10%] lg:object-[80%_15%] mix-blend-luminosity filter brightness-110 contrast-125"
+              className="h-full w-full object-cover object-[65%_center] lg:object-right mix-blend-luminosity filter brightness-110 contrast-125"
             />
           </motion.div>
           
@@ -133,26 +134,26 @@ function Landing() {
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-20">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 lg:py-20">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left lg:max-w-3xl"
+            className="text-center lg:text-left lg:max-w-2xl"
           >
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="hairline-gold mb-8 inline-flex items-center gap-2 rounded-full bg-white/5 px-5 py-2 text-[10px] font-medium tracking-[0.3em] text-gold uppercase"
+              className="hairline-gold mb-6 lg:mb-8 inline-flex items-center gap-2 rounded-full bg-white/5 px-5 py-2 text-[10px] font-medium tracking-[0.3em] text-gold uppercase"
             >
               <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
             </motion.div>
-            <h1 className="font-display text-5xl leading-[1] sm:text-7xl lg:text-8xl font-medium tracking-tight">
+            <h1 className="font-display text-4xl leading-[1.1] sm:text-6xl lg:text-7xl font-medium tracking-tight">
               Elevando a sua{" "}
               <span className="text-gradient-gold block mt-2 drop-shadow-[0_4px_20px_rgba(212,175,55,0.3)] italic">Arte do Toque</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base text-white/70 leading-relaxed sm:text-xl lg:mx-0">
+            <p className="mt-6 max-w-xl text-base text-white/70 leading-relaxed sm:text-lg lg:mx-0">
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
               Domine técnicas exclusivas e conquiste o posicionamento que você merece.
             </p>
