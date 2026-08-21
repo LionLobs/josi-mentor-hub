@@ -27,6 +27,7 @@ import { Route as AlunoAgendaRouteImport } from './routes/aluno.agenda'
 import { Route as AlunoCursosRouteImport } from './routes/aluno.cursos'
 import { Route as AlunoMateriaisRouteImport } from './routes/aluno.materiais'
 import { Route as AlunoPagamentosRouteImport } from './routes/aluno.pagamentos'
+import { Route as ApiPublicKiwifyRouteImport } from './routes/api/public/kiwify'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -118,6 +119,11 @@ const AlunoPagamentosRoute = AlunoPagamentosRouteImport.update({
   path: '/pagamentos',
   getParentRoute: () => AlunoRoute,
 } as any)
+const ApiPublicKiwifyRoute = ApiPublicKiwifyRouteImport.update({
+  id: '/api/public/kiwify',
+  path: '/api/public/kiwify',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -138,6 +144,7 @@ export interface FileRoutesByFullPath {
   '/aluno/pagamentos': typeof AlunoPagamentosRoute
   '/admin/': typeof AdminIndexRoute
   '/aluno/': typeof AlunoIndexRoute
+  '/api/public/kiwify': typeof ApiPublicKiwifyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -156,6 +163,7 @@ export interface FileRoutesByTo {
   '/aluno/pagamentos': typeof AlunoPagamentosRoute
   '/admin': typeof AdminIndexRoute
   '/aluno': typeof AlunoIndexRoute
+  '/api/public/kiwify': typeof ApiPublicKiwifyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -177,6 +185,7 @@ export interface FileRoutesById {
   '/aluno/pagamentos': typeof AlunoPagamentosRoute
   '/admin/': typeof AdminIndexRoute
   '/aluno/': typeof AlunoIndexRoute
+  '/api/public/kiwify': typeof ApiPublicKiwifyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -199,6 +208,7 @@ export interface FileRouteTypes {
     | '/aluno/pagamentos'
     | '/admin/'
     | '/aluno/'
+    | '/api/public/kiwify'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -217,6 +227,7 @@ export interface FileRouteTypes {
     | '/aluno/pagamentos'
     | '/admin'
     | '/aluno'
+    | '/api/public/kiwify'
   id:
     | '__root__'
     | '/'
@@ -237,6 +248,7 @@ export interface FileRouteTypes {
     | '/aluno/pagamentos'
     | '/admin/'
     | '/aluno/'
+    | '/api/public/kiwify'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -244,6 +256,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRouteWithChildren
   AlunoRoute: typeof AlunoRouteWithChildren
   AuthRoute: typeof AuthRoute
+  ApiPublicKiwifyRoute: typeof ApiPublicKiwifyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -374,6 +387,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlunoPagamentosRouteImport
       parentRoute: typeof AlunoRoute
     }
+    '/api/public/kiwify': {
+      id: '/api/public/kiwify'
+      path: '/api/public/kiwify'
+      fullPath: '/api/public/kiwify'
+      preLoaderRoute: typeof ApiPublicKiwifyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -426,6 +446,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRouteWithChildren,
   AlunoRoute: AlunoRouteWithChildren,
   AuthRoute: AuthRoute,
+  ApiPublicKiwifyRoute: ApiPublicKiwifyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
