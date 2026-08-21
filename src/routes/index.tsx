@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router"; // o layout do site ta tudo muito grande
+import { createFileRoute, Link } from "@tanstack/react-router"; 
+import { useState } from "react";
 import {
   Sparkles,
   Crown,
@@ -70,6 +71,9 @@ const staggerContainer = {
 };
 
 function Landing() {
+  const [isExperienceHovered, setIsExperienceHovered] = useState(false);
+  const [isJourneyHovered, setIsJourneyHovered] = useState(false);
+
   return (
     <div className="min-h-screen bg-ink text-white overflow-x-hidden selection:bg-gold selection:text-ink relative">
       <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
@@ -196,30 +200,39 @@ function Landing() {
           </h2>
         </motion.div>
 
-        <motion.div 
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {pilares.map((p) => (
-            <motion.div
-              key={p.title}
-              variants={fadeInUp}
-               className="group relative rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-md p-8 transition-all duration-500 hover:bg-white/10 hover:shadow-elegant hover:-translate-y-2 overflow-hidden"
-            >
-              <div className="absolute -top-10 -right-10 h-32 w-32 bg-gold/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-gold/20" />
-              <div className="relative">
-                <div className="h-12 w-12 rounded-2xl bg-primary/5 flex items-center justify-center transition-colors group-hover:bg-gold/10 mb-6">
-                  <p.icon className="h-6 w-6 text-gold" />
+        <div className="relative overflow-hidden py-10">
+          {/* Gradients for mask effect */}
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-ink to-transparent z-10" />
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-ink to-transparent z-10" />
+          
+          <motion.div 
+            animate={isExperienceHovered ? {} : { x: ["0%", "-50%"] }}
+            transition={{ 
+              duration: 30, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+            onMouseEnter={() => setIsExperienceHovered(true)}
+            onMouseLeave={() => setIsExperienceHovered(false)}
+            className="flex gap-6 w-fit"
+          >
+            {[...pilares, ...pilares].map((p, idx) => (
+              <div
+                key={`${p.title}-${idx}`}
+                 className="group relative w-[350px] shrink-0 rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-md p-8 transition-all duration-500 hover:bg-white/10 hover:shadow-elegant hover:-translate-y-2 overflow-hidden"
+              >
+                <div className="absolute -top-10 -right-10 h-32 w-32 bg-gold/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-gold/20" />
+                <div className="relative">
+                  <div className="h-12 w-12 rounded-2xl bg-primary/5 flex items-center justify-center transition-colors group-hover:bg-gold/10 mb-6">
+                    <p.icon className="h-6 w-6 text-gold" />
+                  </div>
+                  <h3 className="text-2xl font-display mb-4">{p.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{p.text}</p>
                 </div>
-                <h3 className="text-2xl font-display mb-4">{p.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{p.text}</p>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </section>
 
       <section className="surface-ink py-24 relative overflow-hidden">
@@ -233,24 +246,36 @@ function Landing() {
             </h2>
           </motion.div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {modulos.map((m, idx) => (
-              <motion.div 
-                key={m.n}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group glass-ink rounded-[2rem] p-8 border border-white/5 hover:border-gold/30 transition-all"
-              >
-                <p className="font-display text-5xl text-gradient-gold opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 origin-left italic leading-none">{m.n}</p>
-                <div className="mt-6 relative">
-                  <div className="absolute -left-4 top-0 w-1 h-0 bg-gold/50 group-hover:h-full transition-all duration-700" />
-                  <h4 className="text-xl font-display tracking-tight text-white mb-2 italic">{m.nome}</h4>
-                  <p className="text-base text-white/50 leading-relaxed font-light">{m.desc}</p>
+          <div className="relative overflow-hidden py-10">
+            {/* Gradients for mask effect */}
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-ink to-transparent z-10" />
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-ink to-transparent z-10" />
+
+            <motion.div 
+              animate={isJourneyHovered ? {} : { x: ["0%", "-50%"] }}
+              transition={{ 
+                duration: 25, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+              onMouseEnter={() => setIsJourneyHovered(true)}
+              onMouseLeave={() => setIsJourneyHovered(false)}
+              className="flex gap-6 w-fit"
+            >
+              {[...modulos, ...modulos].map((m, idx) => (
+                <div 
+                  key={`${m.n}-${idx}`}
+                  className="group glass-ink w-[300px] shrink-0 rounded-[2rem] p-8 border border-white/5 hover:border-gold/30 transition-all"
+                >
+                  <p className="font-display text-5xl text-gradient-gold opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 origin-left italic leading-none">{m.n}</p>
+                  <div className="mt-6 relative">
+                    <div className="absolute -left-4 top-0 w-1 h-0 bg-gold/50 group-hover:h-full transition-all duration-700" />
+                    <h4 className="text-xl font-display tracking-tight text-white mb-2 italic">{m.nome}</h4>
+                    <p className="text-base text-white/50 leading-relaxed font-light">{m.desc}</p>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
