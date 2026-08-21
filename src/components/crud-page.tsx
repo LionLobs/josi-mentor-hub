@@ -224,7 +224,7 @@ export function CrudPage({
                     ) : f.type === "checkbox" ? (
                       <input
                         type="checkbox"
-                        className="h-4 w-4 accent-[oklch(0.34_0.062_163)]"
+                        className="h-4 w-4 accent-gold"
                         checked={Boolean(form[f.name])}
                         onChange={(e) => setForm({ ...form, [f.name]: e.target.checked })}
                       />
