@@ -106,7 +106,7 @@ function Landing() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, scale: 1.15, filter: "blur(10px)" }}
-            animate={{ opacity: 0.4, scale: 1, filter: "blur(0px)" }}
+            animate={{ opacity: 0.6, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 2.5, ease: "easeOut" }}
             className="absolute inset-0"
           >
