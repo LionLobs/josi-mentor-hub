@@ -149,19 +149,23 @@ function Landing() {
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative mx-auto w-full max-w-lg lg:ml-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="relative mx-auto w-full max-w-2xl lg:ml-auto"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl animate-float">
-              <div className="absolute inset-0 border-2 border-gold/30 rounded-[2rem] z-20 pointer-events-none" />
+            <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden lg:overflow-visible flex items-center justify-center">
+              {/* Decorative Glow behind the image */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gold/10 blur-[100px] rounded-full z-0 pointer-events-none" />
+              
               <img
                 src={josiHero.url}
                 alt="Josi Nascimento, mentora em massoterapia avançada"
-                className="h-full w-full object-cover object-top"
+                className="relative z-10 h-full w-full object-contain object-bottom opacity-60 mix-blend-lighten drop-shadow-[0_20px_50px_rgba(212,175,55,0.3)] transition-opacity duration-700 hover:opacity-80"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-60" />
+              
+              {/* Subtle mask at the bottom to blend with background */}
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink via-ink/50 to-transparent z-20 pointer-events-none" />
             </div>
             
             {/* Floating stats card */}
