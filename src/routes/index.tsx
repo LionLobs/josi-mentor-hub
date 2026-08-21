@@ -410,7 +410,7 @@ function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24 relative overflow-hidden">
+      <section className="mx-auto max-w-6xl px-6 py-20 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--gold-soft)_0%,_transparent_70%)] opacity-[0.05] -z-10" />
         <div className="absolute -right-20 top-1/2 -translate-y-1/2 text-[15rem] font-display font-black text-gold/5 pointer-events-none select-none rotate-90 lg:rotate-0 lg:opacity-10">
           METHOD
