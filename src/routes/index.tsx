@@ -496,6 +496,8 @@ function Landing() {
             </div>
 
             <h2 className="font-display text-5xl sm:text-7xl mb-10 font-medium tracking-tighter leading-[0.85] relative">
+              confira esses textos
+              <br />
               Josi <br />
               <span className="text-gradient-gold italic">Nascimento</span>
               <motion.div 
