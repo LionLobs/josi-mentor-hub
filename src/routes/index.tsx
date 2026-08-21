@@ -371,11 +371,11 @@ function Landing() {
         </div>
       </section>
 
-      <section className="surface-ink py-24 relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6">
-          <motion.div {...fadeInUp} className="text-center mb-20">
+      <section className="surface-ink py-20 relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div {...fadeInUp} className="text-center mb-16">
             <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Cronograma</p>
-            <h2 className="font-display text-3xl sm:text-5xl text-white font-medium tracking-tight">
+            <h2 className="font-display text-2xl sm:text-4xl text-white font-medium tracking-tight">
               A jornada completa da mentoria
             </h2>
           </motion.div>
