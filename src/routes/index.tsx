@@ -292,8 +292,8 @@ function Landing() {
                 <div className="h-14 w-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-8">
                   <p.icon className="h-7 w-7 text-gold" />
                 </div>
-                <h3 className="text-2xl font-display text-white mb-4 italic">{p.title}</h3>
-                <p className="text-white/60 leading-relaxed">{p.text}</p>
+                <h3 className="text-xl font-display text-white mb-3 italic">{p.title}</h3>
+                <p className="text-sm text-white/60 leading-relaxed">{p.text}</p>
               </motion.div>
             ))}
           </div>
