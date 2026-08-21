@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router"; // analise a aba inicial completa e compare com alto padrao,
 import {
   Sparkles,
   Crown,
@@ -71,7 +71,8 @@ const staggerContainer = {
 
 function Landing() {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-ink text-white overflow-x-hidden selection:bg-gold selection:text-ink relative">
+      <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
       <header className="glass-ink sticky top-0 z-50 border-b border-white/10">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <motion.div 
@@ -100,24 +101,32 @@ function Landing() {
         </div>
       </header>
 
-      <section className="surface-ink relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="surface-ink relative min-h-[95vh] flex items-center overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.35, scale: 1 }}
-            transition={{ duration: 2 }}
+            initial={{ opacity: 0, scale: 1.15, filter: "blur(10px)" }}
+            animate={{ opacity: 0.4, scale: 1, filter: "blur(0px)" }}
+            transition={{ duration: 2.5, ease: "easeOut" }}
             className="absolute inset-0"
           >
             <img
               src={josiHeroBg.url}
               alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-full w-full object-cover object-[center_20%] mix-blend-luminosity filter brightness-110 contrast-125"
+              className="h-full w-full object-cover object-[center_15%] mix-blend-luminosity filter brightness-125 contrast-125"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-ink/40 to-ink" />
-          <div className="absolute top-1/4 -left-20 h-96 w-96 bg-gold/20 blur-[120px] rounded-full animate-pulse" />
-          <div className="absolute bottom-1/4 -right-20 h-96 w-96 bg-primary/30 blur-[120px] rounded-full animate-pulse" />
+          
+          {/* Enhanced Overlay Gradients */}
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/60 to-ink" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_var(--gold)_0%,_transparent_70%)] opacity-10" />
+          
+          {/* Animated Glows */}
+          <div className="absolute top-1/4 -left-20 h-[500px] w-[500px] bg-gold/15 blur-[140px] rounded-full animate-pulse" />
+          <div className="absolute bottom-1/4 -right-20 h-[500px] w-[500px] bg-primary/25 blur-[140px] rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+          
+          {/* Grain Texture */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-20">
@@ -135,9 +144,9 @@ function Landing() {
             >
               <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
             </motion.div>
-            <h1 className="font-display text-5xl leading-[1.1] sm:text-7xl lg:text-9xl font-black tracking-tighter uppercase italic">
+            <h1 className="font-display text-6xl leading-[1] sm:text-8xl lg:text-[10rem] font-black tracking-tighter uppercase italic">
               Elevando a sua{" "}
-              <span className="text-gradient-gold block mt-2 drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)]">Arte do Toque</span>
+              <span className="text-gradient-gold block mt-4 drop-shadow-[0_10px_30px_rgba(212,175,55,0.5)] scale-105 origin-left">Arte do Toque</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg text-white/70 leading-relaxed sm:text-2xl lg:mx-0">
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
@@ -198,9 +207,9 @@ function Landing() {
             <motion.div
               key={p.title}
               variants={fadeInUp}
-              className="group relative rounded-3xl border border-border/50 bg-card p-8 shadow-sm transition-all hover:shadow-elegant hover:-translate-y-2 overflow-hidden"
+               className="group relative rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-md p-10 transition-all duration-500 hover:bg-white/10 hover:shadow-elegant hover:-translate-y-3 overflow-hidden"
             >
-              <div className="absolute top-0 right-0 h-24 w-24 bg-gold/5 rounded-bl-[100%] transition-all group-hover:scale-150" />
+              <div className="absolute -top-10 -right-10 h-32 w-32 bg-gold/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-gold/20" />
               <div className="relative">
                 <div className="h-12 w-12 rounded-2xl bg-primary/5 flex items-center justify-center transition-colors group-hover:bg-gold/10 mb-6">
                   <p.icon className="h-6 w-6 text-gold" />
@@ -234,10 +243,11 @@ function Landing() {
                 transition={{ delay: idx * 0.1 }}
                 className="group glass-ink rounded-[2rem] p-8 border border-white/5 hover:border-gold/30 transition-all"
               >
-                <p className="font-display text-5xl text-gradient-gold opacity-50 group-hover:opacity-100 transition-opacity">{m.n}</p>
-                <div className="mt-8">
-                  <h4 className="text-sm font-semibold tracking-[0.2em] text-white uppercase mb-3">{m.nome}</h4>
-                  <p className="text-sm text-white/50 leading-relaxed">{m.desc}</p>
+                <p className="font-display text-7xl text-gradient-gold opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 origin-left italic">{m.n}</p>
+                <div className="mt-12 relative">
+                  <div className="absolute -left-4 top-0 w-1 h-0 bg-gold/50 group-hover:h-full transition-all duration-700" />
+                  <h4 className="text-lg font-display tracking-[0.1em] text-white uppercase mb-4 italic">{m.nome}</h4>
+                  <p className="text-base text-white/50 leading-relaxed font-light">{m.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -245,60 +255,81 @@ function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-32">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
+      <section className="mx-auto max-w-7xl px-6 py-40 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--gold-soft)_0%,_transparent_70%)] opacity-[0.03] -z-10" />
+        
+        <div className="grid items-center gap-24 lg:grid-cols-2">
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-6"
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-2 gap-8"
           >
-            <div className="space-y-6">
-              <img
-                src={josiSorriso.url}
-                alt="Josi Nascimento sorrindo"
-                className="aspect-[3/4] w-full rounded-[2rem] object-cover shadow-2xl"
-              />
-              <img
-                src={josiSobre.url}
-                alt="Josi Nascimento no consultório"
-                className="aspect-square w-full rounded-[2rem] object-cover shadow-2xl"
-              />
+            <div className="space-y-8">
+              <div className="relative group overflow-hidden rounded-[2.5rem]">
+                <img
+                  src={josiSorriso.url}
+                  alt="Josi Nascimento sorrindo"
+                  className="aspect-[3/4] w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2.5rem]" />
+              </div>
+              <div className="relative group overflow-hidden rounded-[2.5rem]">
+                <img
+                  src={josiSobre.url}
+                  alt="Josi Nascimento no consultório"
+                  className="aspect-square w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2.5rem]" />
+              </div>
             </div>
-            <div className="pt-12">
-              <img
-                src={josiPremio.url}
-                alt="Josi Nascimento com prêmio"
-                className="aspect-[3/5] w-full rounded-[2rem] object-cover shadow-2xl border-2 border-gold/20"
-              />
+            <div className="pt-16">
+              <div className="relative group overflow-hidden rounded-[2.5rem]">
+                <img
+                  src={josiPremio.url}
+                  alt="Josi Nascimento com prêmio"
+                  className="aspect-[3/5] w-full object-cover shadow-2xl border-2 border-gold/30 transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2.5rem]" />
+                <div className="absolute bottom-6 left-6 right-6 glass-ink p-4 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
+                   <p className="text-[10px] text-gold uppercase tracking-[0.2em] font-bold">Certificação Internacional</p>
+                   <p className="text-sm text-white italic">Mar del Plata</p>
+                </div>
+              </div>
             </div>
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">A Mentora</p>
-            <h2 className="font-display text-4xl sm:text-6xl mb-8 font-black uppercase">Josi Nascimento</h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/5 border border-gold/20 mb-8">
+              <p className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">A Mentora</p>
+            </div>
+            <h2 className="font-display text-5xl sm:text-7xl mb-10 font-black uppercase italic leading-[0.9]">
+              Josi <br />
+              <span className="text-gradient-gold">Nascimento</span>
+            </h2>
+            <div className="space-y-8 text-xl text-muted-foreground leading-relaxed font-light">
               <p>
                 Massoterapeuta premiada e reconhecida internacionalmente, Josi transformou anos de
                 prática clínica em um método claro e replicável.
+              </p>
+              <p className="border-l-4 border-gold/30 pl-8 italic text-white/80">
+                "Minha missão é elevar o padrão da massoterapia, transformando técnica em arte e profissionais em referências de mercado."
               </p>
               <p>
                 Nesta mentoria, ela conduz você passo a passo — da excelência técnica ao posicionamento 
                 de mercado que atrai clientes de alto valor.
               </p>
-              <p>
-                Uma plataforma exclusiva onde você recebe acompanhamento individual, aulas estratégicas e 
-                todo o suporte necessário para sua transformação profissional.
-              </p>
             </div>
-            <div className="mt-12 flex items-center gap-6">
-              <div className="h-px flex-1 bg-border" />
-              <div className="font-display text-2xl italic">Josi Nascimento</div>
-              <div className="h-px flex-1 bg-border" />
+            <div className="mt-16 flex items-center gap-8">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
+              <div className="font-display text-3xl italic tracking-tighter text-gold">Josi Nascimento</div>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
             </div>
           </motion.div>
         </div>
