@@ -1,4 +1,5 @@
 // o site está lento
+// ela é massoterapeuta, tente deixar o site com tons mais brancos tb
 import { createFileRoute, Link } from "@tanstack/react-router"; 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
 
