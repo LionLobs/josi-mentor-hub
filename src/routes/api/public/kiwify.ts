@@ -71,7 +71,7 @@ export const Route = createFileRoute('/api/public/kiwify')({
               // 3. Record Payment
               await supabaseAdmin.from('payments').insert({
                 student_id: userId,
-                enrollment_id: enrollment?.id,
+                enrollment_id: enrollment?.id ?? null,
                 amount_cents: Math.round((body.order_amount || 0) * 100),
                 status: 'pago',
                 paid_at: new Date().toISOString(),
