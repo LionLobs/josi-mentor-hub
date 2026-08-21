@@ -379,7 +379,7 @@ function Landing() {
                 <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <p className="mt-8 text-white/40 text-sm tracking-widest uppercase">Vagas limitadas por turma</p>
+            <p className="mt-8 text-ink/40 text-sm tracking-widest uppercase">Vagas limitadas por turma</p>
           </div>
         </motion.div>
       </section>
