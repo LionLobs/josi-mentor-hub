@@ -395,7 +395,7 @@ function Landing() {
               {[...modulos, ...modulos].map((m, idx) => (
                 <div 
                   key={`${m.n}-${idx}`}
-                  className="group glass-ink w-[300px] shrink-0 rounded-[2rem] p-8 border border-white/5 hover:border-gold/30 transition-all"
+                  className="group glass-ink w-[260px] shrink-0 rounded-[1.5rem] p-6 border border-white/5 hover:border-gold/30 transition-all"
                 >
                   <p className="font-display text-5xl text-gradient-gold opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 origin-left italic leading-none">{m.n}</p>
                   <div className="mt-6 relative">
