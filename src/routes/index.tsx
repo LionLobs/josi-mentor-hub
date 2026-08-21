@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+preciso que crie um design system incrivel a essa plataforma, levando em conta que é alto padrao, deve ter efeitos incriveis e sofisticados
 import {
   Sparkles,
   Crown,
