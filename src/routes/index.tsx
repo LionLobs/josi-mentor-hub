@@ -166,7 +166,7 @@ function Landing() {
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-10 lg:py-16 flex justify-start items-center">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-10 pt-24 pb-16 lg:py-16 flex justify-start items-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
