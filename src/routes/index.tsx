@@ -347,7 +347,8 @@ function Landing() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <div className="px-4 py-1.5 rounded-full bg-white/5 border border-gold/20">
+              <div className="px-4 py-1.5 rounded-full bg-white/5 border border-gold/20 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 <p className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">A Mentora</p>
               </div>
               <div className="h-px w-12 bg-gold/30" />
