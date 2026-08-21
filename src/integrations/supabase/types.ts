@@ -60,6 +60,7 @@ export type Database = {
           cover_url: string | null
           created_at: string
           description: string | null
+          external_id: string | null
           id: string
           price_cents: number
           published: boolean
@@ -69,6 +70,7 @@ export type Database = {
           cover_url?: string | null
           created_at?: string
           description?: string | null
+          external_id?: string | null
           id?: string
           price_cents?: number
           published?: boolean
@@ -78,6 +80,7 @@ export type Database = {
           cover_url?: string | null
           created_at?: string
           description?: string | null
+          external_id?: string | null
           id?: string
           price_cents?: number
           published?: boolean
@@ -170,6 +173,7 @@ export type Database = {
           created_at: string
           description: string | null
           duration_weeks: number
+          external_id: string | null
           id: string
           price_cents: number
           status: string
@@ -179,6 +183,7 @@ export type Database = {
           created_at?: string
           description?: string | null
           duration_weeks?: number
+          external_id?: string | null
           id?: string
           price_cents?: number
           status?: string
@@ -188,6 +193,7 @@ export type Database = {
           created_at?: string
           description?: string | null
           duration_weeks?: number
+          external_id?: string | null
           id?: string
           price_cents?: number
           status?: string
