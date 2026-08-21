@@ -267,31 +267,31 @@ function Landing() {
             className="grid grid-cols-2 gap-8"
           >
             <div className="space-y-8">
-              <div className="relative group overflow-hidden rounded-[2.5rem]">
+              <div className="relative group overflow-hidden rounded-[2rem]">
                 <img
                   src={josiSorriso.url}
                   alt="Josi Nascimento sorrindo"
                   className="aspect-[3/4] w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2.5rem]" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
               </div>
-              <div className="relative group overflow-hidden rounded-[2.5rem]">
+              <div className="relative group overflow-hidden rounded-[2rem]">
                 <img
                   src={josiSobre.url}
                   alt="Josi Nascimento no consultório"
                   className="aspect-square w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2.5rem]" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
               </div>
             </div>
             <div className="pt-16">
-              <div className="relative group overflow-hidden rounded-[2.5rem]">
+              <div className="relative group overflow-hidden rounded-[2rem]">
                 <img
                   src={josiPremio.url}
                   alt="Josi Nascimento com prêmio"
                   className="aspect-[3/5] w-full object-cover shadow-2xl border-2 border-gold/30 transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2.5rem]" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
                 <div className="absolute bottom-6 left-6 right-6 glass-ink p-4 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
                    <p className="text-[10px] text-gold uppercase tracking-[0.2em] font-bold">Certificação Internacional</p>
                    <p className="text-sm text-white italic">Mar del Plata</p>
