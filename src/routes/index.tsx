@@ -102,13 +102,20 @@ function Landing() {
 
       <section className="surface-ink relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Effects */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImg}
-            alt="Fundo elegante em verde e dourado"
-            className="h-full w-full object-cover opacity-30 mix-blend-overlay"
-          />
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-ink/50 to-ink" />
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 0.15, scale: 1 }}
+            transition={{ duration: 2 }}
+            className="absolute inset-0"
+          >
+            <img
+              src={josiHeroBg.url}
+              alt="Josi Nascimento — Massoterapia Avançada"
+              className="h-full w-full object-cover object-[center_20%] mix-blend-luminosity filter brightness-125 contrast-75"
+            />
+          </motion.div>
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-ink/80 to-ink" />
           <div className="absolute top-1/4 -left-20 h-96 w-96 bg-gold/10 blur-[120px] rounded-full animate-pulse" />
           <div className="absolute bottom-1/4 -right-20 h-96 w-96 bg-primary/20 blur-[120px] rounded-full animate-pulse" />
         </div>
