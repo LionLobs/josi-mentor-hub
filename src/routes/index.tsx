@@ -502,7 +502,7 @@ function Landing() {
               </div>
               <div className="w-px h-10 bg-white/10" />
               <div>
-                <p className="text-gold font-display text-3xl italic leading-none">EXPERIÊNCIA</p>
+                <p className="text-gold font-display text-2xl italic leading-none">EXPERIÊNCIA</p>
                 <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">CONSOLIDADA</p>
               </div>
             </div>
