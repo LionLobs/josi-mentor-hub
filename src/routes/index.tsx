@@ -105,15 +105,15 @@ function Landing() {
         {/* Background Effects */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, scale: 1.15, filter: "blur(10px)" }}
+            initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
             animate={{ opacity: 0.6, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 2.5, ease: "easeOut" }}
-            className="absolute inset-0"
+            className="absolute inset-0 flex justify-end"
           >
             <img
               src={josiHeroBg.url}
               alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-full w-full object-cover object-[70%_top] mix-blend-luminosity filter brightness-110 contrast-125 lg:object-[80%_20%]"
+              className="h-full w-full object-cover object-[75%_top] lg:object-contain lg:object-right-top mix-blend-luminosity filter brightness-110 contrast-125"
             />
           </motion.div>
           
