@@ -113,12 +113,12 @@ function Landing() {
             initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
             animate={{ opacity: 0.7, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 2.5, ease: "easeOut" }}
-            className="absolute inset-0 flex justify-end"
+            className="absolute inset-0 flex justify-end lg:justify-end"
           >
             <img
               src={josiNovoHero.url}
               alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-full w-full object-cover object-[65%_center] lg:object-right mix-blend-luminosity filter brightness-110 contrast-125"
+              className="h-full w-full object-cover object-[75%_center] lg:object-[85%_center] mix-blend-luminosity filter brightness-110 contrast-125"
             />
           </motion.div>
           
@@ -139,7 +139,7 @@ function Landing() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left lg:max-w-2xl"
+            className="text-left lg:max-w-2xl lg:ml-0"
           >
             <motion.div 
               initial={{ opacity: 0 }}
@@ -157,7 +157,7 @@ function Landing() {
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
               Domine técnicas exclusivas e conquiste o posicionamento que você merece.
             </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-5 lg:justify-start">
+            <div className="mt-10 flex flex-wrap justify-start gap-5">
               <Button asChild size="xl" variant="gold" className="h-14 px-10 text-base shadow-gold group">
                 <Link to="/auth">
                   Começar minha mentoria 
@@ -174,7 +174,7 @@ function Landing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="mt-12 flex items-center gap-4 lg:justify-start justify-center"
+              className="mt-12 flex items-center gap-4 justify-start"
             >
               <div className="h-12 w-12 rounded-full bg-gold/20 flex items-center justify-center">
                 <Crown className="h-6 w-6 text-gold" />
