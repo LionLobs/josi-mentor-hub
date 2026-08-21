@@ -143,14 +143,14 @@ function Landing() {
                 alt="Josi Nascimento — Massoterapia Avançada"
                 className="h-full w-full object-cover object-[center_20%] lg:object-[center_top] mix-blend-luminosity filter brightness-110 contrast-125"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/50 to-transparent lg:hidden" />
-              <div className="absolute inset-y-0 -left-1 w-32 bg-gradient-to-r from-ink to-transparent hidden lg:block" />
+              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/20 to-transparent lg:hidden" />
+              <div className="absolute inset-y-0 -left-1 w-64 bg-gradient-to-r from-ink via-ink/40 to-transparent hidden lg:block" />
             </div>
           </motion.div>
           
           {/* Enhanced Overlay Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/40 to-ink" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_var(--gold)_0%,_transparent_70%)] opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,_var(--gold)_0%,_transparent_60%)] opacity-15" />
           
           {/* Animated Glows */}
           <div className="absolute top-1/4 -left-20 h-[500px] w-[500px] bg-gold/15 blur-[140px] rounded-full animate-pulse" />
