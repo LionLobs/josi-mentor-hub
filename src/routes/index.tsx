@@ -257,7 +257,7 @@ function Landing() {
                   <div className="h-12 w-12 rounded-2xl bg-primary/5 flex items-center justify-center transition-colors group-hover:bg-gold/10 mb-6">
                     <p.icon className="h-6 w-6 text-gold" />
                   </div>
-                  <h3 className="text-2xl font-display mb-4 text-ink">{p.title}</h3>
+                  <h3 className="text-xl font-display mb-3 text-ink">{p.title}</h3>
                   <p className="text-muted-foreground leading-relaxed text-ink/70">{p.text}</p>
                 </div>
               </div>
