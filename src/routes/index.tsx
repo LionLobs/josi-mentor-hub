@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router"; 
 // senha do email silvascuderoagatha : 82038203
 // veja se consigo interlligar algum perfil tipo shopify pra colocar os produtos de josi, integrar pagamentos e dar o acesso p josi inserir os videos na plataforma
+// diminua o layout do site, ta tudo muito grande
+
 
 import { useState } from "react";
 import {
