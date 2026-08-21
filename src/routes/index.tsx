@@ -432,7 +432,7 @@ function Landing() {
                   alt="Josi Nascimento sorrindo"
                   className="aspect-[3/4] w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[1.5rem]" />
               </div>
               <div className="relative group overflow-hidden rounded-[2rem]">
                 <img
