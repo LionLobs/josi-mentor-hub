@@ -250,7 +250,7 @@ function Landing() {
             {[...pilaresApp, ...pilaresApp].map((p, idx) => (
               <div
                 key={`${p.title}-${idx}`}
-                 className="group relative w-[350px] shrink-0 rounded-[2rem] border border-gold/10 bg-off-white/80 backdrop-blur-md p-8 transition-all duration-500 hover:bg-white hover:shadow-gold hover:-translate-y-2 overflow-hidden"
+                 className="group relative w-[300px] shrink-0 rounded-[1.5rem] border border-gold/10 bg-off-white/80 backdrop-blur-md p-6 transition-all duration-500 hover:bg-white hover:shadow-gold hover:-translate-y-2 overflow-hidden"
               >
                 <div className="absolute -top-10 -right-10 h-32 w-32 bg-gold/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-gold/20" />
                 <div className="relative">
