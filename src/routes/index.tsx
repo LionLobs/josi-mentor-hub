@@ -118,7 +118,7 @@ function Landing() {
             <img
               src={josiNovoHero.url}
               alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-full w-full object-cover object-[75%_center] lg:object-[85%_center] mix-blend-luminosity filter brightness-110 contrast-125"
+              className="h-full w-full object-cover object-[80%_center] lg:object-[90%_center] mix-blend-luminosity filter brightness-110 contrast-125"
             />
           </motion.div>
           
@@ -134,12 +134,12 @@ function Landing() {
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 lg:py-20">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 lg:py-20 flex justify-start">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-left lg:max-w-2xl lg:ml-0"
+            className="text-left max-w-2xl"
           >
             <motion.div 
               initial={{ opacity: 0 }}
@@ -153,7 +153,7 @@ function Landing() {
               Elevando a sua{" "}
               <span className="text-gradient-gold block mt-2 drop-shadow-[0_4px_20px_rgba(212,175,55,0.3)] italic">Arte do Toque</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base text-white/70 leading-relaxed sm:text-lg lg:mx-0">
+            <p className="mt-6 max-w-xl text-base text-white/70 leading-relaxed sm:text-lg">
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
               Domine técnicas exclusivas e conquiste o posicionamento que você merece.
             </p>
