@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router"; // analise a aba inicial completa e compare com alto padrao,
+import { createFileRoute, Link } from "@tanstack/react-router"; // troque a letra , essa ta horrivel e deu erro no site
 import {
   Sparkles,
   Crown,
