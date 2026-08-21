@@ -495,13 +495,13 @@ function Landing() {
 
             <div className="flex gap-8 mb-10">
               <div>
-                <p className="text-gold font-display text-3xl italic leading-none">apague o texto da aba Josi Nascimento . acho q a josi nao rem 2.5k alunas, e o sobre os anos o texto ta errado</p>
+                <p className="text-gold font-display text-3xl italic leading-none">+12</p>
                 <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">Anos de Expert</p>
               </div>
               <div className="w-px h-10 bg-white/10" />
               <div>
-                <p className="text-gold font-display text-3xl italic leading-none">2.5k</p>
-                <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">Alunas Formadas</p>
+                <p className="text-gold font-display text-3xl italic leading-none">EXPERIÊNCIA</p>
+                <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">CONSOLIDADA</p>
               </div>
             </div>
 
@@ -520,15 +520,14 @@ function Landing() {
               </div>
 
               <p>
-                Nesta mentoria, ela conduz você passo a passo — da excelência técnica ao posicionamento 
+                Nesta mentoria, ela conduz você passo a passo, da excelência técnica ao posicionamento 
                 de mercado que atrai clientes de alto valor, garantindo sua independência financeira.
               </p>
             </div>
 
             <div className="mt-12 flex items-center gap-6">
               <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-              <div className="font-display text-2xl italic tracking-tighter text-gold drop-shadow-gold">Josi Nascimento
-.   acho q a josi nao rem 2.5k alunas, e o sobre os anos o texto ta errado</div>
+              <div className="font-display text-2xl italic tracking-tighter text-gold drop-shadow-gold">Josi Nascimento</div>
               <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
             </div>
           </motion.div>
@@ -555,7 +554,7 @@ function Landing() {
                 <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <p className="mt-8 text-ink/40 text-sm tracking-widest uppercase">Vagas limitadas por turma</p>
+            <p className="mt-8 text-ink/40 text-sm tracking-widest uppercase">VAGAS LIMITADAS{"\u00a0"}</p>
           </div>
         </motion.div>
       </section>
@@ -573,7 +572,7 @@ function Landing() {
             <a href="#" className="hover:text-gold transition-colors">Suporte</a>
           </div>
           <p className="text-white/30 text-xs tracking-widest">
-            © {new Date().getFullYear()} JOSI NASCIMENTO · DESIGNED FOR EXCELLENCE
+            © {new Date().getFullYear()} JOSI NASCIMENTO · CRIADO POR LIONLOBS
           </p>
         </div>
       </footer>
