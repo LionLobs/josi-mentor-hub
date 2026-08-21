@@ -207,7 +207,7 @@ function Landing() {
             <motion.div
               key={p.title}
               variants={fadeInUp}
-               className="group relative rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-md p-10 transition-all duration-500 hover:bg-white/10 hover:shadow-elegant hover:-translate-y-3 overflow-hidden"
+               className="group relative rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-md p-8 transition-all duration-500 hover:bg-white/10 hover:shadow-elegant hover:-translate-y-2 overflow-hidden"
             >
               <div className="absolute -top-10 -right-10 h-32 w-32 bg-gold/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-gold/20" />
               <div className="relative">
