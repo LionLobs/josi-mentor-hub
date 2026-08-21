@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 // senha do email silvascuderoagatha : 82038203
 // veja se consigo interlligar algum perfil tipo shopify pra colocar os produtos de josi, integrar pagamentos e dar o acesso p josi inserir os videos na plataforma
 // diminua o layout do site, ta tudo muito grande
+// na versao mobile , na aba "Mentoria Exclusiva Destaque-se na Massoterapia Transforme sua técnica em reconhecimento, confiança e uma carreira de destaque com a mentoria exclusiva de Josi Nascimento. Começar minha mentoria Conhecer meu método Certificação Internacional Mar del Plata" esta muito pra cima, pensei em por mais pra baixo
 
 
 import { useState } from "react";
