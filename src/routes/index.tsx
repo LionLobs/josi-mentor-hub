@@ -434,7 +434,7 @@ function Landing() {
                 />
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[1.5rem]" />
               </div>
-              <div className="relative group overflow-hidden rounded-[2rem]">
+              <div className="relative group overflow-hidden rounded-[1.5rem]">
                 <img
                   src={josiSobre.url}
                   alt="Josi Nascimento no consultório"
