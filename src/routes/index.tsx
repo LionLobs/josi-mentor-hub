@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router"; // troque a letra , essa ta horrivel e deu erro no site
+import { createFileRoute, Link } from "@tanstack/react-router"; // ta cortando a foto da josi na aba inicial,
 import {
   Sparkles,
   Crown,
