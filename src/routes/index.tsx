@@ -105,7 +105,7 @@ function Landing() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.3, scale: 1 }}
+            animate={{ opacity: 0.35, scale: 1 }}
             transition={{ duration: 2 }}
             className="absolute inset-0"
           >
@@ -115,9 +115,9 @@ function Landing() {
               className="h-full w-full object-cover object-[center_20%] mix-blend-luminosity filter brightness-110 contrast-125"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-ink/60 to-ink" />
-          <div className="absolute top-1/4 -left-20 h-96 w-96 bg-gold/15 blur-[120px] rounded-full animate-pulse" />
-          <div className="absolute bottom-1/4 -right-20 h-96 w-96 bg-primary/25 blur-[120px] rounded-full animate-pulse" />
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-ink/40 to-ink" />
+          <div className="absolute top-1/4 -left-20 h-96 w-96 bg-gold/20 blur-[120px] rounded-full animate-pulse" />
+          <div className="absolute bottom-1/4 -right-20 h-96 w-96 bg-primary/30 blur-[120px] rounded-full animate-pulse" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-20">
