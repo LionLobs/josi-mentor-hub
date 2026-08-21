@@ -588,47 +588,97 @@ function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-12">
+      <section id="cta" className="mx-auto max-w-6xl px-6 py-20">
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white relative overflow-hidden rounded-[2rem] p-8 sm:p-12 text-center shadow-gold border border-gold/20"
+          className="relative overflow-hidden rounded-[3.5rem] bg-ink p-12 lg:p-24 text-center shadow-[0_50px_100px_-30px_rgba(0,0,0,0.5)] border border-gold/20 group"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--gold-soft)_0%,_transparent_50%)] opacity-20" />
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-display text-2xl sm:text-4xl text-ink mb-4 font-medium tracking-tight">Sua vaga na próxima turma</h2>
-            <p className="text-ink/60 text-base mb-8 leading-relaxed">
-              Tenha acesso imediato à plataforma exclusiva, cronograma de sessões individuais 
-              e toda a biblioteca de conhecimentos do método.
+          <div className="absolute inset-0 bg-gradient-to-br from-gold/10 via-transparent to-primary/10 opacity-50 transition-opacity duration-1000 group-hover:opacity-100" />
+          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--gold-soft)_0%,_transparent_60%)] opacity-20" />
+          
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-block px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 text-gold text-[10px] font-bold tracking-[0.3em] uppercase mb-8"
+            >
+              Última Chamada do Ano
+            </motion.div>
+            <h2 className="font-display text-4xl sm:text-6xl text-white mb-8 font-medium tracking-tight leading-[1.1]">
+              Pronta para <span className="italic text-gradient-gold font-black">Liderar</span> seu Mercado?
+            </h2>
+            <p className="text-white/50 text-base lg:text-lg mb-12 leading-relaxed font-light">
+              Não perca a chance de ter o acompanhamento direto de quem já trilhou o caminho do sucesso internacional.
             </p>
-            <Button asChild size="lg" variant="gold" className="h-14 px-10 text-base shadow-gold group">
-              <Link to="/auth" className="flex items-center gap-3">
-                Garantir meu acesso agora
-                <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-            <p className="mt-8 text-ink/40 text-sm tracking-widest uppercase">VAGAS LIMITADAS{"\u00a0"}</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Button asChild size="lg" variant="gold" className="h-16 px-12 text-[12px] font-bold tracking-[0.2em] uppercase shadow-gold group w-full sm:w-auto relative overflow-hidden">
+                <Link to="/auth" className="flex items-center gap-3">
+                  <span className="relative z-10">Quero minha vaga</span>
+                  <ArrowRight className="h-4 w-4 relative z-10 transition-transform group-hover:translate-x-2" />
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                </Link>
+              </Button>
+            </div>
+            <div className="mt-12 flex flex-col items-center gap-4">
+              <p className="text-gold/60 text-[10px] font-bold tracking-[0.4em] uppercase">VAGAS EXTREMAMENTE LIMITADAS</p>
+              <div className="flex items-center gap-2">
+                {[1, 2, 3].map(i => (
+                  <Sparkles key={i} className="h-3 w-3 text-gold/30" />
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </section>
 
-      <footer className="surface-ink py-20 border-t border-white/5">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <img
-            src={logoAsset.url}
-            alt="Josi Nascimento — Massoterapia Avançada"
-            className="mx-auto mb-8 h-12 w-auto opacity-80"
-          />
-          <div className="flex justify-center gap-8 mb-8 text-white/40 text-sm">
-            <a href="#" className="hover:text-gold transition-colors">Termos de Uso</a>
-            <a href="#" className="hover:text-gold transition-colors">Privacidade</a>
-            <a href="#" className="hover:text-gold transition-colors">Suporte</a>
+      <footer className="bg-ink pt-32 pb-16 border-t border-white/5 relative overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent" />
+        
+        <div className="mx-auto max-w-6xl px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 mb-20 items-center">
+            <div className="text-left">
+              <img
+                src={logoAsset.url}
+                alt="Josi Nascimento"
+                className="mb-10 h-10 w-auto brightness-110 drop-shadow-lux"
+              />
+              <p className="text-white/40 text-sm max-w-xs leading-relaxed font-light">
+                Elevando o padrão da massoterapia avançada através de técnica, arte e estratégia.
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-start lg:justify-end gap-16">
+              <div className="space-y-6">
+                <h4 className="text-gold text-[10px] font-bold tracking-widest uppercase">Navegação</h4>
+                <div className="flex flex-col gap-4 text-sm text-white/40 font-light">
+                  <a href="#hero" className="hover:text-gold transition-colors">Início</a>
+                  <a href="#o-método" className="hover:text-gold transition-colors">O Método</a>
+                  <a href="#a-mentora" className="hover:text-gold transition-colors">A Mentora</a>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <h4 className="text-gold text-[10px] font-bold tracking-widest uppercase">Jurídico</h4>
+                <div className="flex flex-col gap-4 text-sm text-white/40 font-light">
+                  <a href="#" className="hover:text-gold transition-colors">Privacidade</a>
+                  <a href="#" className="hover:text-gold transition-colors">Termos</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="text-white/30 text-xs tracking-widest">
-            © {new Date().getFullYear()} JOSI NASCIMENTO · CRIADO POR LIONLOBS
-          </p>
+          
+          <div className="pt-16 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-8">
+            <p className="text-white/20 text-[10px] tracking-[0.2em] uppercase font-bold">
+              © {new Date().getFullYear()} JOSI NASCIMENTO
+            </p>
+            <div className="flex items-center gap-4">
+               <span className="text-[10px] text-white/10 tracking-widest uppercase font-bold">Desenvolvido por</span>
+               <span className="text-gold text-[10px] tracking-[0.3em] uppercase font-black hover:brightness-125 transition-all">LIONLOBS</span>
+            </div>
+          </div>
         </div>
+      </footer>
       </footer>
     </div>
   );
