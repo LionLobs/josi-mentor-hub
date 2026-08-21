@@ -495,13 +495,13 @@ function Landing() {
 
             <div className="flex gap-8 mb-10">
               <div>
-                <p className="text-gold font-display text-3xl italic leading-none">apague o texto da aba Josi Nascimento . acho q a josi nao rem 2.5k alunas, e o sobre os anos o texto ta errado</p>
+                <p className="text-gold font-display text-3xl italic leading-none">+12</p>
                 <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">Anos de Expert</p>
               </div>
               <div className="w-px h-10 bg-white/10" />
               <div>
-                <p className="text-gold font-display text-3xl italic leading-none">2.5k</p>
-                <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">Alunas Formadas</p>
+                <p className="text-gold font-display text-3xl italic leading-none">EXPERIÊNCIA</p>
+                <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">CONSOLIDADA</p>
               </div>
             </div>
 
