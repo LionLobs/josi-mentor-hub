@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router"; // analise a aba inicial completa e compare com alto padrao,
 import {
   Sparkles,
   Crown,
