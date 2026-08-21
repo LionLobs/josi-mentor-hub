@@ -227,7 +227,7 @@ function Landing() {
           className="text-center mb-20"
         >
           <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Experiência</p>
-          <h2 className="font-display text-3xl sm:text-5xl font-medium tracking-tight text-ink">
+          <h2 className="font-display text-2xl sm:text-4xl font-medium tracking-tight text-ink">
             Tudo o que você recebe por dentro
           </h2>
         </motion.div>
