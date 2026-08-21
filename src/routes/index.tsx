@@ -219,15 +219,15 @@ function Landing() {
             {[...pilares, ...pilares].map((p, idx) => (
               <div
                 key={`${p.title}-${idx}`}
-                 className="group relative w-[350px] shrink-0 rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-md p-8 transition-all duration-500 hover:bg-white/10 hover:shadow-elegant hover:-translate-y-2 overflow-hidden"
+                 className="group relative w-[350px] shrink-0 rounded-[2rem] border border-gold/10 bg-off-white/80 backdrop-blur-md p-8 transition-all duration-500 hover:bg-white hover:shadow-gold hover:-translate-y-2 overflow-hidden"
               >
                 <div className="absolute -top-10 -right-10 h-32 w-32 bg-gold/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-gold/20" />
                 <div className="relative">
                   <div className="h-12 w-12 rounded-2xl bg-primary/5 flex items-center justify-center transition-colors group-hover:bg-gold/10 mb-6">
                     <p.icon className="h-6 w-6 text-gold" />
                   </div>
-                  <h3 className="text-2xl font-display mb-4">{p.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{p.text}</p>
+                  <h3 className="text-2xl font-display mb-4 text-ink">{p.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-ink/70">{p.text}</p>
                 </div>
               </div>
             ))}
@@ -364,12 +364,12 @@ function Landing() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="surface-ink relative overflow-hidden rounded-[2rem] p-10 sm:p-16 text-center shadow-2xl"
+          className="bg-white relative overflow-hidden rounded-[3rem] p-10 sm:p-16 text-center shadow-gold border border-gold/20"
         >
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--gold-soft)_0%,_transparent_50%)] opacity-20" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl sm:text-5xl text-white mb-6 font-medium tracking-tight">Sua vaga na próxima turma</h2>
-            <p className="text-white/60 text-lg mb-10 leading-relaxed">
+            <h2 className="font-display text-3xl sm:text-5xl text-ink mb-6 font-medium tracking-tight">Sua vaga na próxima turma</h2>
+            <p className="text-ink/60 text-lg mb-10 leading-relaxed">
               Tenha acesso imediato à plataforma exclusiva, cronograma de sessões individuais 
               e toda a biblioteca de conhecimentos do método.
             </p>
