@@ -105,19 +105,19 @@ function Landing() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.15, scale: 1 }}
+            animate={{ opacity: 0.35, scale: 1 }}
             transition={{ duration: 2 }}
             className="absolute inset-0"
           >
             <img
               src={josiHeroBg.url}
               alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-full w-full object-cover object-[center_20%] mix-blend-luminosity filter brightness-125 contrast-75"
+              className="h-full w-full object-cover object-[center_20%] mix-blend-luminosity filter brightness-110 contrast-125"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-ink/80 to-ink" />
-          <div className="absolute top-1/4 -left-20 h-96 w-96 bg-gold/10 blur-[120px] rounded-full animate-pulse" />
-          <div className="absolute bottom-1/4 -right-20 h-96 w-96 bg-primary/20 blur-[120px] rounded-full animate-pulse" />
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-ink/40 to-ink" />
+          <div className="absolute top-1/4 -left-20 h-96 w-96 bg-gold/20 blur-[120px] rounded-full animate-pulse" />
+          <div className="absolute bottom-1/4 -right-20 h-96 w-96 bg-primary/30 blur-[120px] rounded-full animate-pulse" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-20">
@@ -135,9 +135,9 @@ function Landing() {
             >
               <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
             </motion.div>
-            <h1 className="font-display text-5xl leading-[1.1] sm:text-7xl lg:text-9xl">
+            <h1 className="font-display text-5xl leading-[1.1] sm:text-7xl lg:text-9xl font-bold tracking-tight">
               Elevando a sua{" "}
-              <span className="text-gradient-gold block mt-2">Arte do Toque</span>
+              <span className="text-gradient-gold block mt-2 drop-shadow-sm">Arte do Toque</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg text-white/70 leading-relaxed sm:text-2xl lg:mx-0">
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
@@ -182,7 +182,7 @@ function Landing() {
           className="text-center mb-20"
         >
           <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Experiência</p>
-          <h2 className="font-display text-4xl sm:text-6xl">
+          <h2 className="font-display text-4xl sm:text-6xl font-bold">
             Tudo o que você recebe por dentro
           </h2>
         </motion.div>
