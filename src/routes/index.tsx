@@ -102,9 +102,12 @@ function Landing() {
 
   return (
     <div className="min-h-screen bg-ink text-white overflow-x-hidden selection:bg-gold selection:text-ink relative">
+      {/* Texture & Noise */}
       <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
-      <header className="glass-ink sticky top-0 z-50 border-b border-white/10">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+      <div className="fixed inset-0 pointer-events-none z-[1] opacity-[0.4] mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+      
+      <header className="glass-ink sticky top-0 z-[110] border-b border-white/5 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -112,20 +115,34 @@ function Landing() {
           >
             <img
               src={logoAsset.url}
-              alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-8 w-auto sm:h-10"
+              alt="Josi Nascimento"
+              className="h-7 w-auto sm:h-9 hover:brightness-110 transition-all duration-500 drop-shadow-lux"
             />
           </motion.div>
+          
+          <nav className="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-white/50">
+            {['O Método', 'A Mentora', 'Pilares', 'Conteúdo'].map((item) => (
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase().replace(' ', '-')}`}
+                className="hover:text-gold transition-colors duration-300 relative group"
+              >
+                {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
+              </a>
+            ))}
+          </nav>
+
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex shrink-0 items-center gap-4"
           >
-            <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex text-white hover:bg-white/10">
-              <Link to="/auth">Entrar</Link>
+            <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex text-[11px] font-bold tracking-widest text-white/70 hover:text-white hover:bg-white/5 uppercase">
+              <Link to="/auth">Portal Aluna</Link>
             </Button>
-            <Button asChild size="sm" variant="gold" className="shadow-gold">
-              <Link to="/auth">Quero entrar</Link>
+            <Button asChild size="sm" variant="gold" className="shadow-gold h-9 px-6 text-[10px] font-bold tracking-widest uppercase">
+              <Link to="/auth">Vagas Limitadas</Link>
             </Button>
           </motion.div>
         </div>
