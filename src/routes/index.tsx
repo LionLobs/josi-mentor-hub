@@ -328,7 +328,7 @@ function Landing() {
             </div>
             <div className="mt-12 flex items-center gap-6">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
-              <div className="font-display text-2xl italic tracking-tighter text-gold">Josi Nascimento</div>
+              <div className="font-display text-xl italic tracking-tighter text-gold">Josi Nascimento</div>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
             </div>
           </motion.div>
