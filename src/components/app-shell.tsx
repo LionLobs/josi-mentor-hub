@@ -10,14 +10,20 @@ import logoAsset from "@/assets/logo-horiz.png.asset.json";
 export type NavItem = { to: string; label: string; icon: LucideIcon };
 
 export function AppShell({ items, area }: { items: NavItem[]; area: string }) {
-  const { user, loading } = useAuth();
+  const { user, isAdmin, loading } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
-    if (!loading && !user) void navigate({ to: "/auth", replace: true });
-  }, [loading, user, navigate]);
+    if (!loading) {
+      if (!user) {
+        void navigate({ to: "/auth", replace: true });
+      } else if (area === "ADMINISTRAÇÃO" && !isAdmin) {
+        void navigate({ to: "/aluno", replace: true });
+      }
+    }
+  }, [loading, user, isAdmin, navigate, area]);
 
   const signOut = async () => {
     await queryClient.cancelQueries();

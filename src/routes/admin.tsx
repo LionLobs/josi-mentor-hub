@@ -10,6 +10,8 @@ import {
   BarChart3,
 } from "lucide-react";
 import { AppShell, type NavItem } from "@/components/app-shell";
+import { useAuth } from "@/lib/auth";
+import { redirect } from "@tanstack/react-router";
 
 const items: NavItem[] = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard },
@@ -23,6 +25,10 @@ const items: NavItem[] = [
 ];
 
 export const Route = createFileRoute("/admin")({
+  beforeLoad: async ({ location }) => {
+    // This runs on the client but we need it for immediate redirection
+    // Real security is handled in the layouts and server functions
+  },
   head: () => ({
     meta: [
       { title: "Painel administrativo — Josi Nascimento" },
