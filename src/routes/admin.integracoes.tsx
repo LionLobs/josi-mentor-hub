@@ -72,7 +72,7 @@ function IntegracoesPage() {
               <ul className="text-xs text-muted-foreground space-y-2 list-disc pl-4">
                 <li>Acesse seu painel Kiwify.</li>
                 <li>Vá em <strong>Produtos</strong> e selecione sua mentoria.</li>
-                <li>Clique em <strong>Configurações</strong> > <strong>Webhooks</strong>.</li>
+                <li>Clique em <strong>Configurações</strong> {" > "} <strong>Webhooks</strong>.</li>
                 <li>Adicione uma nova URL e cole o link acima.</li>
                 <li>Selecione o evento <strong>Compra Aprovada</strong>.</li>
               </ul>

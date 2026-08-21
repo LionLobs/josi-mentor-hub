@@ -8,6 +8,7 @@ import {
   GraduationCap,
   Download,
   BarChart3,
+  Settings,
 } from "lucide-react";
 import { AppShell, type NavItem } from "@/components/app-shell";
 import { useAuth } from "@/lib/auth";

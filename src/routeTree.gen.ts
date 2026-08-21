@@ -18,6 +18,7 @@ import { Route as AdminAgendaRouteImport } from './routes/admin.agenda'
 import { Route as AdminAlunosRouteImport } from './routes/admin.alunos'
 import { Route as AdminCursosRouteImport } from './routes/admin.cursos'
 import { Route as AdminFinanceiroRouteImport } from './routes/admin.financeiro'
+import { Route as AdminIntegracoesRouteImport } from './routes/admin.integracoes'
 import { Route as AdminMateriaisRouteImport } from './routes/admin.materiais'
 import { Route as AdminMentoriasRouteImport } from './routes/admin.mentorias'
 import { Route as AdminRelatoriosRouteImport } from './routes/admin.relatorios'
@@ -72,6 +73,11 @@ const AdminFinanceiroRoute = AdminFinanceiroRouteImport.update({
   path: '/financeiro',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminIntegracoesRoute = AdminIntegracoesRouteImport.update({
+  id: '/integracoes',
+  path: '/integracoes',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminMateriaisRoute = AdminMateriaisRouteImport.update({
   id: '/materiais',
   path: '/materiais',
@@ -122,6 +128,7 @@ export interface FileRoutesByFullPath {
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
   '/admin/financeiro': typeof AdminFinanceiroRoute
+  '/admin/integracoes': typeof AdminIntegracoesRoute
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
@@ -139,6 +146,7 @@ export interface FileRoutesByTo {
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
   '/admin/financeiro': typeof AdminFinanceiroRoute
+  '/admin/integracoes': typeof AdminIntegracoesRoute
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
@@ -159,6 +167,7 @@ export interface FileRoutesById {
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
   '/admin/financeiro': typeof AdminFinanceiroRoute
+  '/admin/integracoes': typeof AdminIntegracoesRoute
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
@@ -180,6 +189,7 @@ export interface FileRouteTypes {
     | '/admin/alunos'
     | '/admin/cursos'
     | '/admin/financeiro'
+    | '/admin/integracoes'
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
@@ -197,6 +207,7 @@ export interface FileRouteTypes {
     | '/admin/alunos'
     | '/admin/cursos'
     | '/admin/financeiro'
+    | '/admin/integracoes'
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
@@ -216,6 +227,7 @@ export interface FileRouteTypes {
     | '/admin/alunos'
     | '/admin/cursos'
     | '/admin/financeiro'
+    | '/admin/integracoes'
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
@@ -299,6 +311,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminFinanceiroRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/integracoes': {
+      id: '/admin/integracoes'
+      path: '/integracoes'
+      fullPath: '/admin/integracoes'
+      preLoaderRoute: typeof AdminIntegracoesRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/materiais': {
       id: '/admin/materiais'
       path: '/materiais'
@@ -363,6 +382,7 @@ interface AdminRouteChildren {
   AdminAlunosRoute: typeof AdminAlunosRoute
   AdminCursosRoute: typeof AdminCursosRoute
   AdminFinanceiroRoute: typeof AdminFinanceiroRoute
+  AdminIntegracoesRoute: typeof AdminIntegracoesRoute
   AdminMateriaisRoute: typeof AdminMateriaisRoute
   AdminMentoriasRoute: typeof AdminMentoriasRoute
   AdminRelatoriosRoute: typeof AdminRelatoriosRoute
@@ -374,6 +394,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminAlunosRoute: AdminAlunosRoute,
   AdminCursosRoute: AdminCursosRoute,
   AdminFinanceiroRoute: AdminFinanceiroRoute,
+  AdminIntegracoesRoute: AdminIntegracoesRoute,
   AdminMateriaisRoute: AdminMateriaisRoute,
   AdminMentoriasRoute: AdminMentoriasRoute,
   AdminRelatoriosRoute: AdminRelatoriosRoute,
