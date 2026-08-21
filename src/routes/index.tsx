@@ -8,6 +8,7 @@
 // preciso vincular uma plataforma para inserir essa mentoria de josi
 // preciso vincular uma plataforma para inserir essa mentoria de josi
 // preciso vincular uma plataforma para inserir essa mentoria de josi
+// eu quero que a area de alunas, membros e agenda, tudo, seja integrado ao nosso sistema, com login e senha. algo que a josi consiga inserir no app dela e ele ir direto para a plataforma nossa. pagamentos e tudo integrado
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
