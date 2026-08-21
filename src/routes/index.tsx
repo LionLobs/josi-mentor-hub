@@ -279,8 +279,12 @@ function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--gold-soft)_0%,_transparent_70%)] opacity-[0.03] -z-10" />
+      <section className="mx-auto max-w-7xl px-6 py-24 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--gold-soft)_0%,_transparent_70%)] opacity-[0.05] -z-10" />
+        <div className="absolute -right-20 top-1/2 -translate-y-1/2 text-[15rem] font-display font-black text-gold/5 pointer-events-none select-none rotate-90 lg:rotate-0 lg:opacity-10">
+          METHOD
+        </div>
+        
         
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <motion.div 
@@ -308,7 +312,19 @@ function Landing() {
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
               </div>
             </div>
-            <div className="pt-16">
+            <div className="pt-16 relative">
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute -top-8 -right-8 z-20 hidden sm:block"
+              >
+                <div className="relative flex items-center justify-center w-24 h-24">
+                  <div className="absolute inset-0 rounded-full border border-gold/30 border-dashed" />
+                  <p className="text-[8px] text-gold font-bold uppercase tracking-[0.2em] text-center px-2">
+                    Premium • Excellence • Advanced
+                  </p>
+                </div>
+              </motion.div>
               <div className="relative group overflow-hidden rounded-[2rem]">
                 <img
                   src={josiPremio.url}
@@ -330,30 +346,60 @@ function Landing() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/5 border border-gold/20 mb-8">
-              <p className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">A Mentora</p>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="px-4 py-1.5 rounded-full bg-white/5 border border-gold/20 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                <p className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">A Mentora</p>
+              </div>
+              <div className="h-px w-12 bg-gold/30" />
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl mb-8 font-medium tracking-tight leading-[0.9]">
+
+            <h2 className="font-display text-5xl sm:text-7xl mb-10 font-medium tracking-tighter leading-[0.85] relative">
               Josi <br />
-              <span className="text-gradient-gold">Nascimento</span>
+              <span className="text-gradient-gold italic">Nascimento</span>
+              <motion.div 
+                initial={{ width: 0 }}
+                whileInView={{ width: "100px" }}
+                className="h-1 bg-gold/30 absolute -bottom-4 left-0"
+              />
             </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
-              <p>
+
+            <div className="flex gap-8 mb-10">
+              <div>
+                <p className="text-gold font-display text-3xl italic leading-none">12+</p>
+                <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">Anos de Expert</p>
+              </div>
+              <div className="w-px h-10 bg-white/10" />
+              <div>
+                <p className="text-gold font-display text-3xl italic leading-none">2.5k</p>
+                <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">Alunas Formadas</p>
+              </div>
+            </div>
+
+            <div className="space-y-8 text-lg text-white/70 leading-relaxed font-light">
+              <p className="first-letter:text-4xl first-letter:font-display first-letter:text-gold first-letter:mr-3 first-letter:float-left">
                 Massoterapeuta premiada e reconhecida internacionalmente, Josi transformou anos de
-                prática clínica em um método claro e replicável.
+                prática clínica em um método claro e replicável, focado em resultados de alto padrão.
               </p>
-              <p className="border-l-4 border-gold/30 pl-6 italic text-white/80">
-                "Minha missão é elevar o padrão da massoterapia, transformando técnica em arte e profissionais em referências de mercado."
-              </p>
+              
+              <div className="relative py-8 px-10 rounded-3xl bg-white/5 border border-white/10 overflow-hidden group">
+                <div className="absolute top-0 left-0 w-1 h-full bg-gold" />
+                <Sparkles className="absolute top-4 right-4 h-6 w-6 text-gold/20 group-hover:text-gold/40 transition-colors" />
+                <p className="italic text-white text-xl font-display leading-relaxed">
+                  "Minha missão é elevar o padrão da massoterapia, transformando técnica em arte e profissionais em referências de mercado."
+                </p>
+              </div>
+
               <p>
                 Nesta mentoria, ela conduz você passo a passo — da excelência técnica ao posicionamento 
-                de mercado que atrai clientes de alto valor.
+                de mercado que atrai clientes de alto valor, garantindo sua independência financeira.
               </p>
             </div>
+
             <div className="mt-12 flex items-center gap-6">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-              <div className="font-display text-xl italic tracking-tighter text-gold">Josi Nascimento</div>
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+              <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+              <div className="font-display text-2xl italic tracking-tighter text-gold drop-shadow-gold">Josi Nascimento</div>
+              <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
             </div>
           </motion.div>
         </div>
