@@ -513,7 +513,7 @@ function Landing() {
                 prática clínica em um método claro e replicável, focado em resultados de alto padrão.
               </p>
               
-              <div className="relative py-8 px-10 rounded-3xl bg-white/5 border border-white/10 overflow-hidden group">
+              <div className="relative py-6 px-8 rounded-2xl bg-white/5 border border-white/10 overflow-hidden group">
                 <div className="absolute top-0 left-0 w-1 h-full bg-gold" />
                 <Sparkles className="absolute top-4 right-4 h-6 w-6 text-gold/20 group-hover:text-gold/40 transition-colors" />
                 <p className="italic text-white text-xl font-display leading-relaxed">
