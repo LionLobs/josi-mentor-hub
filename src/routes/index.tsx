@@ -1,4 +1,4 @@
-o site está lento
+// o site está lento
 import { createFileRoute, Link } from "@tanstack/react-router"; 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
 
