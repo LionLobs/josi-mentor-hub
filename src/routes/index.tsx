@@ -280,7 +280,7 @@ function Landing() {
             viewport={{ once: true }}
           >
             <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">A Mentora</p>
-            <h2 className="font-display text-4xl sm:text-6xl mb-8">Josi Nascimento</h2>
+            <h2 className="font-display text-4xl sm:text-6xl mb-8 font-black uppercase">Josi Nascimento</h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
                 Massoterapeuta premiada e reconhecida internacionalmente, Josi transformou anos de
