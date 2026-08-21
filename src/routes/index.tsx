@@ -20,6 +20,7 @@ import josiPremio from "@/assets/josi-25.jpg.asset.json";
 import josiSorriso from "@/assets/josi-6.jpg.asset.json";
 import josiHeroBg from "@/assets/josi-17.jpg.asset.json";
 import josiNovoHero from "@/assets/josi-25.jpg.asset.json";
+import ebookImg from "@/assets/ebook-oficial.png.asset.json";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -342,38 +343,25 @@ function Landing() {
                 {/* Ebook Suspense Element */}
                 <div className="relative group perspective-1000">
                   <div className="absolute inset-0 bg-gold/20 blur-[100px] rounded-full opacity-50 animate-pulse" />
-                  <div className="relative glass-ink rounded-[2rem] p-1 border border-white/10 shadow-2xl overflow-hidden transform group-hover:rotate-y-12 transition-transform duration-700">
-                    <div className="aspect-[3/4] bg-gradient-to-br from-ink to-ink/90 relative overflow-hidden">
-                      {/* Book Cover Simulation */}
-                      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
-                      <div className="absolute top-0 left-0 w-2 h-full bg-gold/30 blur-sm" />
-                      <div className="p-12 h-full flex flex-col justify-between items-center text-center">
-                        <div className="space-y-4">
-                          <p className="text-gold text-[10px] font-bold tracking-[0.5em] uppercase">Exclusivo</p>
-                          <h3 className="font-display text-4xl text-white italic leading-tight">Destaque-se na Massoterapia</h3>
-                        </div>
-                        <div className="relative w-full h-px bg-gold/20">
-                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-ink text-[10px] text-gold uppercase tracking-[0.2em]">Josi Nascimento</div>
-                        </div>
-                        <div className="glass-ink px-6 py-3 rounded-full border border-gold/30">
-                          <div className="flex items-center gap-2">
-                            <ShieldCheck className="h-4 w-4 text-gold" />
-                            <span className="text-xs text-white/90">Conteúdo Protegido</span>
-                          </div>
-                        </div>
-                      </div>
-                      {/* Suspense Blur Overlay */}
-                      <div className="absolute inset-0 backdrop-blur-[8px] bg-ink/40 flex items-center justify-center group-hover:backdrop-blur-0 transition-all duration-700">
-                         <div className="text-center p-8">
+                    <div className="relative glass-ink rounded-[2rem] p-1 border border-white/10 shadow-2xl overflow-hidden transform group-hover:rotate-y-12 transition-transform duration-700">
+                      <div className="aspect-[3/4] bg-gradient-to-br from-ink to-ink/90 relative overflow-hidden">
+                        <img 
+                          src={ebookImg.url} 
+                          alt="Ebook Destaque-se na Massoterapia" 
+                          className="absolute inset-0 w-full h-full object-contain p-4"
+                        />
+                        {/* Suspense Blur Overlay */}
+                        <div className="absolute inset-0 backdrop-blur-[8px] bg-ink/40 flex items-center justify-center group-hover:backdrop-blur-0 transition-all duration-700">
+                          <div className="text-center p-8">
                             <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gold/20 border border-gold/40 mb-4 group-hover:scale-110 transition-transform">
                               <ShieldCheck className="h-8 w-8 text-gold" />
                             </div>
                             <p className="text-white font-display text-xl italic mb-2">Ebook Exclusivo</p>
                             <p className="text-white/60 text-sm">Disponível apenas para alunas da mentoria.</p>
-                         </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
                 </div>
               </motion.div>
             </div>
