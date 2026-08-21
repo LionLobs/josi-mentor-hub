@@ -350,15 +350,12 @@ function Landing() {
                           alt="Ebook Destaque-se na Massoterapia" 
                           className="absolute inset-0 w-full h-full object-contain p-4"
                         />
-                        {/* Suspense Blur Overlay */}
-                        <div className="absolute inset-0 bg-ink/40 flex items-center justify-center transition-all duration-700">
-                          <div className="text-center p-8">
-                            <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gold/20 border border-gold/40 mb-4">
-                              <ShieldCheck className="h-8 w-8 text-gold" />
-                            </div>
-                            <p className="text-white font-display text-xl italic mb-2">Ebook Exclusivo</p>
-                            <p className="text-white/60 text-sm">Disponível apenas para alunas da mentoria.</p>
-                          </div>
+                        {/* Ebook Glow Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-60" />
+                        
+                        <div className="absolute bottom-6 left-6 right-6 z-20">
+                          <p className="text-gold text-[10px] font-bold tracking-[0.2em] uppercase mb-1">Ebook Exclusivo</p>
+                          <h4 className="text-white font-display text-lg italic italic">Destaque-se na Massoterapia</h4>
                         </div>
                       </div>
                     </div>
