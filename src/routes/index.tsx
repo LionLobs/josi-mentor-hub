@@ -301,9 +301,9 @@ function Landing() {
       </section>
 
       {/* Mentalidade de Campeão Section */}
-      <section className="py-24 relative overflow-hidden bg-off-white">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="bg-ink rounded-[3rem] p-12 lg:p-24 relative overflow-hidden shadow-elegant border border-gold/10">
+      <section className="py-20 relative overflow-hidden bg-off-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="bg-ink rounded-[2.5rem] p-10 lg:p-20 relative overflow-hidden shadow-elegant border border-gold/10">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.05]" />
             <div className="absolute top-0 right-0 w-1/2 h-full bg-gold/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
             
