@@ -135,9 +135,9 @@ function Landing() {
             >
               <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
             </motion.div>
-            <h1 className="font-display text-5xl leading-[1.1] sm:text-7xl lg:text-9xl font-bold tracking-tight">
+            <h1 className="font-display text-5xl leading-[1.1] sm:text-7xl lg:text-9xl font-black tracking-tighter uppercase italic">
               Elevando a sua{" "}
-              <span className="text-gradient-gold block mt-2 drop-shadow-sm">Arte do Toque</span>
+              <span className="text-gradient-gold block mt-2 drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)]">Arte do Toque</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg text-white/70 leading-relaxed sm:text-2xl lg:mx-0">
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
@@ -182,7 +182,7 @@ function Landing() {
           className="text-center mb-20"
         >
           <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Experiência</p>
-          <h2 className="font-display text-4xl sm:text-6xl font-bold">
+          <h2 className="font-display text-4xl sm:text-6xl font-black uppercase">
             Tudo o que você recebe por dentro
           </h2>
         </motion.div>
@@ -219,7 +219,7 @@ function Landing() {
         <div className="mx-auto max-w-7xl px-6">
           <motion.div {...fadeInUp} className="text-center mb-20">
             <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Cronograma</p>
-            <h2 className="font-display text-4xl sm:text-6xl text-white">
+            <h2 className="font-display text-4xl sm:text-6xl text-white font-black uppercase">
               A jornada completa da mentoria
             </h2>
           </motion.div>
@@ -280,7 +280,7 @@ function Landing() {
             viewport={{ once: true }}
           >
             <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">A Mentora</p>
-            <h2 className="font-display text-4xl sm:text-6xl mb-8">Josi Nascimento</h2>
+            <h2 className="font-display text-4xl sm:text-6xl mb-8 font-black uppercase">Josi Nascimento</h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
                 Massoterapeuta premiada e reconhecida internacionalmente, Josi transformou anos de
@@ -313,7 +313,7 @@ function Landing() {
         >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-display text-4xl sm:text-6xl text-white mb-6">Sua vaga na próxima turma</h2>
+            <h2 className="font-display text-4xl sm:text-6xl text-white mb-6 font-black uppercase">Sua vaga na próxima turma</h2>
             <p className="text-white/60 text-lg mb-10 leading-relaxed">
               Tenha acesso imediato à plataforma exclusiva, cronograma de sessões individuais 
               e toda a biblioteca de conhecimentos do método.
