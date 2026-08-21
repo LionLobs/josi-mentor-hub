@@ -188,13 +188,13 @@ function Landing() {
               Transforme sua técnica em reconhecimento, confiança e uma carreira de destaque com a mentoria exclusiva de <span className="text-white font-medium">Josi Nascimento</span>.
             </p>
             <div className="mt-10 flex flex-wrap justify-start gap-5">
-              <Button asChild size="xl" variant="gold" className="h-14 px-10 text-base shadow-gold group">
+              <Button asChild size="lg" variant="gold" className="h-12 px-8 text-sm shadow-gold group">
                 <Link to="/auth">
                   Começar minha mentoria 
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="xl" className="h-14 px-10 text-base border-white/40 bg-white text-ink hover:bg-white/90 backdrop-blur-sm shadow-lux">
+              <Button asChild variant="outline" size="lg" className="h-12 px-8 text-sm border-white/40 bg-white text-ink hover:bg-white/90 backdrop-blur-sm shadow-lux">
                 <Link to="/auth">Conhecer meu método</Link>
               </Button>
             </div>
