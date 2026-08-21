@@ -507,7 +507,7 @@ function Landing() {
               </div>
             </div>
 
-            <div className="space-y-8 text-lg text-white/70 leading-relaxed font-light">
+            <div className="space-y-6 text-base text-white/70 leading-relaxed font-light">
               <p className="first-letter:text-4xl first-letter:font-display first-letter:text-gold first-letter:mr-3 first-letter:float-left">
                 Massoterapeuta premiada e reconhecida internacionalmente, Josi transformou anos de
                 prática clínica em um método claro e replicável, focado em resultados de alto padrão.
