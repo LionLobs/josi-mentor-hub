@@ -312,7 +312,19 @@ function Landing() {
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
               </div>
             </div>
-            <div className="pt-16">
+            <div className="pt-16 relative">
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute -top-8 -right-8 z-20 hidden sm:block"
+              >
+                <div className="relative flex items-center justify-center w-24 h-24">
+                  <div className="absolute inset-0 rounded-full border border-gold/30 border-dashed" />
+                  <p className="text-[8px] text-gold font-bold uppercase tracking-[0.2em] text-center px-2">
+                    Premium • Excellence • Advanced
+                  </p>
+                </div>
+              </motion.div>
               <div className="relative group overflow-hidden rounded-[2rem]">
                 <img
                   src={josiPremio.url}
