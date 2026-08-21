@@ -7,7 +7,8 @@
 // preciso vincular uma plataforma para inserir essa mentoria de josi
 // preciso vincular uma plataforma para inserir essa mentoria de josi
 // preciso vincular uma plataforma para inserir essa mentoria de josi
-import { createFileRoute, Link } from "@tanstack/react-router"; 
+// preciso vincular uma plataforma para inserir essa mentoria de josi
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
 
