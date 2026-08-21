@@ -340,7 +340,7 @@ function Landing() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="surface-ink relative overflow-hidden rounded-[3rem] p-12 sm:p-20 text-center shadow-2xl"
+          className="surface-ink relative overflow-hidden rounded-[2rem] p-10 sm:p-16 text-center shadow-2xl"
         >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="relative z-10 max-w-3xl mx-auto">
