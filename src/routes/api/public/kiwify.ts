@@ -65,7 +65,7 @@ export const Route = createFileRoute('/api/public/kiwify')({
                 student_id: userId,
                 mentorship_id: mentorship.id,
                 status: 'ativo',
-                start_date: new Date().toISOString().split('T')[0]
+                start_date: new Date().toISOString().split('T')[0] as string
               }).select('id').single()
 
               // 3. Record Payment
@@ -75,7 +75,7 @@ export const Route = createFileRoute('/api/public/kiwify')({
                 amount_cents: Math.round((body.order_amount || 0) * 100),
                 status: 'pago',
                 paid_at: new Date().toISOString(),
-                method: body.payment_method || 'kiwify',
+                method: (body.payment_method as string) || 'kiwify',
                 description: `Kiwify: ${body.product_name || 'Mentoria'}`
               })
             }
