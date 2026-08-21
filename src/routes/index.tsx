@@ -313,7 +313,7 @@ function Landing() {
                   <ShieldCheck className="h-4 w-4 text-gold" />
                   <span className="text-gold text-[10px] font-bold tracking-[0.2em] uppercase">Mentalidade de Campeão</span>
                 </div>
-                <h2 className="font-display text-3xl sm:text-5xl text-white font-medium mb-8 leading-tight">
+                <h2 className="font-display text-2xl sm:text-4xl text-white font-medium mb-6 leading-tight">
                   Do Medo à <span className="italic text-gradient-gold">Vitória</span>
                 </h2>
                 <p className="text-white/70 text-lg mb-10 leading-relaxed">
