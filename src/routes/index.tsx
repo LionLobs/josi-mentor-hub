@@ -191,7 +191,7 @@ function Landing() {
           className="text-center mb-20"
         >
           <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Experiência</p>
-          <h2 className="font-display text-4xl sm:text-6xl font-black uppercase">
+          <h2 className="font-display text-3xl sm:text-5xl font-medium uppercase tracking-wider">
             Tudo o que você recebe por dentro
           </h2>
         </motion.div>
@@ -228,7 +228,7 @@ function Landing() {
         <div className="mx-auto max-w-7xl px-6">
           <motion.div {...fadeInUp} className="text-center mb-20">
             <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Cronograma</p>
-            <h2 className="font-display text-4xl sm:text-6xl text-white font-black uppercase">
+            <h2 className="font-display text-3xl sm:text-5xl text-white font-medium uppercase tracking-wider">
               A jornada completa da mentoria
             </h2>
           </motion.div>
@@ -243,11 +243,11 @@ function Landing() {
                 transition={{ delay: idx * 0.1 }}
                 className="group glass-ink rounded-[2rem] p-8 border border-white/5 hover:border-gold/30 transition-all"
               >
-                <p className="font-display text-7xl text-gradient-gold opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 origin-left italic">{m.n}</p>
-                <div className="mt-12 relative">
+                <p className="font-display text-5xl text-gradient-gold opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 origin-left italic">{m.n}</p>
+                <div className="mt-8 relative">
                   <div className="absolute -left-4 top-0 w-1 h-0 bg-gold/50 group-hover:h-full transition-all duration-700" />
-                  <h4 className="text-lg font-display tracking-[0.1em] text-white uppercase mb-4 italic">{m.nome}</h4>
-                  <p className="text-base text-white/50 leading-relaxed font-light">{m.desc}</p>
+                  <h4 className="text-base font-display tracking-[0.15em] text-white uppercase mb-3">{m.nome}</h4>
+                  <p className="text-sm text-white/50 leading-relaxed font-light">{m.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -309,7 +309,7 @@ function Landing() {
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/5 border border-gold/20 mb-8">
               <p className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">A Mentora</p>
             </div>
-            <h2 className="font-display text-5xl sm:text-7xl mb-10 font-black uppercase italic leading-[0.9]">
+            <h2 className="font-display text-4xl sm:text-6xl mb-10 font-medium uppercase tracking-wide leading-[0.9]">
               Josi <br />
               <span className="text-gradient-gold">Nascimento</span>
             </h2>
@@ -344,7 +344,7 @@ function Landing() {
         >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-display text-4xl sm:text-6xl text-white mb-6 font-black uppercase">Sua vaga na próxima turma</h2>
+            <h2 className="font-display text-3xl sm:text-5xl text-white mb-6 font-medium uppercase tracking-wider">Sua vaga na próxima turma</h2>
             <p className="text-white/60 text-lg mb-10 leading-relaxed">
               Tenha acesso imediato à plataforma exclusiva, cronograma de sessões individuais 
               e toda a biblioteca de conhecimentos do método.
