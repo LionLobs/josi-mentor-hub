@@ -219,7 +219,7 @@ function Landing() {
         <div className="mx-auto max-w-7xl px-6">
           <motion.div {...fadeInUp} className="text-center mb-20">
             <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Cronograma</p>
-            <h2 className="font-display text-4xl sm:text-6xl text-white">
+            <h2 className="font-display text-4xl sm:text-6xl text-white font-black uppercase">
               A jornada completa da mentoria
             </h2>
           </motion.div>
