@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router"; // ta cortando a foto da josi na aba inicial,
+import { createFileRoute, Link } from "@tanstack/react-router"; // o layout do site ta tudo muito grande
 import {
   Sparkles,
   Crown,
@@ -144,15 +144,15 @@ function Landing() {
             >
               <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
             </motion.div>
-            <h1 className="font-display text-6xl leading-[1] sm:text-8xl lg:text-9xl font-medium tracking-tight">
+            <h1 className="font-display text-5xl leading-[1] sm:text-7xl lg:text-8xl font-medium tracking-tight">
               Elevando a sua{" "}
               <span className="text-gradient-gold block mt-2 drop-shadow-[0_4px_20px_rgba(212,175,55,0.3)] italic">Arte do Toque</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg text-white/70 leading-relaxed sm:text-2xl lg:mx-0">
+            <p className="mt-6 max-w-xl text-base text-white/70 leading-relaxed sm:text-xl lg:mx-0">
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
               Domine técnicas exclusivas e conquiste o posicionamento que você merece.
             </p>
-            <div className="mt-12 flex flex-wrap justify-center gap-5 lg:justify-start">
+            <div className="mt-10 flex flex-wrap justify-center gap-5 lg:justify-start">
               <Button asChild size="xl" variant="gold" className="h-14 px-10 text-base shadow-gold group">
                 <Link to="/auth">
                   Começar minha mentoria 
@@ -169,7 +169,7 @@ function Landing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="mt-16 flex items-center gap-4 lg:justify-start justify-center"
+              className="mt-12 flex items-center gap-4 lg:justify-start justify-center"
             >
               <div className="h-12 w-12 rounded-full bg-gold/20 flex items-center justify-center">
                 <Crown className="h-6 w-6 text-gold" />
@@ -183,7 +183,7 @@ function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-32 relative">
+      <section className="mx-auto max-w-7xl px-6 py-24 relative">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[100px] -z-10" />
         
         <motion.div 
@@ -191,7 +191,7 @@ function Landing() {
           className="text-center mb-20"
         >
           <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Experiência</p>
-          <h2 className="font-display text-4xl sm:text-6xl font-medium tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-medium tracking-tight">
             Tudo o que você recebe por dentro
           </h2>
         </motion.div>
@@ -201,13 +201,13 @@ function Landing() {
           initial="initial"
           whileInView="whileInView"
           viewport={{ once: true }}
-          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {pilares.map((p) => (
             <motion.div
               key={p.title}
               variants={fadeInUp}
-               className="group relative rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-md p-10 transition-all duration-500 hover:bg-white/10 hover:shadow-elegant hover:-translate-y-3 overflow-hidden"
+               className="group relative rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-md p-8 transition-all duration-500 hover:bg-white/10 hover:shadow-elegant hover:-translate-y-2 overflow-hidden"
             >
               <div className="absolute -top-10 -right-10 h-32 w-32 bg-gold/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-gold/20" />
               <div className="relative">
@@ -222,13 +222,13 @@ function Landing() {
         </motion.div>
       </section>
 
-      <section className="surface-ink py-32 relative overflow-hidden">
+      <section className="surface-ink py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--gold-soft)_0%,_transparent_100%)] opacity-5" />
         
         <div className="mx-auto max-w-7xl px-6">
           <motion.div {...fadeInUp} className="text-center mb-20">
             <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Cronograma</p>
-            <h2 className="font-display text-4xl sm:text-6xl text-white font-medium tracking-tight">
+            <h2 className="font-display text-3xl sm:text-5xl text-white font-medium tracking-tight">
               A jornada completa da mentoria
             </h2>
           </motion.div>
@@ -243,7 +243,7 @@ function Landing() {
                 transition={{ delay: idx * 0.1 }}
                 className="group glass-ink rounded-[2rem] p-8 border border-white/5 hover:border-gold/30 transition-all"
               >
-                <p className="font-display text-6xl text-gradient-gold opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 origin-left italic leading-none">{m.n}</p>
+                <p className="font-display text-5xl text-gradient-gold opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 origin-left italic leading-none">{m.n}</p>
                 <div className="mt-6 relative">
                   <div className="absolute -left-4 top-0 w-1 h-0 bg-gold/50 group-hover:h-full transition-all duration-700" />
                   <h4 className="text-xl font-display tracking-tight text-white mb-2 italic">{m.nome}</h4>
@@ -255,43 +255,43 @@ function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-40 relative">
+      <section className="mx-auto max-w-7xl px-6 py-24 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--gold-soft)_0%,_transparent_70%)] opacity-[0.03] -z-10" />
         
-        <div className="grid items-center gap-24 lg:grid-cols-2">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-8"
+            className="grid grid-cols-2 gap-4 sm:gap-8"
           >
-            <div className="space-y-8">
-              <div className="relative group overflow-hidden rounded-[2.5rem]">
+            <div className="space-y-4 sm:space-y-8">
+              <div className="relative group overflow-hidden rounded-[2rem]">
                 <img
                   src={josiSorriso.url}
                   alt="Josi Nascimento sorrindo"
                   className="aspect-[3/4] w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2.5rem]" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
               </div>
-              <div className="relative group overflow-hidden rounded-[2.5rem]">
+              <div className="relative group overflow-hidden rounded-[2rem]">
                 <img
                   src={josiSobre.url}
                   alt="Josi Nascimento no consultório"
                   className="aspect-square w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2.5rem]" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
               </div>
             </div>
             <div className="pt-16">
-              <div className="relative group overflow-hidden rounded-[2.5rem]">
+              <div className="relative group overflow-hidden rounded-[2rem]">
                 <img
                   src={josiPremio.url}
                   alt="Josi Nascimento com prêmio"
                   className="aspect-[3/5] w-full object-cover shadow-2xl border-2 border-gold/30 transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2.5rem]" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
                 <div className="absolute bottom-6 left-6 right-6 glass-ink p-4 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
                    <p className="text-[10px] text-gold uppercase tracking-[0.2em] font-bold">Certificação Internacional</p>
                    <p className="text-sm text-white italic">Mar del Plata</p>
@@ -309,16 +309,16 @@ function Landing() {
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/5 border border-gold/20 mb-8">
               <p className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">A Mentora</p>
             </div>
-            <h2 className="font-display text-5xl sm:text-7xl mb-10 font-medium tracking-tight leading-[0.9]">
+            <h2 className="font-display text-4xl sm:text-6xl mb-8 font-medium tracking-tight leading-[0.9]">
               Josi <br />
               <span className="text-gradient-gold">Nascimento</span>
             </h2>
-            <div className="space-y-8 text-xl text-muted-foreground leading-relaxed font-light">
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
               <p>
                 Massoterapeuta premiada e reconhecida internacionalmente, Josi transformou anos de
                 prática clínica em um método claro e replicável.
               </p>
-              <p className="border-l-4 border-gold/30 pl-8 italic text-white/80">
+              <p className="border-l-4 border-gold/30 pl-6 italic text-white/80">
                 "Minha missão é elevar o padrão da massoterapia, transformando técnica em arte e profissionais em referências de mercado."
               </p>
               <p>
@@ -326,25 +326,25 @@ function Landing() {
                 de mercado que atrai clientes de alto valor.
               </p>
             </div>
-            <div className="mt-16 flex items-center gap-8">
+            <div className="mt-12 flex items-center gap-6">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
-              <div className="font-display text-3xl italic tracking-tighter text-gold">Josi Nascimento</div>
+              <div className="font-display text-xl italic tracking-tighter text-gold">Josi Nascimento</div>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
             </div>
           </motion.div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
+      <section className="mx-auto max-w-7xl px-6 py-16">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="surface-ink relative overflow-hidden rounded-[3rem] p-12 sm:p-20 text-center shadow-2xl"
+          className="surface-ink relative overflow-hidden rounded-[2rem] p-10 sm:p-16 text-center shadow-2xl"
         >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-display text-4xl sm:text-6xl text-white mb-6 font-medium tracking-tight">Sua vaga na próxima turma</h2>
+            <h2 className="font-display text-3xl sm:text-5xl text-white mb-6 font-medium tracking-tight">Sua vaga na próxima turma</h2>
             <p className="text-white/60 text-lg mb-10 leading-relaxed">
               Tenha acesso imediato à plataforma exclusiva, cronograma de sessões individuais 
               e toda a biblioteca de conhecimentos do método.
