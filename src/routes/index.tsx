@@ -169,7 +169,7 @@ function Landing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="mt-16 flex items-center gap-4 lg:justify-start justify-center"
+              className="mt-12 flex items-center gap-4 lg:justify-start justify-center"
             >
               <div className="h-12 w-12 rounded-full bg-gold/20 flex items-center justify-center">
                 <Crown className="h-6 w-6 text-gold" />
