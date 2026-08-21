@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router"; // o layout do site ta tudo muito grande
+import { createFileRoute, Link } from "@tanstack/react-router"; 
+import { useState } from "react";
 import {
   Sparkles,
   Crown,
