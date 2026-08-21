@@ -127,8 +127,8 @@ function Landing() {
           </motion.div>
           
           {/* Enhanced Overlay Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/40 to-ink" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_var(--gold)_0%,_transparent_70%)] opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/10 via-ink/30 to-ink" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,_var(--gold)_0%,_transparent_60%)] opacity-15" />
           
           {/* Animated Glows */}
           <div className="absolute top-1/4 -left-20 h-[500px] w-[500px] bg-gold/15 blur-[140px] rounded-full animate-pulse" />
