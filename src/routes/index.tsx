@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router"; // ta cortando a foto da josi na aba inicial,
+import { createFileRoute, Link } from "@tanstack/react-router"; // o layout do site ta tudo muito grande
 import {
   Sparkles,
   Crown,
@@ -144,11 +144,11 @@ function Landing() {
             >
               <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
             </motion.div>
-            <h1 className="font-display text-6xl leading-[1] sm:text-8xl lg:text-9xl font-medium tracking-tight">
+            <h1 className="font-display text-5xl leading-[1] sm:text-7xl lg:text-8xl font-medium tracking-tight">
               Elevando a sua{" "}
               <span className="text-gradient-gold block mt-2 drop-shadow-[0_4px_20px_rgba(212,175,55,0.3)] italic">Arte do Toque</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg text-white/70 leading-relaxed sm:text-2xl lg:mx-0">
+            <p className="mt-6 max-w-xl text-base text-white/70 leading-relaxed sm:text-xl lg:mx-0">
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
               Domine técnicas exclusivas e conquiste o posicionamento que você merece.
             </p>
@@ -183,7 +183,7 @@ function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-32 relative">
+      <section className="mx-auto max-w-7xl px-6 py-24 relative">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[100px] -z-10" />
         
         <motion.div 
@@ -191,7 +191,7 @@ function Landing() {
           className="text-center mb-20"
         >
           <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Experiência</p>
-          <h2 className="font-display text-4xl sm:text-6xl font-medium tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-medium tracking-tight">
             Tudo o que você recebe por dentro
           </h2>
         </motion.div>
@@ -222,13 +222,13 @@ function Landing() {
         </motion.div>
       </section>
 
-      <section className="surface-ink py-32 relative overflow-hidden">
+      <section className="surface-ink py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--gold-soft)_0%,_transparent_100%)] opacity-5" />
         
         <div className="mx-auto max-w-7xl px-6">
           <motion.div {...fadeInUp} className="text-center mb-20">
             <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Cronograma</p>
-            <h2 className="font-display text-4xl sm:text-6xl text-white font-medium tracking-tight">
+            <h2 className="font-display text-3xl sm:text-5xl text-white font-medium tracking-tight">
               A jornada completa da mentoria
             </h2>
           </motion.div>
@@ -255,7 +255,7 @@ function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-40 relative">
+      <section className="mx-auto max-w-7xl px-6 py-24 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--gold-soft)_0%,_transparent_70%)] opacity-[0.03] -z-10" />
         
         <div className="grid items-center gap-24 lg:grid-cols-2">
@@ -309,7 +309,7 @@ function Landing() {
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/5 border border-gold/20 mb-8">
               <p className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">A Mentora</p>
             </div>
-            <h2 className="font-display text-5xl sm:text-7xl mb-10 font-medium tracking-tight leading-[0.9]">
+            <h2 className="font-display text-4xl sm:text-6xl mb-8 font-medium tracking-tight leading-[0.9]">
               Josi <br />
               <span className="text-gradient-gold">Nascimento</span>
             </h2>
@@ -344,7 +344,7 @@ function Landing() {
         >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-display text-4xl sm:text-6xl text-white mb-6 font-medium tracking-tight">Sua vaga na próxima turma</h2>
+            <h2 className="font-display text-3xl sm:text-5xl text-white mb-6 font-medium tracking-tight">Sua vaga na próxima turma</h2>
             <p className="text-white/60 text-lg mb-10 leading-relaxed">
               Tenha acesso imediato à plataforma exclusiva, cronograma de sessões individuais 
               e toda a biblioteca de conhecimentos do método.
