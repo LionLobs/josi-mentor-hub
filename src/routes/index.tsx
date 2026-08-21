@@ -115,11 +115,11 @@ function Landing() {
             transition={{ duration: 2.5, ease: "easeOut" }}
             className="absolute inset-0 flex"
           >
-            <div className="relative w-full h-full lg:w-2/3 ml-auto">
+            <div className="relative w-full h-full lg:w-1/2 ml-auto">
               <img
                 src={josiNovoHero.url}
                 alt="Josi Nascimento — Massoterapia Avançada"
-                className="h-full w-full object-cover object-[right_center] lg:object-[right_20%] mix-blend-luminosity filter brightness-110 contrast-125"
+                className="h-full w-full object-cover object-[80%_center] lg:object-center mix-blend-luminosity filter brightness-110 contrast-125 translate-x-12 lg:translate-x-0"
               />
             </div>
           </motion.div>
