@@ -545,8 +545,8 @@ function Landing() {
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--gold-soft)_0%,_transparent_50%)] opacity-20" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl sm:text-5xl text-ink mb-6 font-medium tracking-tight">Sua vaga na próxima turma</h2>
-            <p className="text-ink/60 text-lg mb-10 leading-relaxed">
+            <h2 className="font-display text-2xl sm:text-4xl text-ink mb-4 font-medium tracking-tight">Sua vaga na próxima turma</h2>
+            <p className="text-ink/60 text-base mb-8 leading-relaxed">
               Tenha acesso imediato à plataforma exclusiva, cronograma de sessões individuais 
               e toda a biblioteca de conhecimentos do método.
             </p>
