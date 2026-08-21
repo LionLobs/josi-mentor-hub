@@ -17,6 +17,7 @@ import josiHero from "@/assets/josi-42.jpg.asset.json";
 import josiSobre from "@/assets/josi-10.jpg.asset.json";
 import josiPremio from "@/assets/josi-25.jpg.asset.json";
 import josiSorriso from "@/assets/josi-6.jpg.asset.json";
+import josiHeroBg from "@/assets/josi-17.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -101,13 +102,20 @@ function Landing() {
 
       <section className="surface-ink relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Effects */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImg}
-            alt="Fundo elegante em verde e dourado"
-            className="h-full w-full object-cover opacity-30 mix-blend-overlay"
-          />
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-ink/50 to-ink" />
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 0.15, scale: 1 }}
+            transition={{ duration: 2 }}
+            className="absolute inset-0"
+          >
+            <img
+              src={josiHeroBg.url}
+              alt="Josi Nascimento — Massoterapia Avançada"
+              className="h-full w-full object-cover object-[center_20%] mix-blend-luminosity filter brightness-125 contrast-75"
+            />
+          </motion.div>
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-ink/80 to-ink" />
           <div className="absolute top-1/4 -left-20 h-96 w-96 bg-gold/10 blur-[120px] rounded-full animate-pulse" />
           <div className="absolute bottom-1/4 -right-20 h-96 w-96 bg-primary/20 blur-[120px] rounded-full animate-pulse" />
         </div>
@@ -161,7 +169,7 @@ function Landing() {
               <img
                 src={josiHero.url}
                 alt="Josi Nascimento, mentora em massoterapia avançada"
-                className="relative z-10 h-full w-full object-contain object-bottom opacity-60 mix-blend-lighten drop-shadow-[0_20px_50px_rgba(212,175,55,0.3)] transition-opacity duration-700 hover:opacity-80"
+                className="relative z-10 h-full w-full object-contain object-bottom opacity-70 mix-blend-lighten drop-shadow-[0_20px_50px_rgba(212,175,55,0.4)] transition-opacity duration-700 hover:opacity-90"
               />
               
               {/* Subtle mask at the bottom to blend with background */}
@@ -173,7 +181,7 @@ function Landing() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1 }}
-              className="absolute -bottom-6 -right-6 glass-ink p-6 rounded-2xl shadow-lux z-30 hidden sm:block"
+              className="absolute bottom-10 -right-6 glass-ink p-6 rounded-2xl shadow-lux z-30 hidden sm:block"
             >
               <div className="flex items-center gap-4">
                 <div className="h-12 w-12 rounded-full bg-gold/20 flex items-center justify-center">
