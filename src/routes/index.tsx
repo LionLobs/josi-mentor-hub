@@ -152,7 +152,7 @@ function Landing() {
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
               Domine técnicas exclusivas e conquiste o posicionamento que você merece.
             </p>
-            <div className="mt-12 flex flex-wrap justify-center gap-5 lg:justify-start">
+            <div className="mt-10 flex flex-wrap justify-center gap-5 lg:justify-start">
               <Button asChild size="xl" variant="gold" className="h-14 px-10 text-base shadow-gold group">
                 <Link to="/auth">
                   Começar minha mentoria 
