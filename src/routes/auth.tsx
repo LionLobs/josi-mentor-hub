@@ -105,20 +105,12 @@ function AuthPage() {
           </Link>
 
           <Tabs defaultValue="entrar" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 h-14 bg-white/5 rounded-2xl p-1 mb-8 border border-white/5">
-              <TabsTrigger 
-                value="entrar" 
-                className="rounded-xl data-[state=active]:bg-white/10 data-[state=active]:text-gold data-[state=active]:shadow-lux transition-all"
-              >
-                Entrar
-              </TabsTrigger>
-              <TabsTrigger 
-                value="criar" 
-                className="rounded-xl data-[state=active]:bg-white/10 data-[state=active]:text-gold data-[state=active]:shadow-lux transition-all"
-              >
-                Criar conta
-              </TabsTrigger>
-            </TabsList>
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-display text-white mb-2">Seja bem-vinda</h2>
+              <p className="text-white/50 text-sm">
+                Acesso exclusivo para mentoradas. Se você já é aluna, entre com seus dados abaixo.
+              </p>
+            </div>
 
             <TabsContent value="entrar" className="focus-visible:outline-none">
               <form onSubmit={signIn} className="space-y-6">
@@ -150,41 +142,14 @@ function AuthPage() {
             </TabsContent>
 
             <TabsContent value="criar" className="focus-visible:outline-none">
-              <form onSubmit={signUp} className="space-y-5">
-                <div className="space-y-2">
-                  <Label className="text-white/60 text-xs font-semibold tracking-wider uppercase ml-1">Nome completo</Label>
-                  <Input
-                    required
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="h-12 border-white/10 bg-white/5 text-white rounded-xl focus:ring-gold/30 transition-all"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-white/60 text-xs font-semibold tracking-wider uppercase ml-1">E-mail</Label>
-                  <Input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="h-12 border-white/10 bg-white/5 text-white rounded-xl focus:ring-gold/30 transition-all"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-white/60 text-xs font-semibold tracking-wider uppercase ml-1">Senha</Label>
-                  <Input
-                    type="password"
-                    required
-                    minLength={6}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="h-12 border-white/10 bg-white/5 text-white rounded-xl focus:ring-gold/30 transition-all"
-                  />
-                </div>
-                <Button type="submit" variant="gold" size="xl" className="w-full shadow-gold mt-2" disabled={busy}>
-                  Criar minha conta
-                </Button>
-              </form>
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Para garantir a exclusividade do Método Josi Nascimento, novas contas são criadas apenas pela nossa equipe.
+                </p>
+                <p className="mt-4 text-gold font-medium text-sm">
+                  Entre em contato para adquirir sua mentoria.
+                </p>
+              </div>
             </TabsContent>
           </Tabs>
 

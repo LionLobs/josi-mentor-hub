@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LayoutDashboard, CalendarDays, GraduationCap, Wallet, Download } from "lucide-react";
 import { AppShell, type NavItem } from "@/components/app-shell";
+import { redirect } from "@tanstack/react-router";
 
 const items: NavItem[] = [
   { to: "/aluno", label: "Início", icon: LayoutDashboard },
