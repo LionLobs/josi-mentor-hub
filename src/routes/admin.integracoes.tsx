@@ -75,6 +75,7 @@ function IntegracoesPage() {
                 <li>Clique em <strong>Configurações</strong> {" > "} <strong>Webhooks</strong>.</li>
                 <li>Adicione uma nova URL e cole o link acima.</li>
                 <li>Selecione o evento <strong>Compra Aprovada</strong>.</li>
+                <li>Copie o <strong>Token do Webhook</strong> gerado pela Kiwify e informe-o ao suporte para ser salvo com segurança (chave <code>KIWIFY_WEBHOOK_SECRET</code>). Sem ele, os webhooks são rejeitados.</li>
               </ul>
             </div>
 
