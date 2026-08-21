@@ -120,12 +120,12 @@ function Landing() {
           <div className="absolute bottom-1/4 -right-20 h-96 w-96 bg-primary/20 blur-[120px] rounded-full animate-pulse" />
         </div>
 
-        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-20">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left lg:max-w-3xl"
           >
             <motion.div 
               initial={{ opacity: 0 }}
@@ -135,11 +135,11 @@ function Landing() {
             >
               <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
             </motion.div>
-            <h1 className="font-display text-5xl leading-[1.1] sm:text-7xl lg:text-8xl">
+            <h1 className="font-display text-5xl leading-[1.1] sm:text-7xl lg:text-9xl">
               Elevando a sua{" "}
               <span className="text-gradient-gold block mt-2">Arte do Toque</span>
             </h1>
-            <p className="mt-8 max-w-xl text-lg text-white/70 leading-relaxed sm:text-xl lg:mx-0">
+            <p className="mt-8 max-w-2xl text-lg text-white/70 leading-relaxed sm:text-2xl lg:mx-0">
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
               Domine técnicas exclusivas e conquiste o posicionamento que você merece.
             </p>
@@ -154,43 +154,20 @@ function Landing() {
                 <Link to="/auth">Conhecer o método</Link>
               </Button>
             </div>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            className="relative mx-auto w-full max-w-2xl lg:ml-auto"
-          >
-            <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden lg:overflow-visible flex items-center justify-center">
-              {/* Decorative Glow behind the image */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gold/10 blur-[100px] rounded-full z-0 pointer-events-none" />
-              
-              <img
-                src={josiHero.url}
-                alt="Josi Nascimento, mentora em massoterapia avançada"
-                className="relative z-10 h-full w-full object-contain object-bottom opacity-70 mix-blend-lighten drop-shadow-[0_20px_50px_rgba(212,175,55,0.4)] transition-opacity duration-700 hover:opacity-90"
-              />
-              
-              {/* Subtle mask at the bottom to blend with background */}
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink via-ink/50 to-transparent z-20 pointer-events-none" />
-            </div>
             
-            {/* Floating stats card */}
+            {/* Certificação Badge - repositioned since portrait is gone */}
             <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="absolute bottom-10 -right-6 glass-ink p-6 rounded-2xl shadow-lux z-30 hidden sm:block"
+              className="mt-16 flex items-center gap-4 lg:justify-start justify-center"
             >
-              <div className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-gold/20 flex items-center justify-center">
-                  <Crown className="h-6 w-6 text-gold" />
-                </div>
-                <div>
-                  <p className="text-xs text-gold font-medium uppercase tracking-wider">Certificação</p>
-                  <p className="text-lg font-display text-white italic">Internacional</p>
-                </div>
+              <div className="h-12 w-12 rounded-full bg-gold/20 flex items-center justify-center">
+                <Crown className="h-6 w-6 text-gold" />
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-gold font-medium uppercase tracking-wider">Certificação</p>
+                <p className="text-lg font-display text-white italic">Internacional Mar del Plata</p>
               </div>
             </motion.div>
           </motion.div>
