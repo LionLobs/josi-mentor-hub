@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router"; 
+// adicione segurança no site, inseririremos banco de dados pra inserir cada cliente e dar o acesso da plataforma somente com esses dados
 import { useState } from "react";
 import {
   Sparkles,

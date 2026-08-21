@@ -29,6 +29,10 @@ export const Route = createFileRoute("/admin")({
     // This runs on the client but we need it for immediate redirection
     // Real security is handled in the layouts and server functions
   },
+  beforeLoad: async ({ location }) => {
+    // Redirection logic handled in AppShell component for better UX during hydration
+    // But we can add a basic check here if needed for server-side
+  },
   head: () => ({
     meta: [
       { title: "Painel administrativo — Josi Nascimento" },
