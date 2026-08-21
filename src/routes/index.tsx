@@ -17,6 +17,7 @@ import josiHero from "@/assets/josi-42.jpg.asset.json";
 import josiSobre from "@/assets/josi-10.jpg.asset.json";
 import josiPremio from "@/assets/josi-25.jpg.asset.json";
 import josiSorriso from "@/assets/josi-6.jpg.asset.json";
+import josiHeroBg from "@/assets/josi-17.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
