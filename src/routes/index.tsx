@@ -113,13 +113,13 @@ function Landing() {
             initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
             animate={{ opacity: 0.7, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 2.5, ease: "easeOut" }}
-            className="absolute inset-0 flex lg:justify-end"
+            className="absolute inset-0 flex"
           >
-            <div className="relative w-full h-full lg:w-1/2 ml-auto">
+            <div className="relative w-full h-full lg:w-2/3 ml-auto">
               <img
                 src={josiNovoHero.url}
                 alt="Josi Nascimento — Massoterapia Avançada"
-                className="h-full w-full object-cover object-[right_center] lg:object-center mix-blend-luminosity filter brightness-110 contrast-125"
+                className="h-full w-full object-cover object-[right_center] lg:object-[right_20%] mix-blend-luminosity filter brightness-110 contrast-125"
               />
             </div>
           </motion.div>
