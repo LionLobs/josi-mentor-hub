@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 // senha do email silvascuderoagatha : 82038203
 // veja se consigo interlligar algum perfil tipo shopify pra colocar os produtos de josi, integrar pagamentos e dar o acesso p josi inserir os videos na plataforma
 // diminua o layout do site, ta tudo muito grande
+// na versao mobile , na aba "Mentoria Exclusiva Destaque-se na Massoterapia Transforme sua técnica em reconhecimento, confiança e uma carreira de destaque com a mentoria exclusiva de Josi Nascimento. Começar minha mentoria Conhecer meu método Certificação Internacional Mar del Plata" esta muito pra cima, pensei em por mais pra baixo
 
 
 import { useState } from "react";
@@ -165,7 +166,7 @@ function Landing() {
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-10 lg:py-16 flex justify-start items-center">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-10 pt-24 pb-16 lg:py-16 flex justify-start items-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
