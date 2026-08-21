@@ -100,24 +100,32 @@ function Landing() {
         </div>
       </header>
 
-      <section className="surface-ink relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="surface-ink relative min-h-[95vh] flex items-center overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.35, scale: 1 }}
-            transition={{ duration: 2 }}
+            initial={{ opacity: 0, scale: 1.15, filter: "blur(10px)" }}
+            animate={{ opacity: 0.4, scale: 1, filter: "blur(0px)" }}
+            transition={{ duration: 2.5, ease: "easeOut" }}
             className="absolute inset-0"
           >
             <img
               src={josiHeroBg.url}
               alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-full w-full object-cover object-[center_20%] mix-blend-luminosity filter brightness-110 contrast-125"
+              className="h-full w-full object-cover object-[center_15%] mix-blend-luminosity filter brightness-125 contrast-125"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-ink/40 to-ink" />
-          <div className="absolute top-1/4 -left-20 h-96 w-96 bg-gold/20 blur-[120px] rounded-full animate-pulse" />
-          <div className="absolute bottom-1/4 -right-20 h-96 w-96 bg-primary/30 blur-[120px] rounded-full animate-pulse" />
+          
+          {/* Enhanced Overlay Gradients */}
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/60 to-ink" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_var(--gold)_0%,_transparent_70%)] opacity-10" />
+          
+          {/* Animated Glows */}
+          <div className="absolute top-1/4 -left-20 h-[500px] w-[500px] bg-gold/15 blur-[140px] rounded-full animate-pulse" />
+          <div className="absolute bottom-1/4 -right-20 h-[500px] w-[500px] bg-primary/25 blur-[140px] rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+          
+          {/* Grain Texture */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-20">
@@ -135,9 +143,9 @@ function Landing() {
             >
               <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
             </motion.div>
-            <h1 className="font-display text-5xl leading-[1.1] sm:text-7xl lg:text-9xl font-black tracking-tighter uppercase italic">
+            <h1 className="font-display text-6xl leading-[1] sm:text-8xl lg:text-[10rem] font-black tracking-tighter uppercase italic">
               Elevando a sua{" "}
-              <span className="text-gradient-gold block mt-2 drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)]">Arte do Toque</span>
+              <span className="text-gradient-gold block mt-4 drop-shadow-[0_10px_30px_rgba(212,175,55,0.5)] scale-105 origin-left">Arte do Toque</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg text-white/70 leading-relaxed sm:text-2xl lg:mx-0">
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
@@ -198,9 +206,9 @@ function Landing() {
             <motion.div
               key={p.title}
               variants={fadeInUp}
-              className="group relative rounded-3xl border border-border/50 bg-card p-8 shadow-sm transition-all hover:shadow-elegant hover:-translate-y-2 overflow-hidden"
+               className="group relative rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-md p-10 transition-all duration-500 hover:bg-white/10 hover:shadow-elegant hover:-translate-y-3 overflow-hidden"
             >
-              <div className="absolute top-0 right-0 h-24 w-24 bg-gold/5 rounded-bl-[100%] transition-all group-hover:scale-150" />
+              <div className="absolute -top-10 -right-10 h-32 w-32 bg-gold/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-gold/20" />
               <div className="relative">
                 <div className="h-12 w-12 rounded-2xl bg-primary/5 flex items-center justify-center transition-colors group-hover:bg-gold/10 mb-6">
                   <p.icon className="h-6 w-6 text-gold" />
