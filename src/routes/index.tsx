@@ -456,7 +456,7 @@ function Landing() {
                   </p>
                 </div>
               </motion.div>
-              <div className="relative group overflow-hidden rounded-[2rem]">
+              <div className="relative group overflow-hidden rounded-[1.5rem]">
                 <img
                   src={josiPremio.url}
                   alt="Josi Nascimento com prêmio"
