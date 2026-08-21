@@ -550,7 +550,7 @@ function Landing() {
               Tenha acesso imediato à plataforma exclusiva, cronograma de sessões individuais 
               e toda a biblioteca de conhecimentos do método.
             </p>
-            <Button asChild size="xl" variant="gold" className="h-16 px-12 text-lg shadow-gold group">
+            <Button asChild size="lg" variant="gold" className="h-14 px-10 text-base shadow-gold group">
               <Link to="/auth" className="flex items-center gap-3">
                 Garantir meu acesso agora
                 <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
