@@ -20,6 +20,7 @@ import josiPremio from "@/assets/josi-25.jpg.asset.json";
 import josiSorriso from "@/assets/josi-6.jpg.asset.json";
 import josiHeroBg from "@/assets/josi-17.jpg.asset.json";
 import josiNovoHero from "@/assets/josi-25.jpg.asset.json";
+import ebookImg from "@/assets/ebook-oficial.png.asset.json";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
