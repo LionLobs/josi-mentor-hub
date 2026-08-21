@@ -485,7 +485,7 @@ function Landing() {
               <div className="h-px w-12 bg-gold/30" />
             </div>
 
-            <h2 className="font-display text-5xl sm:text-7xl mb-10 font-medium tracking-tighter leading-[0.85] relative">
+            <h2 className="font-display text-4xl sm:text-6xl mb-8 font-medium tracking-tighter leading-[0.85] relative">
               Josi <br />
               <span className="text-gradient-gold italic">Nascimento</span>
               <motion.div 
