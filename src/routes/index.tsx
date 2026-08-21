@@ -318,7 +318,7 @@ function Landing() {
                 Massoterapeuta premiada e reconhecida internacionalmente, Josi transformou anos de
                 prática clínica em um método claro e replicável.
               </p>
-              <p className="border-l-4 border-gold/30 pl-8 italic text-white/80">
+              <p className="border-l-4 border-gold/30 pl-6 italic text-white/80">
                 "Minha missão é elevar o padrão da massoterapia, transformando técnica em arte e profissionais em referências de mercado."
               </p>
               <p>
