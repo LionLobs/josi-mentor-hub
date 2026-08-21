@@ -348,7 +348,7 @@ function Landing() {
                 {/* Ebook Suspense Element */}
                 <div className="relative group perspective-1000">
                   <div className="absolute inset-0 bg-gold/20 blur-[100px] rounded-full opacity-50 animate-pulse" />
-                    <div className="relative glass-ink rounded-[2rem] p-1 border border-white/10 shadow-2xl overflow-hidden transform group-hover:rotate-y-12 transition-transform duration-700">
+                    <div className="relative glass-ink rounded-[1.5rem] p-1 border border-white/10 shadow-2xl overflow-hidden transform group-hover:rotate-y-12 transition-transform duration-700">
                       <div className="aspect-[3/4] bg-gradient-to-br from-ink to-ink/90 relative overflow-hidden">
                         <img 
                           src={ebookImg.url} 
