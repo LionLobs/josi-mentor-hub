@@ -313,7 +313,7 @@ function Landing() {
               Josi <br />
               <span className="text-gradient-gold">Nascimento</span>
             </h2>
-            <div className="space-y-8 text-xl text-muted-foreground leading-relaxed font-light">
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
               <p>
                 Massoterapeuta premiada e reconhecida internacionalmente, Josi transformou anos de
                 prática clínica em um método claro e replicável.
