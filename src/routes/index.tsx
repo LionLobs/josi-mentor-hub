@@ -272,7 +272,7 @@ function Landing() {
         <div className="mx-auto max-w-6xl px-6">
           <motion.div {...fadeInUp} className="text-center mb-20">
             <p className="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Os 3 Pilares</p>
-            <h2 className="font-display text-3xl sm:text-5xl text-white font-medium tracking-tight">
+            <h2 className="font-display text-2xl sm:text-4xl text-white font-medium tracking-tight">
               Sua Transformação Começa Agora
             </h2>
             <p className="mt-6 text-white/60 max-w-2xl mx-auto">O destaque não depende apenas de técnica. Ele nasce da combinação entre excelência, presença e mentalidade.</p>
