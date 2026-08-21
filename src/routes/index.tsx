@@ -106,19 +106,19 @@ function Landing() {
         </div>
       </header>
 
-      <section className="surface-ink relative min-h-[95vh] flex items-center overflow-hidden">
+      <section className="surface-ink relative min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
-            animate={{ opacity: 0.6, scale: 1, filter: "blur(0px)" }}
+            animate={{ opacity: 0.7, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 2.5, ease: "easeOut" }}
             className="absolute inset-0 flex justify-end"
           >
             <img
-              src={josiHeroBg.url}
+              src={josiNovoHero.url}
               alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-full w-full object-cover object-[center_10%] lg:object-[80%_15%] mix-blend-luminosity filter brightness-110 contrast-125"
+              className="h-full w-full object-cover object-[65%_center] lg:object-right mix-blend-luminosity filter brightness-110 contrast-125"
             />
           </motion.div>
           
