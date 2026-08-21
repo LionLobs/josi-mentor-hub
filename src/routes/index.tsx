@@ -110,26 +110,23 @@ function Landing() {
         {/* Background Effects */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
+            animate={{ opacity: 0.7, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 2.5, ease: "easeOut" }}
             className="absolute inset-0 flex"
           >
-            <div className="relative w-full h-full lg:w-2/3 ml-auto">
+            <div className="relative w-full h-full lg:w-1/2 ml-auto">
               <img
                 src={josiNovoHero.url}
                 alt="Josi Nascimento — Massoterapia Avançada"
-                className="h-full w-full object-cover object-[90%_center] lg:object-center brightness-110 contrast-125 translate-x-32 lg:translate-x-0"
+                className="h-full w-full object-cover object-[90%_center] lg:object-center mix-blend-luminosity filter brightness-110 contrast-125"
               />
-              {/* Transitions to hide "corte seco" */}
-              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/60 to-transparent lg:hidden" />
-              <div className="absolute inset-y-0 -left-px w-full bg-gradient-to-r from-ink via-ink/30 to-transparent hidden lg:block" />
             </div>
           </motion.div>
           
           {/* Enhanced Overlay Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/10 via-ink/30 to-ink" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,_var(--gold)_0%,_transparent_60%)] opacity-15" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/40 to-ink" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_var(--gold)_0%,_transparent_70%)] opacity-20" />
           
           {/* Animated Glows */}
           <div className="absolute top-1/4 -left-20 h-[500px] w-[500px] bg-gold/15 blur-[140px] rounded-full animate-pulse" />
