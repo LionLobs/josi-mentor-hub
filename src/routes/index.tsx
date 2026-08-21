@@ -258,7 +258,7 @@ function Landing() {
       <section className="mx-auto max-w-7xl px-6 py-24 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--gold-soft)_0%,_transparent_70%)] opacity-[0.03] -z-10" />
         
-        <div className="grid items-center gap-24 lg:grid-cols-2">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
