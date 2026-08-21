@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router"; 
-// acho q deveria ter uma plataforma onde a josi possa acessar , inserir dados de cada aluna, e informações de video aulas
+
 import { useState } from "react";
 import {
   Sparkles,
