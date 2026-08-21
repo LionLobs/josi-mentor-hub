@@ -190,7 +190,7 @@ function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24 relative bg-white rounded-[3rem] my-12 shadow-elegant border border-gold/10">
+      <section className="mx-auto max-w-7xl px-6 py-24 relative bg-white rounded-[3rem] my-12 shadow-elegant border border-gold/10 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[100px] -z-10" />
         <div className="absolute -top-24 -left-24 w-64 h-64 bg-gold/5 blur-[120px] rounded-full" />
         
