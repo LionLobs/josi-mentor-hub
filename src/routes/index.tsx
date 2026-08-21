@@ -258,7 +258,7 @@ function Landing() {
                     <p.icon className="h-6 w-6 text-gold" />
                   </div>
                   <h3 className="text-xl font-display mb-3 text-ink">{p.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-ink/70">{p.text}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed text-ink/70">{p.text}</p>
                 </div>
               </div>
             ))}
