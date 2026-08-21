@@ -349,40 +349,44 @@ function Landing() {
       </section>
 
       {/* Mentalidade de Campeão Section */}
-      <section className="py-20 relative overflow-hidden bg-off-white">
+      <section id="conteúdo" className="py-28 relative overflow-hidden bg-off-white">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="bg-ink rounded-[2.5rem] p-10 lg:p-20 relative overflow-hidden shadow-elegant border border-gold/10">
+          <div className="bg-ink rounded-[4rem] p-12 lg:p-24 relative overflow-hidden shadow-[0_60px_120px_-30px_rgba(0,0,0,0.5)] border border-gold/10">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.05]" />
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gold/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-[60%] h-full bg-gold/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/3" />
             
-            <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
               <motion.div {...fadeInUp}>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 mb-8">
+                <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-gold/10 border border-gold/20 mb-10 backdrop-blur-md">
                   <ShieldCheck className="h-4 w-4 text-gold" />
-                  <span className="text-gold text-[10px] font-bold tracking-[0.2em] uppercase">Mentalidade de Campeão</span>
+                  <span className="text-gold text-[10px] font-bold tracking-[0.3em] uppercase">Excelência Mental</span>
                 </div>
-                <h2 className="font-display text-2xl sm:text-4xl text-white font-medium mb-6 leading-tight">
-                  Do Medo à <span className="italic text-gradient-gold">Vitória</span>
+                <h2 className="font-display text-4xl sm:text-6xl text-white font-medium mb-10 leading-[0.9] tracking-tight">
+                  Protocolo da <span className="italic text-gradient-gold font-black">Vitória</span>
                 </h2>
-                <p className="text-white/70 text-base mb-8 leading-relaxed">
-                  O medo faz parte da jornada. A diferença está em como você reage a ele. A preparação mental e o foco no processo transformam insegurança em performance de elite.
+                <p className="text-white/60 text-base mb-12 leading-relaxed font-light max-w-lg">
+                  O sucesso nos bastidores reflete na performance no palco. Dominar a mente é o primeiro passo para dominar a técnica.
                 </p>
                 
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {[
-                    { t: "Preparação Mental", d: "Visualização, respiração e afirmações." },
-                    { t: "Preparação Técnica", d: "Prática com cronômetro e refinamento." },
-                    { t: "Preparação Final", d: "Revisão mental e confiança no processo." }
+                    { t: "Blindagem Profissional", d: "Construção de uma postura inabalável e segura." },
+                    { t: "Performance de Elite", d: "Refinamento contínuo e busca pela perfeição." },
+                    { t: "Foco Estratégico", d: "Clareza absoluta nos seus objetivos de carreira." }
                   ].map((item, i) => (
-                    <div key={i} className="flex gap-4 group">
-                      <div className="h-10 w-10 shrink-0 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/50 transition-colors">
-                        <div className="h-1.5 w-1.5 rounded-full bg-gold" />
+                    <motion.div 
+                      key={i} 
+                      className="flex gap-6 group"
+                      whileHover={{ x: 10 }}
+                    >
+                      <div className="h-12 w-12 shrink-0 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold group-hover:bg-gold/5 transition-all duration-500">
+                        <div className="h-2 w-2 rounded-full bg-gold animate-pulse" />
                       </div>
                       <div>
-                        <h4 className="text-white font-medium mb-1">{item.t}</h4>
-                        <p className="text-white/50 text-sm">{item.d}</p>
+                        <h4 className="text-white text-lg font-medium mb-2 group-hover:text-gold transition-colors">{item.t}</h4>
+                        <p className="text-white/40 text-sm font-light leading-relaxed">{item.d}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
