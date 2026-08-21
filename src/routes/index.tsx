@@ -286,7 +286,7 @@ function Landing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.2 }}
-                className="glass-ink p-10 rounded-[2.5rem] border border-white/5 hover:border-gold/30 transition-all group relative overflow-hidden"
+                className="glass-ink p-8 rounded-[2rem] border border-white/5 hover:border-gold/30 transition-all group relative overflow-hidden"
               >
                 <div className="absolute -right-8 -top-8 text-8xl font-display font-black text-white/5 group-hover:text-gold/5 transition-colors">{p.n}</div>
                 <div className="h-14 w-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-8">
