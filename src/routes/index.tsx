@@ -496,8 +496,6 @@ function Landing() {
             </div>
 
             <h2 className="font-display text-5xl sm:text-7xl mb-10 font-medium tracking-tighter leading-[0.85] relative">
-              confira esses textos
-              <br />
               Josi <br />
               <span className="text-gradient-gold italic">Nascimento</span>
               <motion.div 
@@ -509,7 +507,7 @@ function Landing() {
 
             <div className="flex gap-8 mb-10">
               <div>
-                <p className="text-gold font-display text-3xl italic leading-none">12+</p>
+                <p className="text-gold font-display text-3xl italic leading-none">confira esses textos 12+</p>
                 <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">Anos de Expert</p>
               </div>
               <div className="w-px h-10 bg-white/10" />
