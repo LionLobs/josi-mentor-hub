@@ -71,6 +71,9 @@ const staggerContainer = {
 };
 
 function Landing() {
+  const [isExperienceHovered, setIsExperienceHovered] = useState(false);
+  const [isJourneyHovered, setIsJourneyHovered] = useState(false);
+
   return (
     <div className="min-h-screen bg-ink text-white overflow-x-hidden selection:bg-gold selection:text-ink relative">
       <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
