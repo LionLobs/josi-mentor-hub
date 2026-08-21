@@ -351,9 +351,9 @@ function Landing() {
                           className="absolute inset-0 w-full h-full object-contain p-4"
                         />
                         {/* Suspense Blur Overlay */}
-                        <div className="absolute inset-0 backdrop-blur-[8px] bg-ink/40 flex items-center justify-center group-hover:backdrop-blur-0 transition-all duration-700">
+                        <div className="absolute inset-0 bg-ink/40 flex items-center justify-center transition-all duration-700">
                           <div className="text-center p-8">
-                            <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gold/20 border border-gold/40 mb-4 group-hover:scale-110 transition-transform">
+                            <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gold/20 border border-gold/40 mb-4">
                               <ShieldCheck className="h-8 w-8 text-gold" />
                             </div>
                             <p className="text-white font-display text-xl italic mb-2">Ebook Exclusivo</p>
