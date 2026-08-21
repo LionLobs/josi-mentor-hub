@@ -144,9 +144,9 @@ function Landing() {
             >
               <Sparkles className="h-3.5 w-3.5" /> Mentoria Exclusiva
             </motion.div>
-            <h1 className="font-display text-6xl leading-[1] sm:text-8xl lg:text-[10rem] font-black tracking-tighter uppercase italic">
+            <h1 className="font-display text-5xl leading-[1.1] sm:text-7xl lg:text-8xl font-medium tracking-tight uppercase">
               Elevando a sua{" "}
-              <span className="text-gradient-gold block mt-4 drop-shadow-[0_10px_30px_rgba(212,175,55,0.5)] scale-105 origin-left">Arte do Toque</span>
+              <span className="text-gradient-gold block mt-2 drop-shadow-[0_4px_20px_rgba(212,175,55,0.3)]">Arte do Toque</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg text-white/70 leading-relaxed sm:text-2xl lg:mx-0">
               Transforme sua carreira com o método de <span className="text-white font-medium">Massoterapia Avançada</span>. 
