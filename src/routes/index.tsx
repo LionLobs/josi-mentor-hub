@@ -495,7 +495,7 @@ function Landing() {
 
             <div className="flex gap-8 mb-10">
               <div>
-                <p className="text-gold font-display text-3xl italic leading-none">confira esses textos 12+</p>
+                <p className="text-gold font-display text-3xl italic leading-none">confira os textos abaixo:               confira esses textos 12+</p>
                 <p className="text-[10px] uppercase tracking-widest text-white/40 mt-1">Anos de Expert</p>
               </div>
               <div className="w-px h-10 bg-white/10" />
@@ -527,7 +527,8 @@ function Landing() {
 
             <div className="mt-12 flex items-center gap-6">
               <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-              <div className="font-display text-2xl italic tracking-tighter text-gold drop-shadow-gold">Josi Nascimento</div>
+              <div className="font-display text-2xl italic tracking-tighter text-gold drop-shadow-gold">Josi Nascimento
+.   acho q a josi nao rem 2.5k alunas, e o sobre os anos o texto ta errado</div>
               <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
             </div>
           </motion.div>
