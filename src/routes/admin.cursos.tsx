@@ -30,13 +30,13 @@ function CoursesPage() {
 
       <CrudPage
         table="course_modules"
-        title="Módulos"
-        description="Aulas e módulos vinculados a cada curso."
+        title="Videoaulas e Módulos"
+        description="Gerenciamento de conteúdos e aulas vinculadas a cada curso."
         select="*, courses(title)"
         orderBy={{ column: "position", ascending: true }}
         columns={[
           { key: "position", label: "#" },
-          { key: "title", label: "Módulo" },
+          { key: "title", label: "Título da Aula" },
           { key: "course", label: "Curso", render: (r) => r["courses"]?.title ?? "—" },
         ]}
         fields={[
@@ -47,7 +47,7 @@ function CoursesPage() {
             required: true,
             optionsFrom: { table: "courses", labelKey: "title" },
           },
-          { name: "title", label: "Título do módulo", required: true },
+          { name: "title", label: "Título da aula/módulo", required: true },
           { name: "description", label: "Descrição", type: "textarea" },
           { name: "video_url", label: "URL do vídeo" },
           { name: "cover_url", label: "URL da capa" },
