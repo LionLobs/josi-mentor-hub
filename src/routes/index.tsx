@@ -132,7 +132,7 @@ function Landing() {
           
           {/* Animated Glows */}
           <div className="absolute top-1/4 -left-20 h-[500px] w-[500px] bg-gold/15 blur-[140px] rounded-full animate-pulse" />
-          <div className="absolute bottom-1/4 -right-20 h-[500px] w-[500px] bg-primary/25 blur-[140px] rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute bottom-1/4 -right-20 h-[500px] w-[500px] bg-gold/10 blur-[140px] rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
           
           {/* Grain Texture */}
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
