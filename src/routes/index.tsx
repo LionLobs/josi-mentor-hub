@@ -113,13 +113,15 @@ function Landing() {
             initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
             animate={{ opacity: 0.7, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 2.5, ease: "easeOut" }}
-            className="absolute inset-0 flex justify-end lg:justify-end"
+            className="absolute inset-0 flex"
           >
-            <img
-              src={josiNovoHero.url}
-              alt="Josi Nascimento — Massoterapia Avançada"
-              className="h-full w-full object-cover object-[85%_center] lg:object-[100%_center] mix-blend-luminosity filter brightness-110 contrast-125"
-            />
+            <div className="relative w-full h-full lg:w-1/2 ml-auto">
+              <img
+                src={josiNovoHero.url}
+                alt="Josi Nascimento — Massoterapia Avançada"
+                className="h-full w-full object-cover object-[90%_center] lg:object-center mix-blend-luminosity filter brightness-110 contrast-125 translate-x-32 lg:translate-x-0"
+              />
+            </div>
           </motion.div>
           
           {/* Enhanced Overlay Gradients */}
@@ -134,7 +136,7 @@ function Landing() {
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 lg:py-20 flex justify-start">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-12 lg:py-20 flex justify-start items-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
