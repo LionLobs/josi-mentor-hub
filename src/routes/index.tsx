@@ -163,7 +163,7 @@ function Landing() {
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="xl" className="h-14 px-10 text-base border-white/20 text-white hover:bg-white/10">
+              <Button asChild variant="outline" size="xl" className="h-14 px-10 text-base border-white/40 bg-white/5 text-white hover:bg-white/10 backdrop-blur-sm shadow-lux">
                 <Link to="/auth">Conhecer o método</Link>
               </Button>
             </div>
