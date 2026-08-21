@@ -316,7 +316,7 @@ function Landing() {
                 <h2 className="font-display text-2xl sm:text-4xl text-white font-medium mb-6 leading-tight">
                   Do Medo à <span className="italic text-gradient-gold">Vitória</span>
                 </h2>
-                <p className="text-white/70 text-lg mb-10 leading-relaxed">
+                <p className="text-white/70 text-base mb-8 leading-relaxed">
                   O medo faz parte da jornada. A diferença está em como você reage a ele. A preparação mental e o foco no processo transformam insegurança em performance de elite.
                 </p>
                 
