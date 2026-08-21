@@ -313,7 +313,7 @@ function Landing() {
         >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-display text-4xl sm:text-6xl text-white mb-6">Sua vaga na próxima turma</h2>
+            <h2 className="font-display text-4xl sm:text-6xl text-white mb-6 font-black uppercase">Sua vaga na próxima turma</h2>
             <p className="text-white/60 text-lg mb-10 leading-relaxed">
               Tenha acesso imediato à plataforma exclusiva, cronograma de sessões individuais 
               e toda a biblioteca de conhecimentos do método.
