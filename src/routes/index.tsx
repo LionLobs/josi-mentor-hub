@@ -527,7 +527,8 @@ function Landing() {
 
             <div className="mt-12 flex items-center gap-6">
               <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-              <div className="font-display text-2xl italic tracking-tighter text-gold drop-shadow-gold">Josi Nascimento</div>
+              <div className="font-display text-2xl italic tracking-tighter text-gold drop-shadow-gold">Josi Nascimento
+.   acho q a josi nao rem 2.5k alunas, e o sobre os anos o texto ta errado</div>
               <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
             </div>
           </motion.div>
