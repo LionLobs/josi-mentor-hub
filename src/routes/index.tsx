@@ -9,6 +9,7 @@
 // preciso vincular uma plataforma para inserir essa mentoria de josi
 // preciso vincular uma plataforma para inserir essa mentoria de josi
 // eu quero que a area de alunas, membros e agenda, tudo, seja integrado ao nosso sistema, com login e senha. algo que a josi consiga inserir no app dela e ele ir direto para a plataforma nossa. pagamentos e tudo integrado
+// preciso que tenha integração com agenda de josi dentro do sistema, mas quero que voce deixe tudo pronto, complexo e que depois eu so logo tudo que precisar, como a conta de josi e mentoria na kiwify,, e tudo os conteudos, videoaulas, deve ir para a plataforma..
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
