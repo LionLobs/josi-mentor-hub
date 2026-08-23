@@ -83,7 +83,7 @@ function AuthPage() {
     setBusy(true);
     try {
       const { error } = await supabase
-        .from("registration_requests")
+        .from("registration_requests" as any)
         .insert([{ full_name: name, email }]);
       
       if (error) {
