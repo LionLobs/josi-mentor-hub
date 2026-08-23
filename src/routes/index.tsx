@@ -14,6 +14,7 @@
 // n tenho token ainda
 // ta constando Invalid login credentials
 // a area de login esta travando, preciso que analise cada detalhe para ficar seguro, sem bugs, e com aba de "esqueci a senha"
+// acho que na area de cadastro podemos implementar, e cada cadastro levar o email ao acesso somente da josi, ou ao email lionlobs
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
