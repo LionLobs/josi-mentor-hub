@@ -13,6 +13,7 @@
 // nao to conseguindo acessar a plataforma. coloque aba de cadastro e banco de dados estruturado. meu email silvascuderoagatha@gmail.com e senha 82038203@
 // n tenho token ainda
 // ta constando Invalid login credentials
+// a area de login esta travando, preciso que analise cada detalhe para ficar seguro, sem bugs, e com aba de "esqueci a senha"
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
