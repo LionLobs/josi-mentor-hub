@@ -27,6 +27,7 @@ import { Route as AlunoAgendaRouteImport } from './routes/aluno.agenda'
 import { Route as AlunoCursosRouteImport } from './routes/aluno.cursos'
 import { Route as AlunoMateriaisRouteImport } from './routes/aluno.materiais'
 import { Route as AlunoPagamentosRouteImport } from './routes/aluno.pagamentos'
+import { Route as AuthResetPasswordRouteImport } from './routes/auth.reset-password'
 import { Route as ApiPublicKiwifyRouteImport } from './routes/api/public/kiwify'
 
 const IndexRoute = IndexRouteImport.update({
@@ -119,6 +120,11 @@ const AlunoPagamentosRoute = AlunoPagamentosRouteImport.update({
   path: '/pagamentos',
   getParentRoute: () => AlunoRoute,
 } as any)
+const AuthResetPasswordRoute = AuthResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => AuthRoute,
+} as any)
 const ApiPublicKiwifyRoute = ApiPublicKiwifyRouteImport.update({
   id: '/api/public/kiwify',
   path: '/api/public/kiwify',
@@ -129,7 +135,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteWithChildren
   '/aluno': typeof AlunoRouteWithChildren
-  '/auth': typeof AuthRoute
+  '/auth': typeof AuthRouteWithChildren
   '/admin/agenda': typeof AdminAgendaRoute
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
@@ -142,13 +148,14 @@ export interface FileRoutesByFullPath {
   '/aluno/cursos': typeof AlunoCursosRoute
   '/aluno/materiais': typeof AlunoMateriaisRoute
   '/aluno/pagamentos': typeof AlunoPagamentosRoute
+  '/auth/reset-password': typeof AuthResetPasswordRoute
   '/admin/': typeof AdminIndexRoute
   '/aluno/': typeof AlunoIndexRoute
   '/api/public/kiwify': typeof ApiPublicKiwifyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/auth': typeof AuthRoute
+  '/auth': typeof AuthRouteWithChildren
   '/admin/agenda': typeof AdminAgendaRoute
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
@@ -161,6 +168,7 @@ export interface FileRoutesByTo {
   '/aluno/cursos': typeof AlunoCursosRoute
   '/aluno/materiais': typeof AlunoMateriaisRoute
   '/aluno/pagamentos': typeof AlunoPagamentosRoute
+  '/auth/reset-password': typeof AuthResetPasswordRoute
   '/admin': typeof AdminIndexRoute
   '/aluno': typeof AlunoIndexRoute
   '/api/public/kiwify': typeof ApiPublicKiwifyRoute
@@ -170,7 +178,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteWithChildren
   '/aluno': typeof AlunoRouteWithChildren
-  '/auth': typeof AuthRoute
+  '/auth': typeof AuthRouteWithChildren
   '/admin/agenda': typeof AdminAgendaRoute
   '/admin/alunos': typeof AdminAlunosRoute
   '/admin/cursos': typeof AdminCursosRoute
@@ -183,6 +191,7 @@ export interface FileRoutesById {
   '/aluno/cursos': typeof AlunoCursosRoute
   '/aluno/materiais': typeof AlunoMateriaisRoute
   '/aluno/pagamentos': typeof AlunoPagamentosRoute
+  '/auth/reset-password': typeof AuthResetPasswordRoute
   '/admin/': typeof AdminIndexRoute
   '/aluno/': typeof AlunoIndexRoute
   '/api/public/kiwify': typeof ApiPublicKiwifyRoute
@@ -206,6 +215,7 @@ export interface FileRouteTypes {
     | '/aluno/cursos'
     | '/aluno/materiais'
     | '/aluno/pagamentos'
+    | '/auth/reset-password'
     | '/admin/'
     | '/aluno/'
     | '/api/public/kiwify'
@@ -225,6 +235,7 @@ export interface FileRouteTypes {
     | '/aluno/cursos'
     | '/aluno/materiais'
     | '/aluno/pagamentos'
+    | '/auth/reset-password'
     | '/admin'
     | '/aluno'
     | '/api/public/kiwify'
@@ -246,6 +257,7 @@ export interface FileRouteTypes {
     | '/aluno/cursos'
     | '/aluno/materiais'
     | '/aluno/pagamentos'
+    | '/auth/reset-password'
     | '/admin/'
     | '/aluno/'
     | '/api/public/kiwify'
@@ -255,7 +267,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRouteWithChildren
   AlunoRoute: typeof AlunoRouteWithChildren
-  AuthRoute: typeof AuthRoute
+  AuthRoute: typeof AuthRouteWithChildren
   ApiPublicKiwifyRoute: typeof ApiPublicKiwifyRoute
 }
 
@@ -387,6 +399,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlunoPagamentosRouteImport
       parentRoute: typeof AlunoRoute
     }
+    '/auth/reset-password': {
+      id: '/auth/reset-password'
+      path: '/reset-password'
+      fullPath: '/auth/reset-password'
+      preLoaderRoute: typeof AuthResetPasswordRouteImport
+      parentRoute: typeof AuthRoute
+    }
     '/api/public/kiwify': {
       id: '/api/public/kiwify'
       path: '/api/public/kiwify'
@@ -441,11 +460,21 @@ const AlunoRouteChildren: AlunoRouteChildren = {
 
 const AlunoRouteWithChildren = AlunoRoute._addFileChildren(AlunoRouteChildren)
 
+interface AuthRouteChildren {
+  AuthResetPasswordRoute: typeof AuthResetPasswordRoute
+}
+
+const AuthRouteChildren: AuthRouteChildren = {
+  AuthResetPasswordRoute: AuthResetPasswordRoute,
+}
+
+const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRouteWithChildren,
   AlunoRoute: AlunoRouteWithChildren,
-  AuthRoute: AuthRoute,
+  AuthRoute: AuthRouteWithChildren,
   ApiPublicKiwifyRoute: ApiPublicKiwifyRoute,
 }
 export const routeTree = rootRouteImport
