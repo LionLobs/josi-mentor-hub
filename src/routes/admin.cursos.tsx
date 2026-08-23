@@ -31,13 +31,18 @@ function CoursesPage() {
       <CrudPage
         table="course_modules"
         title="Videoaulas e Módulos"
-        description="Gerenciamento de conteúdos e aulas vinculadas a cada curso."
+        description="Envie o vídeo direto para a plataforma ou cole um link do YouTube/Vimeo."
         select="*, courses(title)"
         orderBy={{ column: "position", ascending: true }}
         columns={[
           { key: "position", label: "#" },
           { key: "title", label: "Título da Aula" },
           { key: "course", label: "Curso", render: (r) => r["courses"]?.title ?? "—" },
+          {
+            key: "origem",
+            label: "Origem",
+            render: (r) => (r["storage_path"] ? "Upload" : r["video_url"] ? "Link externo" : "—"),
+          },
         ]}
         fields={[
           {
@@ -49,8 +54,17 @@ function CoursesPage() {
           },
           { name: "title", label: "Título da aula/módulo", required: true },
           { name: "description", label: "Descrição", type: "textarea" },
-          { name: "video_url", label: "URL do vídeo" },
+          {
+            name: "storage_path",
+            label: "Vídeo da plataforma (upload)",
+            type: "file",
+            folder: "aulas",
+            accept: "video/*",
+            hint: "MP4, WebM ou MOV. Fica hospedado com acesso restrito às alunas.",
+          },
+          { name: "video_url", label: "Ou link externo (YouTube, Vimeo, MP4)" },
           { name: "cover_url", label: "URL da capa" },
+          { name: "duration_min", label: "Duração (min)", type: "number" },
           { name: "position", label: "Ordem", type: "number", defaultValue: 1 },
         ]}
       />
