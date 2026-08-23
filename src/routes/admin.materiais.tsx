@@ -6,18 +6,31 @@ export const Route = createFileRoute("/admin/materiais")({
     <CrudPage
       table="downloads"
       title="Área de downloads"
-      description="Materiais complementares disponíveis para as alunas."
+      description="Envie PDFs, apostilas e materiais complementares para as alunas."
       select="*, courses(title)"
       orderBy={{ column: "created_at" }}
       columns={[
         { key: "title", label: "Material" },
         { key: "course", label: "Curso", render: (r) => r["courses"]?.title ?? "Geral" },
+        {
+          key: "origem",
+          label: "Origem",
+          render: (r) => (r["storage_path"] ? "Upload" : r["file_url"] ? "Link externo" : "—"),
+        },
         { key: "published", label: "Publicado", render: (r) => (r["published"] ? "Sim" : "Não") },
       ]}
       fields={[
         { name: "title", label: "Título", required: true },
         { name: "description", label: "Descrição", type: "textarea" },
-        { name: "file_url", label: "URL do arquivo", required: true },
+        {
+          name: "storage_path",
+          label: "Arquivo (upload)",
+          type: "file",
+          folder: "materiais",
+          accept: ".pdf,.doc,.docx,.ppt,.pptx,.zip,image/*",
+          hint: "PDF, documentos, imagens ou ZIP.",
+        },
+        { name: "file_url", label: "Ou link externo do arquivo" },
         {
           name: "course_id",
           label: "Curso (opcional)",
