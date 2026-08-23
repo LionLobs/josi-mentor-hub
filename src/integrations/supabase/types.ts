@@ -16,32 +16,41 @@ export type Database = {
     Tables: {
       course_modules: {
         Row: {
+          content_type: string
           course_id: string
           cover_url: string | null
           created_at: string
           description: string | null
+          duration_min: number | null
           id: string
           position: number
+          storage_path: string | null
           title: string
           video_url: string | null
         }
         Insert: {
+          content_type?: string
           course_id: string
           cover_url?: string | null
           created_at?: string
           description?: string | null
+          duration_min?: number | null
           id?: string
           position?: number
+          storage_path?: string | null
           title: string
           video_url?: string | null
         }
         Update: {
+          content_type?: string
           course_id?: string
           cover_url?: string | null
           created_at?: string
           description?: string | null
+          duration_min?: number | null
           id?: string
           position?: number
+          storage_path?: string | null
           title?: string
           video_url?: string | null
         }
@@ -93,27 +102,30 @@ export type Database = {
           course_id: string | null
           created_at: string
           description: string | null
-          file_url: string
+          file_url: string | null
           id: string
           published: boolean
+          storage_path: string | null
           title: string
         }
         Insert: {
           course_id?: string | null
           created_at?: string
           description?: string | null
-          file_url: string
+          file_url?: string | null
           id?: string
           published?: boolean
+          storage_path?: string | null
           title: string
         }
         Update: {
           course_id?: string | null
           created_at?: string
           description?: string | null
-          file_url?: string
+          file_url?: string | null
           id?: string
           published?: boolean
+          storage_path?: string | null
           title?: string
         }
         Relationships: [
@@ -164,6 +176,41 @@ export type Database = {
             columns: ["student_id"]
             isOneToOne: false
             referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      lesson_progress: {
+        Row: {
+          completed_at: string | null
+          created_at: string
+          id: string
+          module_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          module_id: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          module_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lesson_progress_module_id_fkey"
+            columns: ["module_id"]
+            isOneToOne: false
+            referencedRelation: "course_modules"
             referencedColumns: ["id"]
           },
         ]

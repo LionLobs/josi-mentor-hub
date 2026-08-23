@@ -23,18 +23,34 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { FileUpload } from "@/components/file-upload";
+
 
 export type Row = Record<string, any>;
 
 export type Field = {
   name: string;
   label: string;
-  type?: "text" | "textarea" | "number" | "money" | "date" | "datetime" | "select" | "checkbox";
+  type?:
+    | "text"
+    | "textarea"
+    | "number"
+    | "money"
+    | "date"
+    | "datetime"
+    | "select"
+    | "checkbox"
+    | "file";
   options?: { value: string; label: string }[];
   optionsFrom?: { table: string; labelKey: string };
   required?: boolean;
   defaultValue?: any;
+  /** file only */
+  folder?: string;
+  accept?: string;
+  hint?: string;
 };
+
 
 export type Column = {
   key: string;
@@ -221,6 +237,14 @@ export function CrudPage({
                           </option>
                         ))}
                       </select>
+                    ) : f.type === "file" ? (
+                      <FileUpload
+                        value={form[f.name] || null}
+                        folder={f.folder ?? "geral"}
+                        {...(f.accept ? { accept: f.accept } : {})}
+                        {...(f.hint ? { hint: f.hint } : {})}
+                        onChange={(path) => setForm({ ...form, [f.name]: path })}
+                      />
                     ) : f.type === "checkbox" ? (
                       <input
                         type="checkbox"
@@ -228,6 +252,7 @@ export function CrudPage({
                         checked={Boolean(form[f.name])}
                         onChange={(e) => setForm({ ...form, [f.name]: e.target.checked })}
                       />
+
                     ) : (
                       <Input
                         type={
