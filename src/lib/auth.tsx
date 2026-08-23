@@ -24,27 +24,40 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const checkAdmin = async (userId: string) => {
+      try {
+        const { data } = await supabase
+          .from("user_roles")
+          .select("role")
+          .eq("user_id", userId)
+          .eq("role", "admin")
+          .maybeSingle();
+        setIsAdmin(Boolean(data));
+      } catch (e) {
+        console.error("Error checking admin status:", e);
+        setIsAdmin(false);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     const { data: sub } = supabase.auth.onAuthStateChange((_event, nextSession) => {
       setSession(nextSession);
-      setLoading(false);
       if (nextSession?.user) {
-        setTimeout(() => {
-          void supabase
-            .from("user_roles")
-            .select("role")
-            .eq("user_id", nextSession.user.id)
-            .eq("role", "admin")
-            .maybeSingle()
-            .then(({ data }) => setIsAdmin(Boolean(data)));
-        }, 0);
+        void checkAdmin(nextSession.user.id);
       } else {
         setIsAdmin(false);
+        setLoading(false);
       }
     });
 
     void supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
-      setLoading(false);
+      if (data.session?.user) {
+        void checkAdmin(data.session.user.id);
+      } else {
+        setLoading(false);
+      }
     });
 
     return () => sub.subscription.unsubscribe();

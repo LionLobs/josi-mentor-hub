@@ -1,3 +1,4 @@
+// TA DANDO ERRO AINDA PRA ENTRAR!!!!!!!!!!!!!!!!!!!!!!!!!!
 // o site está lento
 // ela é massoterapeuta, tente deixar o site com tons mais brancos tb
 // tire um pouco esses pontos pretos no backgound do site
@@ -20,6 +21,7 @@
 // TA DANDO ERRO PRA ENTRAR NA PLATAFORMA Este e-mail já enviou uma solicitação de acesso.
 // TA DANDO ERRO PRA ENTRAR NO LOGIN Este e-mail já enviou uma solicitação de acesso.
 // Invalid login credentials
+// TA DANDO ERRO AINDA PRA ENTRAR!!!!!!!!!!!!!!!!!!!!!!!!!!
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
