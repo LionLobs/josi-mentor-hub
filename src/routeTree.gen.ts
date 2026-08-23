@@ -22,6 +22,7 @@ import { Route as AdminIntegracoesRouteImport } from './routes/admin.integracoes
 import { Route as AdminMateriaisRouteImport } from './routes/admin.materiais'
 import { Route as AdminMentoriasRouteImport } from './routes/admin.mentorias'
 import { Route as AdminRelatoriosRouteImport } from './routes/admin.relatorios'
+import { Route as AdminSolicitacoesRouteImport } from './routes/admin.solicitacoes'
 import { Route as AlunoIndexRouteImport } from './routes/aluno.index'
 import { Route as AlunoAgendaRouteImport } from './routes/aluno.agenda'
 import { Route as AlunoCursosRouteImport } from './routes/aluno.cursos'
@@ -95,6 +96,11 @@ const AdminRelatoriosRoute = AdminRelatoriosRouteImport.update({
   path: '/relatorios',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminSolicitacoesRoute = AdminSolicitacoesRouteImport.update({
+  id: '/solicitacoes',
+  path: '/solicitacoes',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AlunoIndexRoute = AlunoIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -144,6 +150,7 @@ export interface FileRoutesByFullPath {
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
+  '/admin/solicitacoes': typeof AdminSolicitacoesRoute
   '/aluno/agenda': typeof AlunoAgendaRoute
   '/aluno/cursos': typeof AlunoCursosRoute
   '/aluno/materiais': typeof AlunoMateriaisRoute
@@ -164,6 +171,7 @@ export interface FileRoutesByTo {
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
+  '/admin/solicitacoes': typeof AdminSolicitacoesRoute
   '/aluno/agenda': typeof AlunoAgendaRoute
   '/aluno/cursos': typeof AlunoCursosRoute
   '/aluno/materiais': typeof AlunoMateriaisRoute
@@ -187,6 +195,7 @@ export interface FileRoutesById {
   '/admin/materiais': typeof AdminMateriaisRoute
   '/admin/mentorias': typeof AdminMentoriasRoute
   '/admin/relatorios': typeof AdminRelatoriosRoute
+  '/admin/solicitacoes': typeof AdminSolicitacoesRoute
   '/aluno/agenda': typeof AlunoAgendaRoute
   '/aluno/cursos': typeof AlunoCursosRoute
   '/aluno/materiais': typeof AlunoMateriaisRoute
@@ -211,6 +220,7 @@ export interface FileRouteTypes {
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
+    | '/admin/solicitacoes'
     | '/aluno/agenda'
     | '/aluno/cursos'
     | '/aluno/materiais'
@@ -231,6 +241,7 @@ export interface FileRouteTypes {
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
+    | '/admin/solicitacoes'
     | '/aluno/agenda'
     | '/aluno/cursos'
     | '/aluno/materiais'
@@ -253,6 +264,7 @@ export interface FileRouteTypes {
     | '/admin/materiais'
     | '/admin/mentorias'
     | '/admin/relatorios'
+    | '/admin/solicitacoes'
     | '/aluno/agenda'
     | '/aluno/cursos'
     | '/aluno/materiais'
@@ -364,6 +376,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRelatoriosRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/solicitacoes': {
+      id: '/admin/solicitacoes'
+      path: '/solicitacoes'
+      fullPath: '/admin/solicitacoes'
+      preLoaderRoute: typeof AdminSolicitacoesRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/aluno/': {
       id: '/aluno/'
       path: '/'
@@ -425,6 +444,7 @@ interface AdminRouteChildren {
   AdminMateriaisRoute: typeof AdminMateriaisRoute
   AdminMentoriasRoute: typeof AdminMentoriasRoute
   AdminRelatoriosRoute: typeof AdminRelatoriosRoute
+  AdminSolicitacoesRoute: typeof AdminSolicitacoesRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
 
@@ -437,6 +457,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminMateriaisRoute: AdminMateriaisRoute,
   AdminMentoriasRoute: AdminMentoriasRoute,
   AdminRelatoriosRoute: AdminRelatoriosRoute,
+  AdminSolicitacoesRoute: AdminSolicitacoesRoute,
   AdminIndexRoute: AdminIndexRoute,
 }
 

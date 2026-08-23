@@ -9,6 +9,7 @@ import {
   Download,
   BarChart3,
   Settings,
+  UserPlus,
 } from "lucide-react";
 import { AppShell, type NavItem } from "@/components/app-shell";
 import { useAuth } from "@/lib/auth";
@@ -17,6 +18,7 @@ import { redirect } from "@tanstack/react-router";
 const items: NavItem[] = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { to: "/admin/alunos", label: "Alunos", icon: Users },
+  { to: "/admin/solicitacoes", label: "Solicitações", icon: UserPlus },
   { to: "/admin/mentorias", label: "Mentorias", icon: Crown },
   { to: "/admin/agenda", label: "Agenda", icon: CalendarDays },
   { to: "/admin/financeiro", label: "Financeiro", icon: Wallet },
