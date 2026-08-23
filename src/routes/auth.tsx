@@ -45,31 +45,59 @@ function AuthPage() {
 
   const signIn = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (busy) return;
     setBusy(true);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    setBusy(false);
-    if (error) toast.error(error.message);
-    else toast.success("Bem-vinda de volta!");
+    try {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+      toast.success("Bem-vinda de volta!");
+    } catch (error: any) {
+      toast.error(error.message || "Erro ao entrar");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    if (!email) {
+      toast.error("Por favor, informe seu e-mail para recuperar a senha.");
+      return;
+    }
+    setBusy(true);
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/auth/reset-password`,
+      });
+      if (error) throw error;
+      toast.success("E-mail de recuperação enviado! Verifique sua caixa de entrada.");
+    } catch (error: any) {
+      toast.error(error.message || "Erro ao enviar e-mail de recuperação");
+    } finally {
+      setBusy(false);
+    }
   };
 
   const signUp = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (busy) return;
     setBusy(true);
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: window.location.origin,
-        data: { full_name: name },
-      },
-    });
-    setBusy(false);
-    if (error) {
-      toast.error(error.message);
-      return;
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: window.location.origin,
+          data: { full_name: name },
+        },
+      });
+      if (error) throw error;
+      if (!data.session) toast.success("Conta criada! Confirme o e-mail para acessar.");
+      else toast.success("Conta criada com sucesso!");
+    } catch (error: any) {
+      toast.error(error.message || "Erro ao criar conta");
+    } finally {
+      setBusy(false);
     }
-    if (!data.session) toast.success("Conta criada! Confirme o e-mail para acessar.");
-    else toast.success("Conta criada com sucesso!");
   };
 
   return (
@@ -126,7 +154,17 @@ function AuthPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-white/60 text-xs font-semibold tracking-wider uppercase ml-1">Senha</Label>
+                  <div className="flex items-center justify-between ml-1">
+                    <Label className="text-white/60 text-xs font-semibold tracking-wider uppercase">Senha</Label>
+                    <button
+                      type="button"
+                      onClick={handleForgotPassword}
+                      className="text-[10px] text-gold/60 hover:text-gold transition-colors font-semibold tracking-wider uppercase"
+                      disabled={busy}
+                    >
+                      Esqueci a senha
+                    </button>
+                  </div>
                   <Input
                     type="password"
                     required
