@@ -19,6 +19,7 @@
 // o cadastro ali da erro, apenas preciso que coloque a coleta de email e senha, e entre direto!
 // TA DANDO ERRO PRA ENTRAR NA PLATAFORMA Este e-mail já enviou uma solicitação de acesso.
 // TA DANDO ERRO PRA ENTRAR NO LOGIN Este e-mail já enviou uma solicitação de acesso.
+// Invalid login credentials
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
