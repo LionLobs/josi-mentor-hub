@@ -68,7 +68,10 @@ function CoursePlayer() {
 
   const openMaterial = async (m: any) => {
     const url = m.storage_path ? await getSignedUrl(m.storage_path) : m.file_url;
-    if (!url) return toast.error("Arquivo indisponível");
+    if (!url) {
+      toast.error("Arquivo indisponível");
+      return;
+    }
     window.open(url, "_blank", "noopener");
   };
 
