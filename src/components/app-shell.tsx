@@ -41,7 +41,7 @@ export function AppShell({ items, area }: { items: NavItem[]; area: string }) {
   }
 
   return (
-    <div className="flex min-h-screen w-full flex-col md:flex-row bg-[#fcfdfc]">
+    <div className="flex min-h-screen w-full flex-col md:flex-row bg-[#080d08]">
       <aside className="surface-ink relative w-full shrink-0 md:min-h-screen md:w-72 shadow-2xl z-10">
         <div className="px-8 py-10">
           <img
