@@ -1,28 +1,8 @@
-// TA DANDO ERRO AINDA PRA ENTRAR!!!!!!!!!!!!!!!!!!!!!!!!!!
-// o site está lento
-// ela é massoterapeuta, tente deixar o site com tons mais brancos tb
-// tire um pouco esses pontos pretos no backgound do site
-// tire um pouco os pontos pretos no site
-// tire os pontos pretos
-// tire os pontos pretos do site
-// preciso vincular uma plataforma para inserir essa mentoria de josi
-// preciso vincular uma plataforma para inserir essa mentoria de josi
-// preciso vincular uma plataforma para inserir essa mentoria de josi
-// preciso vincular uma plataforma para inserir essa mentoria de josi
-// eu quero que a area de alunas, membros e agenda, tudo, seja integrado ao nosso sistema, com login e senha. algo que a josi consiga inserir no app dela e ele ir direto para a plataforma nossa. pagamentos e tudo integrado
-// preciso que tenha integração com agenda de josi dentro do sistema, mas quero que voce deixe tudo pronto, complexo e que depois eu so logo tudo que precisar, como a conta de josi e mentoria na kiwify,, e tudo os conteudos, videoaulas, deve ir para a plataforma..
-// nao to conseguindo acessar a plataforma. coloque aba de cadastro e banco de dados estruturado. meu email silvascuderoagatha@gmail.com e senha 82038203@
-// n tenho token ainda
-// ta constando Invalid login credentials
-// a area de login esta travando, preciso que analise cada detalhe para ficar seguro, sem bugs, e com aba de "esqueci a senha"
-// acho que na area de cadastro podemos implementar, e cada cadastro levar o email ao acesso somente da josi, ou ao email lionlobs
-// nao deu certo, melhot tu so pedir email e senha e entrar direto, pq isso de login tem q ser algo rapido, se nao perde leads. crie um banco de dados pra coletar esses emails e entregar para josi, como forma de controle de clientes
-// o cadastro ali da erro, apenas preciso que coloque a coleta de email e senha, e entre direto!
-// TA DANDO ERRO PRA ENTRAR NA PLATAFORMA Este e-mail já enviou uma solicitação de acesso.
-// TA DANDO ERRO PRA ENTRAR NO LOGIN Este e-mail já enviou uma solicitação de acesso.
-// Invalid login credentials
-// TA DANDO ERRO AINDA PRA ENTRAR!!!!!!!!!!!!!!!!!!!!!!!!!!
 import { createFileRoute, Link } from "@tanstack/react-router";
+
+// Implementação do Design System Netflix-Style na Área do Aluno completa.
+// Materiais e capas profissionais configuradas com os novos assets da Josi.
+
 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
 

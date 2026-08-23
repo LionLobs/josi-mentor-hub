@@ -22,7 +22,14 @@ function CoursesPage() {
         fields={[
           { name: "title", label: "Título", required: true },
           { name: "description", label: "Descrição", type: "textarea" },
-          { name: "cover_url", label: "URL da capa" },
+          {
+            name: "cover_url",
+            label: "Capa do Curso (Mockup)",
+            type: "file",
+            folder: "cursos",
+            accept: "image/*",
+            hint: "Dê preferência a imagens 2:3 estilo Netflix para melhor visual."
+          },
           { name: "price_cents", label: "Preço (R$)", type: "money", defaultValue: 0 },
           { name: "published", label: "Publicado", type: "checkbox", defaultValue: false },
         ]}
