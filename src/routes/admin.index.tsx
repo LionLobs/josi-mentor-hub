@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { Users, Wallet, CalendarDays, Crown, TrendingUp, ArrowUpRight, ArrowDownRight, Activity } from "lucide-react";
+import { Users, Wallet, CalendarDays, Crown, TrendingUp, ArrowUpRight, ArrowDownRight, Activity, GraduationCap } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { brl, dateTimeBR } from "@/lib/format";
 import { motion } from "framer-motion";
