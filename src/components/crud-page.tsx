@@ -235,6 +235,14 @@ export function CrudPage({
                           </option>
                         ))}
                       </select>
+                    ) : f.type === "file" ? (
+                      <FileUpload
+                        value={form[f.name] || null}
+                        folder={f.folder ?? "geral"}
+                        {...(f.accept ? { accept: f.accept } : {})}
+                        {...(f.hint ? { hint: f.hint } : {})}
+                        onChange={(path) => setForm({ ...form, [f.name]: path })}
+                      />
                     ) : f.type === "checkbox" ? (
                       <input
                         type="checkbox"
@@ -242,6 +250,7 @@ export function CrudPage({
                         checked={Boolean(form[f.name])}
                         onChange={(e) => setForm({ ...form, [f.name]: e.target.checked })}
                       />
+
                     ) : (
                       <Input
                         type={
