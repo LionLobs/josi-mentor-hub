@@ -82,6 +82,7 @@ function AuthPage() {
     if (busy) return;
     setBusy(true);
     try {
+      // Direct sign up in Supabase Auth
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
@@ -93,6 +94,15 @@ function AuthPage() {
       });
       
       if (error) throw error;
+
+      // Also track in registration_requests for Josi's control panel as an 'approved' lead
+      await supabase
+        .from("registration_requests" as any)
+        .insert([{ 
+          full_name: name, 
+          email,
+          status: 'approved'
+        }]);
       
       if (data?.user) {
         toast.success("Cadastro realizado com sucesso! Bem-vinda à plataforma.");
