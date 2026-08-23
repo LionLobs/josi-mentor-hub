@@ -82,19 +82,22 @@ function AuthPage() {
     if (busy) return;
     setBusy(true);
     try {
-      const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: window.location.origin,
-          data: { full_name: name },
-        },
-      });
-      if (error) throw error;
-      if (!data.session) toast.success("Conta criada! Confirme o e-mail para acessar.");
-      else toast.success("Conta criada com sucesso!");
+      const { error } = await supabase
+        .from("registration_requests")
+        .insert([{ full_name: name, email }]);
+      
+      if (error) {
+        if (error.code === "23505") {
+          throw new Error("Este e-mail já enviou uma solicitação de acesso.");
+        }
+        throw error;
+      }
+      
+      toast.success("Solicitação enviada! Josi Nascimento ou a equipe Lionlobs entrarão em contato em breve.");
+      setName("");
+      setEmail("");
     } catch (error: any) {
-      toast.error(error.message || "Erro ao criar conta");
+      toast.error(error.message || "Erro ao enviar solicitação");
     } finally {
       setBusy(false);
     }
@@ -218,8 +221,11 @@ function AuthPage() {
                   />
                 </div>
                 <Button type="submit" variant="gold" size="xl" className="w-full shadow-gold" disabled={busy}>
-                  Criar Minha Conta
+                  Solicitar Acesso
                 </Button>
+                <p className="mt-4 text-[10px] text-white/40 text-center leading-relaxed italic">
+                  * Sua solicitação será analisada pela nossa equipe técnica (Lionlobs) e por Josi Nascimento.
+                </p>
               </form>
             </TabsContent>
           </Tabs>
