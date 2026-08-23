@@ -154,7 +154,17 @@ function AuthPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-white/60 text-xs font-semibold tracking-wider uppercase ml-1">Senha</Label>
+                  <div className="flex items-center justify-between ml-1">
+                    <Label className="text-white/60 text-xs font-semibold tracking-wider uppercase">Senha</Label>
+                    <button
+                      type="button"
+                      onClick={handleForgotPassword}
+                      className="text-[10px] text-gold/60 hover:text-gold transition-colors font-semibold tracking-wider uppercase"
+                      disabled={busy}
+                    >
+                      Esqueci a senha
+                    </button>
+                  </div>
                   <Input
                     type="password"
                     required
