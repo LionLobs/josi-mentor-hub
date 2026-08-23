@@ -25,7 +25,10 @@ function StudentDownloads() {
 
   const open = async (d: any) => {
     const url = d.storage_path ? await getSignedUrl(d.storage_path) : d.file_url;
-    if (!url) return toast.error("Arquivo indisponível");
+    if (!url) {
+      toast.error("Arquivo indisponível");
+      return;
+    }
     window.open(url, "_blank", "noopener");
   };
 
