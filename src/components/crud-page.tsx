@@ -23,6 +23,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { FileUpload } from "@/components/file-upload";
+
 
 export type Row = Record<string, any>;
 
