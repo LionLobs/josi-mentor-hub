@@ -82,22 +82,39 @@ function AuthPage() {
     if (busy) return;
     setBusy(true);
     try {
-      const { error } = await supabase
-        .from("registration_requests" as any)
-        .insert([{ full_name: name, email }]);
+      // Direct sign up in Supabase Auth
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            full_name: name,
+          },
+        },
+      });
       
-      if (error) {
-        if (error.code === "23505") {
-          throw new Error("Este e-mail já enviou uma solicitação de acesso.");
-        }
-        throw error;
+      if (error) throw error;
+
+      // Also track in registration_requests for Josi's control panel as an 'approved' lead
+      await supabase
+        .from("registration_requests" as any)
+        .insert([{ 
+          full_name: name, 
+          email,
+          status: 'approved'
+        }]);
+      
+      if (data?.user) {
+        toast.success("Cadastro realizado com sucesso! Bem-vinda à plataforma.");
+      } else {
+        toast.success("Verifique seu e-mail para confirmar o cadastro.");
       }
       
-      toast.success("Solicitação enviada! Josi Nascimento ou a equipe Lionlobs entrarão em contato em breve.");
       setName("");
       setEmail("");
+      setPassword("");
     } catch (error: any) {
-      toast.error(error.message || "Erro ao enviar solicitação");
+      toast.error(error.message || "Erro ao realizar cadastro");
     } finally {
       setBusy(false);
     }
@@ -221,10 +238,10 @@ function AuthPage() {
                   />
                 </div>
                 <Button type="submit" variant="gold" size="xl" className="w-full shadow-gold" disabled={busy}>
-                  Solicitar Acesso
+                  Criar minha conta
                 </Button>
                 <p className="mt-4 text-[10px] text-white/40 text-center leading-relaxed italic">
-                  * Sua solicitação será analisada pela nossa equipe técnica (Lionlobs) e por Josi Nascimento.
+                  * Ao se cadastrar, você terá acesso imediato aos conteúdos gratuitos e área de aluna.
                 </p>
               </form>
             </TabsContent>
