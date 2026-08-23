@@ -16,6 +16,7 @@
 // a area de login esta travando, preciso que analise cada detalhe para ficar seguro, sem bugs, e com aba de "esqueci a senha"
 // acho que na area de cadastro podemos implementar, e cada cadastro levar o email ao acesso somente da josi, ou ao email lionlobs
 // nao deu certo, melhot tu so pedir email e senha e entrar direto, pq isso de login tem q ser algo rapido, se nao perde leads. crie um banco de dados pra coletar esses emails e entregar para josi, como forma de controle de clientes
+// o cadastro ali da erro, apenas preciso que coloque a coleta de email e senha, e entre direto!
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 // estruture melhor o site, com efeitos, elementos profissionais, menu e estrutura profissional
