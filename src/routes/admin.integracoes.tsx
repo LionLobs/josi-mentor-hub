@@ -3,17 +3,32 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { Copy, ExternalLink, CheckCircle2 } from "lucide-react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+import { brl, dateBR } from "@/lib/format";
+import { Copy, ExternalLink, CheckCircle2, AlertTriangle, Link2, Activity } from "lucide-react";
 
 export const Route = createFileRoute("/admin/integracoes")({
   component: IntegracoesPage,
 });
 
+type Mapping = {
+  id: string;
+  title: string;
+  external_id: string | null;
+  kind: "mentorships" | "courses";
+};
+
 function IntegracoesPage() {
   const [copied, setCopied] = useState(false);
-  const webhookUrl = `${window.location.origin}/api/public/kiwify`;
+  const [webhookUrl, setWebhookUrl] = useState("");
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    setWebhookUrl(`${window.location.origin}/api/public/kiwify`);
+  }, []);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(webhookUrl);
@@ -21,6 +36,53 @@ function IntegracoesPage() {
     toast.success("URL copiada!");
     setTimeout(() => setCopied(false), 2000);
   };
+
+  const { data: mappings = [] } = useQuery({
+    queryKey: ["kiwify-mappings"],
+    queryFn: async (): Promise<Mapping[]> => {
+      const [m, c] = await Promise.all([
+        supabase.from("mentorships").select("id, title, external_id").order("created_at"),
+        supabase.from("courses").select("id, title, external_id").order("created_at"),
+      ]);
+      if (m.error) throw m.error;
+      if (c.error) throw c.error;
+      return [
+        ...(m.data ?? []).map((r) => ({ ...r, kind: "mentorships" as const })),
+        ...(c.data ?? []).map((r) => ({ ...r, kind: "courses" as const })),
+      ];
+    },
+  });
+
+  const saveMapping = useMutation({
+    mutationFn: async ({ kind, id, external_id }: { kind: Mapping["kind"]; id: string; external_id: string }) => {
+      const { error } = await supabase
+        .from(kind)
+        .update({ external_id: external_id.trim() || null })
+        .eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      toast.success("Mapeamento salvo.");
+      void queryClient.invalidateQueries({ queryKey: ["kiwify-mappings"] });
+    },
+    onError: (e: Error) => toast.error(e.message),
+  });
+
+  const { data: events = [] } = useQuery({
+    queryKey: ["kiwify-events"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("kiwify_events")
+        .select("id, order_id, order_status, customer_email, product_external_id, amount_cents, processed, message, created_at")
+        .order("created_at", { ascending: false })
+        .limit(20);
+      if (error) throw error;
+      return data ?? [];
+    },
+    refetchInterval: 30_000,
+  });
+
+  const unmapped = mappings.filter((m) => !m.external_id).length;
 
   return (
     <div className="space-y-6">
@@ -36,9 +98,9 @@ function IntegracoesPage() {
           <CardHeader>
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                <img 
-                  src="https://kiwify.com.br/wp-content/uploads/2021/08/cropped-favicon-kiwify-1-32x32.png" 
-                  alt="Kiwify" 
+                <img
+                  src="https://kiwify.com.br/wp-content/uploads/2021/08/cropped-favicon-kiwify-1-32x32.png"
+                  alt="Kiwify"
                   className="w-6 h-6"
                 />
               </div>
@@ -71,11 +133,17 @@ function IntegracoesPage() {
               <h4 className="text-sm font-medium mb-2">Instruções:</h4>
               <ul className="text-xs text-muted-foreground space-y-2 list-disc pl-4">
                 <li>Acesse seu painel Kiwify.</li>
-                <li>Vá em <strong>Produtos</strong> e selecione sua mentoria.</li>
-                <li>Clique em <strong>Configurações</strong> {" > "} <strong>Webhooks</strong>.</li>
-                <li>Adicione uma nova URL e cole o link acima.</li>
-                <li>Selecione o evento <strong>Compra Aprovada</strong>.</li>
-                <li>Copie o <strong>Token do Webhook</strong> gerado pela Kiwify e informe-o ao suporte para ser salvo com segurança (chave <code>KIWIFY_WEBHOOK_SECRET</code>). Sem ele, os webhooks são rejeitados.</li>
+                <li>Crie o produto (ex.: “Mentoria Destaque-se — Turma 1”) e publique.</li>
+                <li>Em <strong>Apps</strong> {" > "} <strong>Webhooks</strong>, adicione a URL acima.</li>
+                <li>
+                  Marque os eventos: <strong>Compra aprovada</strong>, <strong>Reembolso</strong>,{" "}
+                  <strong>Chargeback</strong> e <strong>Assinatura cancelada</strong>.
+                </li>
+                <li>
+                  Copie o <strong>Token do Webhook</strong> e informe ao suporte para ser salvo com segurança
+                  (chave <code>KIWIFY_WEBHOOK_SECRET</code>). Sem ele, os webhooks são rejeitados.
+                </li>
+                <li>Copie o <strong>Product ID</strong> de cada produto e cole no mapeamento ao lado.</li>
               </ul>
             </div>
 
@@ -87,24 +155,119 @@ function IntegracoesPage() {
           </CardContent>
         </Card>
 
-        <Card className="opacity-60 grayscale cursor-not-allowed">
+        <Card className="shadow-elegant border-gold/20">
           <CardHeader>
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-600 font-bold">
-                H
+              <div className="h-10 w-10 rounded-lg bg-gold/10 flex items-center justify-center">
+                <Link2 className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <CardTitle>Hotmart</CardTitle>
-                <CardDescription>Em breve</CardDescription>
+                <CardTitle>Mapeamento de produtos</CardTitle>
+                <CardDescription>
+                  {unmapped > 0
+                    ? `${unmapped} produto(s) sem ID da Kiwify`
+                    : "Todos os produtos estão mapeados"}
+                </CardDescription>
               </div>
             </div>
           </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Integração com Hotmart está sendo preparada para sua plataforma.
-            </p>
+          <CardContent className="space-y-4">
+            {mappings.length === 0 && (
+              <p className="text-sm text-muted-foreground">
+                Cadastre mentorias ou cursos para mapear os produtos.
+              </p>
+            )}
+            {mappings.map((m) => (
+              <MappingRow key={`${m.kind}-${m.id}`} mapping={m} onSave={saveMapping.mutate} />
+            ))}
           </CardContent>
         </Card>
+      </div>
+
+      <Card className="shadow-elegant">
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            <Activity className="h-5 w-5 text-gold" />
+            <div>
+              <CardTitle>Últimos eventos recebidos</CardTitle>
+              <CardDescription>Histórico das compras processadas pela Kiwify.</CardDescription>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          {events.length === 0 ? (
+            <p className="text-sm text-muted-foreground">
+              Nenhum evento recebido ainda. Faça uma compra teste na Kiwify para validar a conexão.
+            </p>
+          ) : (
+            <div className="space-y-3">
+              {events.map((e) => (
+                <div
+                  key={e.id}
+                  className="flex flex-col gap-1 rounded-xl border border-white/10 p-4 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-medium">
+                      {e.customer_email ?? "—"}{" "}
+                      <span className="text-muted-foreground">· {e.order_status ?? "—"}</span>
+                    </p>
+                    <p className="truncate text-xs text-muted-foreground">{e.message}</p>
+                  </div>
+                  <div className="flex items-center gap-4 shrink-0">
+                    <span className="text-sm">{brl(e.amount_cents)}</span>
+                    <span className="text-xs text-muted-foreground">{dateBR(e.created_at)}</span>
+                    {e.processed ? (
+                      <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                    ) : (
+                      <AlertTriangle className="h-4 w-4 text-gold" />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
+function MappingRow({
+  mapping,
+  onSave,
+}: {
+  mapping: Mapping;
+  onSave: (v: { kind: Mapping["kind"]; id: string; external_id: string }) => void;
+}) {
+  const [value, setValue] = useState(mapping.external_id ?? "");
+
+  useEffect(() => {
+    setValue(mapping.external_id ?? "");
+  }, [mapping.external_id]);
+
+  return (
+    <div className="space-y-1.5">
+      <Label className="text-xs">
+        {mapping.title}
+        <span className="ml-2 text-[10px] uppercase tracking-wider text-muted-foreground">
+          {mapping.kind === "mentorships" ? "Mentoria" : "Curso"}
+        </span>
+      </Label>
+      <div className="flex gap-2">
+        <Input
+          value={value}
+          placeholder="Product ID da Kiwify"
+          className="font-mono text-xs"
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <Button
+          variant="outline"
+          size="sm"
+          disabled={value === (mapping.external_id ?? "")}
+          onClick={() => onSave({ kind: mapping.kind, id: mapping.id, external_id: value })}
+        >
+          Salvar
+        </Button>
       </div>
     </div>
   );
