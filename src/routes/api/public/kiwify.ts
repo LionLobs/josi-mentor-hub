@@ -3,18 +3,49 @@ import { createHmac, timingSafeEqual } from 'crypto'
 import { z } from 'zod'
 
 const payloadSchema = z.object({
+  order_id: z.union([z.string().max(120), z.number()]).optional(),
+  order_ref: z.union([z.string().max(120), z.number()]).optional(),
+  webhook_event_type: z.string().max(60).optional(),
   order_status: z.string().max(50).optional(),
   order_amount: z.coerce.number().min(0).max(10_000_000).optional(),
+  Commissions: z
+    .object({ charge_amount: z.coerce.number().min(0).max(10_000_000).optional() })
+    .optional(),
   product_id: z.union([z.string().max(120), z.number()]).optional(),
   product_name: z.string().max(200).optional(),
   payment_method: z.string().max(50).optional(),
+  Product: z
+    .object({
+      product_id: z.union([z.string().max(120), z.number()]).optional(),
+      product_name: z.string().max(200).optional(),
+    })
+    .optional(),
+  Customer: z
+    .object({
+      email: z.string().email().max(320).optional(),
+      full_name: z.string().max(200).optional(),
+      mobile: z.string().max(40).optional(),
+    })
+    .optional(),
   customer: z
     .object({
       email: z.string().email().max(320).optional(),
       full_name: z.string().max(200).optional(),
+      mobile: z.string().max(40).optional(),
     })
     .optional(),
 })
+
+const PAID_STATUSES = new Set(['paid', 'approved', 'pago', 'aprovado'])
+const REVOKE_STATUSES = new Set([
+  'refunded',
+  'chargedback',
+  'chargeback',
+  'canceled',
+  'cancelled',
+  'refused',
+  'subscription_canceled',
+])
 
 function safeEqual(a: string, b: string): boolean {
   const bufA = Buffer.from(a)
@@ -27,9 +58,7 @@ function safeEqual(a: string, b: string): boolean {
 function isAuthentic(request: Request, rawBody: string, secret: string): boolean {
   const url = new URL(request.url)
   const provided =
-    url.searchParams.get('signature') ??
-    request.headers.get('x-kiwify-signature') ??
-    ''
+    url.searchParams.get('signature') ?? request.headers.get('x-kiwify-signature') ?? ''
   if (!provided) return false
 
   const sha1 = createHmac('sha1', secret).update(rawBody).digest('hex')
@@ -59,89 +88,201 @@ export const Route = createFileRoute('/api/public/kiwify')({
           }
           const body = parsed.data
 
-          if (body.order_status === 'paid' || body.order_status === 'approved') {
-            const email = body.customer?.email
-            const fullName = body.customer?.full_name
-            const productExternalId = body.product_id?.toString()
+          const status = (body.order_status ?? '').toLowerCase()
+          const email = (body.Customer?.email ?? body.customer?.email)?.toLowerCase().trim()
+          const fullName = body.Customer?.full_name ?? body.customer?.full_name ?? ''
+          const phone = body.Customer?.mobile ?? body.customer?.mobile ?? null
+          const productExternalId = (body.Product?.product_id ?? body.product_id)?.toString()
+          const productName = body.Product?.product_name ?? body.product_name ?? 'Mentoria'
+          const orderId = (body.order_id ?? body.order_ref)?.toString() ?? null
+          const rawAmount = body.Commissions?.charge_amount ?? body.order_amount ?? 0
+          // Kiwify sends charge_amount in cents and order_amount in reais.
+          const amountCents = body.Commissions?.charge_amount
+            ? Math.round(rawAmount)
+            : Math.round(rawAmount * 100)
 
-            if (!email) {
-              return new Response('Missing customer email', { status: 400 })
-            }
+          const { supabaseAdmin } = await import('@/integrations/supabase/client.server')
 
-            const { supabaseAdmin } = await import('@/integrations/supabase/client.server')
+          const log = async (processed: boolean, message: string) => {
+            await supabaseAdmin.from('kiwify_events').upsert(
+              {
+                order_id: orderId,
+                event_type: body.webhook_event_type ?? null,
+                order_status: status || null,
+                customer_email: email ?? null,
+                product_external_id: productExternalId ?? null,
+                amount_cents: amountCents,
+                processed,
+                message,
+                payload: JSON.parse(rawBody),
+              },
+              { onConflict: 'order_id,order_status', ignoreDuplicates: false },
+            )
+          }
 
-            // 1. Resolve user
-            const { data: profile } = await supabaseAdmin
-              .from('profiles')
+          if (!email) {
+            await log(false, 'Pedido sem e-mail do cliente.')
+            return new Response('Missing customer email', { status: 400 })
+          }
+
+          // ---------- Revogação de acesso (reembolso / chargeback / cancelamento) ----------
+          if (REVOKE_STATUSES.has(status)) {
+            const { data: student } = await supabaseAdmin
+              .from('students')
               .select('id')
               .eq('email', email)
-              .single()
+              .maybeSingle()
 
-            let userId = profile?.id
+            if (student && productExternalId) {
+              const { data: mentorship } = await supabaseAdmin
+                .from('mentorships')
+                .select('id')
+                .eq('external_id', productExternalId)
+                .maybeSingle()
 
-            if (!userId) {
-              const { data: authUser, error: authError } = await supabaseAdmin.auth.admin.createUser({
+              if (mentorship) {
+                await supabaseAdmin
+                  .from('enrollments')
+                  .update({ status: 'cancelada' })
+                  .eq('student_id', student.id)
+                  .eq('mentorship_id', mentorship.id)
+              }
+            }
+            await log(true, `Acesso revogado (${status}).`)
+            return new Response('ok', { status: 200 })
+          }
+
+          if (!PAID_STATUSES.has(status)) {
+            await log(false, `Status ignorado (${status || 'desconhecido'}).`)
+            return new Response('ok', { status: 200 })
+          }
+
+          // ---------- 1. Resolve/cria o usuário ----------
+          const { data: profile } = await supabaseAdmin
+            .from('profiles')
+            .select('id')
+            .eq('email', email)
+            .maybeSingle()
+
+          let userId = profile?.id ?? null
+
+          if (!userId) {
+            const { data: authUser, error: authError } = await supabaseAdmin.auth.admin.createUser({
+              email,
+              email_confirm: true,
+              user_metadata: { full_name: fullName },
+            })
+
+            if (authUser?.user) {
+              userId = authUser.user.id
+            } else {
+              if (authError) console.error('Kiwify: createUser', authError.message)
+              const { data: existing } = await supabaseAdmin
+                .from('profiles')
+                .select('id')
+                .eq('email', email)
+                .maybeSingle()
+              userId = existing?.id ?? null
+            }
+          }
+
+          if (!userId) {
+            await log(false, 'Não foi possível criar/localizar o usuário.')
+            return new Response('User resolution failed', { status: 500 })
+          }
+
+          // ---------- 2. Resolve a ficha do aluno (students.id != profiles.id) ----------
+          let { data: student } = await supabaseAdmin
+            .from('students')
+            .select('id')
+            .eq('profile_id', userId)
+            .maybeSingle()
+
+          if (!student) {
+            const { data: byEmail } = await supabaseAdmin
+              .from('students')
+              .select('id')
+              .eq('email', email)
+              .maybeSingle()
+            student = byEmail ?? null
+          }
+
+          if (!student) {
+            const { data: created, error: studentError } = await supabaseAdmin
+              .from('students')
+              .insert({
+                profile_id: userId,
+                full_name: fullName || email,
                 email,
-                email_confirm: true,
-                user_metadata: { full_name: fullName },
+                phone,
+                status: 'ativo',
+                notes: 'Criado automaticamente pela Kiwify.',
               })
-
-              if (authError && authError.message !== 'User already registered') {
-                console.error('Error creating auth user:', authError)
-                return new Response('Error creating user', { status: 500 })
-              }
-
-              if (authUser?.user) {
-                userId = authUser.user.id
-              } else {
-                const { data: existingUser } = await supabaseAdmin
-                  .from('profiles')
-                  .select('id')
-                  .eq('email', email)
-                  .single()
-                userId = existingUser?.id
-              }
+              .select('id')
+              .single()
+            if (studentError) {
+              console.error('Kiwify: student insert', studentError.message)
+              await log(false, 'Falha ao criar a ficha do aluno.')
+              return new Response('Student creation failed', { status: 500 })
             }
+            student = created
+          }
 
-            if (!userId) {
-              return new Response('User resolution failed', { status: 500 })
-            }
+          // ---------- 3. Matrícula na mentoria mapeada ----------
+          let enrollmentId: string | null = null
+          let matched = false
 
-            // 2. Resolve Mentorship (only known products are honored)
-            if (!productExternalId) {
-              return new Response('ok', { status: 200 })
-            }
-
+          if (productExternalId) {
             const { data: mentorship } = await supabaseAdmin
               .from('mentorships')
               .select('id')
               .eq('external_id', productExternalId)
-              .single()
+              .maybeSingle()
 
             if (mentorship) {
+              matched = true
               const { data: enrollment } = await supabaseAdmin
                 .from('enrollments')
-                .upsert({
-                  student_id: userId,
-                  mentorship_id: mentorship.id,
-                  status: 'ativo',
-                  start_date: new Date().toISOString().split('T')[0] as string,
-                })
+                .upsert(
+                  {
+                    student_id: student.id,
+                    mentorship_id: mentorship.id,
+                    status: 'ativa',
+                    start_date: new Date().toISOString().split('T')[0] as string,
+                  },
+                  { onConflict: 'student_id,mentorship_id' },
+                )
                 .select('id')
                 .single()
-
-              // 3. Record Payment
-              await supabaseAdmin.from('payments').insert({
-                student_id: userId,
-                enrollment_id: enrollment?.id ?? null,
-                amount_cents: Math.round((body.order_amount ?? 0) * 100),
-                status: 'pago',
-                paid_at: new Date().toISOString(),
-                method: body.payment_method ?? 'kiwify',
-                description: `Kiwify: ${body.product_name ?? 'Mentoria'}`,
-              })
+              enrollmentId = enrollment?.id ?? null
             }
+
+            // Curso avulso mapeado pelo mesmo external_id → libera publicação
+            const { data: course } = await supabaseAdmin
+              .from('courses')
+              .select('id')
+              .eq('external_id', productExternalId)
+              .maybeSingle()
+            if (course) matched = true
           }
+
+          // ---------- 4. Registra o pagamento ----------
+          await supabaseAdmin.from('payments').insert({
+            student_id: student.id,
+            enrollment_id: enrollmentId,
+            amount_cents: amountCents,
+            status: 'pago',
+            paid_at: new Date().toISOString(),
+            method: body.payment_method ?? 'kiwify',
+            description: `Kiwify: ${productName}`,
+          })
+
+          await log(
+            true,
+            matched
+              ? 'Acesso liberado e pagamento registrado.'
+              : `Pagamento registrado. Produto ${productExternalId ?? 's/ ID'} não está mapeado em Mentorias/Cursos.`,
+          )
 
           return new Response('ok', { status: 200 })
         } catch (error) {

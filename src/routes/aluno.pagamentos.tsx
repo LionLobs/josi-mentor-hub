@@ -23,10 +23,10 @@ function StudentPayments() {
   });
 
   const totalPaid = data
-    .filter(p => p.status === 'paid')
+    .filter(p => p.status === 'pago' || p.status === 'paid')
     .reduce((sum, p) => sum + (p.amount_cents || 0), 0);
 
-  const pending = data.filter(p => p.status === 'pending' || p.status === 'overdue');
+  const pending = data.filter(p => p.status !== 'pago' && p.status !== 'paid');
 
   return (
     <div className="pb-20">
@@ -106,7 +106,7 @@ function StudentPayments() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-3 mb-1">
                   <h4 className="font-bold text-white truncate">{p.description ?? "Investimento Mentoria"}</h4>
-                  {p.status === 'paid' ? (
+                  {(p.status === 'pago' || p.status === 'paid') ? (
                     <span className="text-[9px] font-bold text-emerald-500 uppercase border border-emerald-500/20 px-2 py-0.5 rounded-full bg-emerald-500/5">Pago</span>
                   ) : (
                     <span className="text-[9px] font-bold text-gold uppercase border border-gold/20 px-2 py-0.5 rounded-full bg-gold/5">Pendente</span>

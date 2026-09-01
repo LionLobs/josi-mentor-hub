@@ -180,6 +180,48 @@ export type Database = {
           },
         ]
       }
+      kiwify_events: {
+        Row: {
+          amount_cents: number
+          created_at: string
+          customer_email: string | null
+          event_type: string | null
+          id: string
+          message: string | null
+          order_id: string | null
+          order_status: string | null
+          payload: Json | null
+          processed: boolean
+          product_external_id: string | null
+        }
+        Insert: {
+          amount_cents?: number
+          created_at?: string
+          customer_email?: string | null
+          event_type?: string | null
+          id?: string
+          message?: string | null
+          order_id?: string | null
+          order_status?: string | null
+          payload?: Json | null
+          processed?: boolean
+          product_external_id?: string | null
+        }
+        Update: {
+          amount_cents?: number
+          created_at?: string
+          customer_email?: string | null
+          event_type?: string | null
+          id?: string
+          message?: string | null
+          order_id?: string | null
+          order_status?: string | null
+          payload?: Json | null
+          processed?: boolean
+          product_external_id?: string | null
+        }
+        Relationships: []
+      }
       lesson_progress: {
         Row: {
           completed_at: string | null
