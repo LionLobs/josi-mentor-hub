@@ -31,6 +31,11 @@ function CoursesPage() {
             hint: "Dê preferência a imagens 2:3 estilo Netflix para melhor visual."
           },
           { name: "price_cents", label: "Preço (R$)", type: "money", defaultValue: 0 },
+          {
+            name: "external_id",
+            label: "ID do produto na Kiwify",
+            hint: "Cole o Product ID da Kiwify para vincular as vendas a este curso.",
+          },
           { name: "published", label: "Publicado", type: "checkbox", defaultValue: false },
         ]}
       />
