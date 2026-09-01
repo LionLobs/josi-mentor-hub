@@ -21,6 +21,11 @@ export const Route = createFileRoute("/admin/mentorias")({
         { name: "price_cents", label: "Investimento (R$)", type: "money", defaultValue: 0 },
         { name: "duration_weeks", label: "Duração (semanas)", type: "number", defaultValue: 8 },
         {
+          name: "external_id",
+          label: "ID do produto na Kiwify",
+          hint: "Cole o Product ID da Kiwify para liberar o acesso automaticamente após a compra.",
+        },
+        {
           name: "status",
           label: "Situação",
           type: "select",
