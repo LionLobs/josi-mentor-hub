@@ -21,14 +21,14 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-mentoria.jpg";
-import logoAsset from "@/assets/logo-horiz.png.asset.json";
-import josiHero from "@/assets/josi-42.jpg.asset.json";
-import josiSobre from "@/assets/josi-10.jpg.asset.json";
-import josiPremio from "@/assets/josi-25.jpg.asset.json";
-import josiSorriso from "@/assets/josi-6.jpg.asset.json";
-import josiHeroBg from "@/assets/josi-17.jpg.asset.json";
-import josiNovoHero from "@/assets/josi-25.jpg.asset.json";
-import ebookImg from "@/assets/ebook-oficial.png.asset.json";
+import logoAsset from "@/assets/logo-horiz.png";
+import josiHero from "@/assets/josi-42.jpg";
+import josiSobre from "@/assets/josi-10.jpg";
+import josiPremio from "@/assets/josi-25.jpg";
+import josiSorriso from "@/assets/josi-6.jpg";
+import josiHeroBg from "@/assets/josi-17.jpg";
+import josiNovoHero from "@/assets/josi-25.jpg";
+import ebookImg from "@/assets/ebook-oficial.png";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -119,7 +119,7 @@ function Landing() {
             className="min-w-0"
           >
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt="Josi Nascimento"
               className="h-7 w-auto sm:h-9 hover:brightness-110 transition-all duration-500 drop-shadow-lux"
             />
@@ -164,7 +164,7 @@ function Landing() {
           >
             <div className="relative w-full h-full lg:w-[65%] ml-auto">
               <img
-                src={josiNovoHero.url}
+                src={josiNovoHero}
                 alt="Josi Nascimento"
                 className="h-full w-full object-cover object-[center_20%] lg:object-[center_top] mix-blend-luminosity filter brightness-110 contrast-125 saturate-[0.8]"
               />
@@ -408,7 +408,7 @@ function Landing() {
                     <div className="relative glass-ink rounded-[1.5rem] p-1 border border-white/10 shadow-2xl overflow-hidden transform group-hover:rotate-y-12 transition-transform duration-700">
                       <div className="aspect-[3/4] bg-gradient-to-br from-ink to-ink/90 relative overflow-hidden">
                         <img 
-                          src={ebookImg.url} 
+                          src={ebookImg} 
                           alt="Ebook Destaque-se na Massoterapia" 
                           className="absolute inset-0 w-full h-full object-contain p-4"
                         />
@@ -485,7 +485,7 @@ function Landing() {
             <div className="space-y-4 sm:space-y-8">
               <div className="relative group overflow-hidden rounded-[1.5rem]">
                 <img
-                  src={josiSorriso.url}
+                  src={josiSorriso}
                   alt="Josi Nascimento sorrindo"
                   className="aspect-[3/4] w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110"
                 />
@@ -493,7 +493,7 @@ function Landing() {
               </div>
               <div className="relative group overflow-hidden rounded-[1.5rem]">
                 <img
-                  src={josiSobre.url}
+                  src={josiSobre}
                   alt="Josi Nascimento no consultório"
                   className="aspect-square w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110"
                 />
@@ -515,7 +515,7 @@ function Landing() {
               </motion.div>
               <div className="relative group overflow-hidden rounded-[1.5rem]">
                 <img
-                  src={josiPremio.url}
+                  src={josiPremio}
                   alt="Josi Nascimento com prêmio"
                   className="aspect-[3/5] w-full object-cover shadow-2xl border-2 border-gold/30 transition-transform duration-700 group-hover:scale-110"
                 />
@@ -646,7 +646,7 @@ function Landing() {
           <div className="grid lg:grid-cols-2 gap-20 mb-20 items-center">
             <div className="text-left">
               <img
-                src={logoAsset.url}
+                src={logoAsset}
                 alt="Josi Nascimento"
                 className="mb-10 h-10 w-auto brightness-110 drop-shadow-lux"
               />

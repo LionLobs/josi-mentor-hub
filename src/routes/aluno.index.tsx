@@ -7,8 +7,8 @@ import { PlayCircle, Calendar, GraduationCap, ArrowRight, Star } from "lucide-re
 import { motion } from "framer-motion";
 
 // Assets for background/hero
-import josiHomeHero from "@/assets/josi_nascimento_40_anos-31.jpg.asset.json";
-import josiPoster1 from "@/assets/josi_nascimento_40_anos-26.jpg.asset.json";
+import josiHomeHero from "@/assets/josi_nascimento_40_anos-31.jpg";
+import josiPoster1 from "@/assets/josi_nascimento_40_anos-26.jpg";
 
 export const Route = createFileRoute("/aluno/")({
   component: StudentHome,
@@ -47,7 +47,7 @@ function StudentHome() {
       <div className="relative mb-12 overflow-hidden rounded-3xl border border-white/10 bg-black/40 shadow-lux">
         <div className="absolute inset-0 z-0">
           <img 
-            src={josiHomeHero.url} 
+            src={josiHomeHero} 
             className="h-full w-full object-cover opacity-40 brightness-50"
             alt="Welcome Background"
           />
@@ -113,7 +113,7 @@ function StudentHome() {
                   <div className="flex gap-4">
                     <div className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-lg bg-white/5">
                       <img 
-                        src={idx === 0 ? josiPoster1.url : course.cover_url} 
+                        src={idx === 0 ? josiPoster1 : course.cover_url} 
                         className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500" 
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">

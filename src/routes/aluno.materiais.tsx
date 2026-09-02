@@ -7,7 +7,7 @@ import { getSignedUrl } from "@/lib/storage";
 import { motion } from "framer-motion";
 
 // Mock poster for downloads to keep the Netflix vibe
-import josiPoster from "@/assets/josi_nascimento_40_anos-14.jpg.asset.json";
+import josiPoster from "@/assets/josi_nascimento_40_anos-14.jpg";
 
 export const Route = createFileRoute("/aluno/materiais")({
   component: StudentDownloads,
@@ -85,7 +85,7 @@ function StudentDownloads() {
             className="group relative overflow-hidden rounded-3xl border border-white/10 bg-card shadow-elegant"
           >
             <div className="absolute inset-0 z-0">
-               <img src={josiPoster.url} className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
+               <img src={josiPoster} className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
             </div>
             

@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import logoAsset from "@/assets/logo-horiz.png.asset.json";
+import logoAsset from "@/assets/logo-horiz.png";
 import heroImg from "@/assets/hero-mentoria.jpg";
 
 export const Route = createFileRoute("/auth/reset-password")({
@@ -69,7 +69,7 @@ function ResetPasswordPage() {
         <div className="glass-ink p-10 rounded-[2.5rem] shadow-elegant ring-1 ring-white/10">
           <div className="text-center mb-10">
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt="Logo"
               className="mx-auto h-12 w-auto brightness-110"
             />

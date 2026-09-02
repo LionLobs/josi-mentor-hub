@@ -5,7 +5,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useAuth } from "@/lib/auth";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/logo-horiz.png.asset.json";
+import logoAsset from "@/assets/logo-horiz.png";
 
 export type NavItem = { to: string; label: string; icon: LucideIcon };
 
@@ -45,7 +45,7 @@ export function AppShell({ items, area }: { items: NavItem[]; area: string }) {
       <aside className="surface-ink relative w-full shrink-0 md:min-h-screen md:w-72 shadow-2xl z-10">
         <div className="px-8 py-10">
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Josi Nascimento — Massoterapia Avançada"
             className="h-10 w-auto brightness-110 contrast-125"
           />
