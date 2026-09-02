@@ -14,6 +14,89 @@ export type Database = {
   }
   public: {
     Tables: {
+      availability_rules: {
+        Row: {
+          active: boolean
+          created_at: string
+          end_time: string
+          id: string
+          slot_min: number
+          start_time: string
+          weekday: number
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          end_time: string
+          id?: string
+          slot_min?: number
+          start_time: string
+          weekday: number
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          end_time?: string
+          id?: string
+          slot_min?: number
+          start_time?: string
+          weekday?: number
+        }
+        Relationships: []
+      }
+      bookings: {
+        Row: {
+          created_at: string
+          duration_min: number
+          email: string
+          full_name: string
+          google_event_id: string | null
+          id: string
+          notes: string | null
+          phone: string | null
+          service_id: string | null
+          starts_at: string
+          status: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          duration_min?: number
+          email: string
+          full_name: string
+          google_event_id?: string | null
+          id?: string
+          notes?: string | null
+          phone?: string | null
+          service_id?: string | null
+          starts_at: string
+          status?: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          duration_min?: number
+          email?: string
+          full_name?: string
+          google_event_id?: string | null
+          id?: string
+          notes?: string | null
+          phone?: string | null
+          service_id?: string | null
+          starts_at?: string
+          status?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookings_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "services"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       course_modules: {
         Row: {
           content_type: string
@@ -395,6 +478,48 @@ export type Database = {
         }
         Relationships: []
       }
+      services: {
+        Row: {
+          active: boolean
+          created_at: string
+          description: string | null
+          discount_note: string | null
+          duration_min: number
+          id: string
+          name: string
+          package_label: string | null
+          package_price_cents: number | null
+          price_cents: number
+          sort_order: number
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          description?: string | null
+          discount_note?: string | null
+          duration_min?: number
+          id?: string
+          name: string
+          package_label?: string | null
+          package_price_cents?: number | null
+          price_cents?: number
+          sort_order?: number
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          description?: string | null
+          discount_note?: string | null
+          duration_min?: number
+          id?: string
+          name?: string
+          package_label?: string | null
+          package_price_cents?: number | null
+          price_cents?: number
+          sort_order?: number
+        }
+        Relationships: []
+      }
       sessions: {
         Row: {
           created_at: string
@@ -513,6 +638,12 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      available_slots: {
+        Args: { _day: string; _duration_min?: number }
+        Returns: {
+          slot: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
