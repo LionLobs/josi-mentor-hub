@@ -6,21 +6,21 @@ import { useAuth } from "@/lib/auth";
 import { motion } from "framer-motion";
 
 // Import new professional assets
-import josiElite from "@/assets/josi_nascimento_40_anos-26.jpg.asset.json";
-import josiAvancada from "@/assets/josi_nascimento_40_anos-14.jpg.asset.json";
-import josiVitoria from "@/assets/josi_nascimento_40_anos-38-2.jpg.asset.json";
-import josiDestaque from "@/assets/josi_nascimento_40_anos-31.jpg.asset.json";
-import josiHero from "@/assets/josi_nascimento_40_anos-2.jpg.asset.json";
+import josiElite from "@/assets/josi_nascimento_40_anos-26.jpg";
+import josiAvancada from "@/assets/josi_nascimento_40_anos-14.jpg";
+import josiVitoria from "@/assets/josi_nascimento_40_anos-38-2.jpg";
+import josiDestaque from "@/assets/josi_nascimento_40_anos-31.jpg";
+import josiHero from "@/assets/josi_nascimento_40_anos-2.jpg";
 
 export const Route = createFileRoute("/aluno/cursos")({
   component: StudentCourses,
 });
 
 const COURSE_POSTERS: Record<string, string> = {
-  "Mentoria Elite": josiElite.url,
-  "Massoterapia Avançada": josiAvancada.url,
-  "Protocolo da Vitória": josiVitoria.url,
-  "Destaque-se no Mercado": josiDestaque.url,
+  "Mentoria Elite": josiElite,
+  "Massoterapia Avançada": josiAvancada,
+  "Protocolo da Vitória": josiVitoria,
+  "Destaque-se no Mercado": josiDestaque,
 };
 
 function NetflixHero({ course }: { course: any }) {
@@ -29,7 +29,7 @@ function NetflixHero({ course }: { course: any }) {
   return (
     <div className="relative mb-12 h-[60vh] min-h-[400px] w-full overflow-hidden rounded-3xl">
       <img
-        src={josiHero.url}
+        src={josiHero}
         alt="Featured Course"
         className="h-full w-full object-cover"
       />
@@ -190,21 +190,21 @@ function StudentCourses() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div className="group relative h-48 rounded-2xl border border-white/10 overflow-hidden bg-card">
-            <img src={josiAvancada.url} className="w-full h-full object-cover opacity-50 transition-opacity group-hover:opacity-30" />
+            <img src={josiAvancada} className="w-full h-full object-cover opacity-50 transition-opacity group-hover:opacity-30" />
             <div className="absolute inset-0 p-6 flex flex-col justify-end">
               <h3 className="font-bold text-white">E-book: A Arte do Toque</h3>
               <p className="text-xs text-white/60">PDF Interativo • 45 páginas</p>
             </div>
           </div>
           <div className="group relative h-48 rounded-2xl border border-white/10 overflow-hidden bg-card">
-            <img src={josiVitoria.url} className="w-full h-full object-cover opacity-50 transition-opacity group-hover:opacity-30" />
+            <img src={josiVitoria} className="w-full h-full object-cover opacity-50 transition-opacity group-hover:opacity-30" />
             <div className="absolute inset-0 p-6 flex flex-col justify-end">
               <h3 className="font-bold text-white">Checklist da Vitória</h3>
               <p className="text-xs text-white/60">Material Prático • Excel</p>
             </div>
           </div>
           <div className="group relative h-48 rounded-2xl border border-white/10 overflow-hidden bg-card">
-            <img src={josiElite.url} className="w-full h-full object-cover opacity-50 transition-opacity group-hover:opacity-30" />
+            <img src={josiElite} className="w-full h-full object-cover opacity-50 transition-opacity group-hover:opacity-30" />
             <div className="absolute inset-0 p-6 flex flex-col justify-end">
               <h3 className="font-bold text-white">Guia de Posicionamento</h3>
               <p className="text-xs text-white/60">Vídeo Complementar • 12min</p>
