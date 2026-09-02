@@ -162,15 +162,23 @@ function Landing() {
             transition={{ duration: 3, ease: [0.22, 1, 0.36, 1] }}
             className="absolute inset-0 flex"
           >
-            <div className="relative w-full h-full lg:w-[65%] ml-auto">
+            <div
+              className="relative w-full h-full lg:w-[70%] ml-auto"
+              style={{
+                WebkitMaskImage:
+                  "radial-gradient(120% 100% at 78% 40%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 38%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0) 88%)",
+                maskImage:
+                  "radial-gradient(120% 100% at 78% 40%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 38%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0) 88%)",
+              }}
+            >
               <img
                 src={josiNovoHero}
                 alt="Josi Nascimento"
                 className="h-full w-full object-cover object-[center_20%] lg:object-[center_top] mix-blend-luminosity filter brightness-110 contrast-125 saturate-[0.8]"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/30 to-transparent lg:hidden" />
-              <div className="absolute inset-y-0 -left-1 w-[400px] bg-gradient-to-r from-ink via-ink/60 to-transparent hidden lg:block" />
+              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/40 to-transparent lg:hidden" />
             </div>
+
           </motion.div>
           
           {/* Light Rays / Glows */}
