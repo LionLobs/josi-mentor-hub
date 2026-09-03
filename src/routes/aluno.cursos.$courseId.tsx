@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth";
 import { MediaPlayer } from "@/components/media-player";
 import { getSignedUrl } from "@/lib/storage";
+import { lessonCover } from "@/lib/course-art";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const Route = createFileRoute("/aluno/cursos/$courseId")({

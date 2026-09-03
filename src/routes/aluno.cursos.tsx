@@ -4,6 +4,7 @@ import { GraduationCap, PlayCircle, Star, Clock, Flame } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth";
 import { motion } from "framer-motion";
+import { COURSE_POSTERS } from "@/lib/course-art";
 
 // Import new professional assets
 import josiElite from "@/assets/josi_nascimento_40_anos-26.jpg";
@@ -16,12 +17,7 @@ export const Route = createFileRoute("/aluno/cursos")({
   component: StudentCourses,
 });
 
-const COURSE_POSTERS: Record<string, string> = {
-  "Mentoria Elite": josiElite,
-  "Massoterapia Avançada": josiAvancada,
-  "Protocolo da Vitória": josiVitoria,
-  "Destaque-se no Mercado": josiDestaque,
-};
+
 
 function NetflixHero({ course }: { course: any }) {
   if (!course) return null;
