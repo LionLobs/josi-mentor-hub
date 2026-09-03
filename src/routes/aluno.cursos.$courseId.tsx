@@ -204,15 +204,17 @@ function CoursePlayer() {
                       isActive ? "bg-gold text-black shadow-[0_0_20px_rgba(202,176,108,0.2)]" : "hover:bg-white/5"
                     }`}
                   >
-                    <div className={`relative h-10 w-10 shrink-0 rounded-xl flex items-center justify-center overflow-hidden border ${
-                       isActive ? "bg-black/10 border-black/10" : "bg-white/5 border-white/10"
+                    <div className={`relative h-14 w-10 shrink-0 rounded-xl flex items-center justify-center overflow-hidden border ${
+                       isActive ? "border-black/20" : "border-white/10"
                     }`}>
+                       <img src={lessonCover(m)} alt="" className="absolute inset-0 h-full w-full object-cover" />
+                       <div className="absolute inset-0 bg-black/55" />
                        {done && !isActive ? (
-                         <CheckCircle2 className="h-4 w-4 text-gold" />
+                         <CheckCircle2 className="relative h-4 w-4 text-gold" />
                        ) : (
-                         <span className={`text-[10px] font-bold ${isActive ? "text-black" : "text-white/20"}`}>{i + 1}</span>
+                         <span className="relative text-[10px] font-bold text-white">{i + 1}</span>
                        )}
-                       {isActive && <Play className="h-3 w-3 fill-black text-black absolute" />}
+                       {isActive && <Play className="h-3 w-3 fill-gold text-gold absolute" />}
                     </div>
                     
                     <div className="min-w-0 flex-1">
