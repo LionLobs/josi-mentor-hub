@@ -26,12 +26,48 @@ function StudentAgenda() {
   const upcoming = data.filter(s => new Date(s.scheduled_at) >= new Date());
   const past = data.filter(s => new Date(s.scheduled_at) < new Date());
 
+  const { data: myBookings = [] } = useQuery({
+    queryKey: ["meus-agendamentos"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("bookings")
+        .select("id, starts_at, duration_min, status, services(name)")
+        .order("starts_at", { ascending: true });
+      if (error) throw error;
+      return data ?? [];
+    },
+  });
+
   return (
     <div className="pb-20">
       <div className="mb-12">
         <p className="text-xs font-bold tracking-[0.4em] text-gold uppercase mb-2">Seus Encontros</p>
         <h1 className="text-4xl md:text-5xl font-serif text-white">Agenda de <span className="text-gold italic">Mentoria</span></h1>
       </div>
+
+      <section className="mb-16">
+        <BookingWidget />
+
+        {myBookings.length > 0 && (
+          <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+            <h2 className="mb-4 flex items-center gap-2 font-serif text-xl text-white">
+              <CalendarCheck className="h-5 w-5 text-gold" /> Meus agendamentos
+            </h2>
+            <div className="space-y-2">
+              {myBookings.map(b => (
+                <div key={b.id} className="flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-3">
+                  <div>
+                    <p className="text-sm text-white/80">{b.services?.name ?? "Atendimento"}</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-white/30">{dateTimeBR(b.starts_at)} · {b.duration_min} min</p>
+                  </div>
+                  <span className="rounded-full border border-gold/25 px-3 py-0.5 text-[10px] font-bold uppercase tracking-widest text-gold">{b.status}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
+
 
       <div className="grid gap-12 lg:grid-cols-3">
         <div className="lg:col-span-2 space-y-12">
