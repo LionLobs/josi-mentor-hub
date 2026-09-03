@@ -2,8 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { dateTimeBR } from "@/lib/format";
-import { Calendar, Video, Clock, ExternalLink } from "lucide-react";
+import { Calendar, Video, Clock, ExternalLink, CalendarCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import { BookingWidget } from "@/components/booking-widget";
 
 export const Route = createFileRoute("/aluno/agenda")({
   component: StudentAgenda,
