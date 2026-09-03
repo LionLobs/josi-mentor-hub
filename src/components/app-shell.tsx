@@ -1,6 +1,6 @@
 import { Link, Outlet, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { LogOut, type LucideIcon } from "lucide-react";
+import { LogOut, ShieldCheck, type LucideIcon } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useAuth } from "@/lib/auth";
 import { supabase } from "@/integrations/supabase/client";
@@ -78,6 +78,17 @@ export function AppShell({ items, area }: { items: NavItem[]; area: string }) {
         </nav>
 
         <div className="mt-auto px-4 pb-10">
+          {isAdmin && (
+            <div className="mb-4 px-1">
+              <Link
+                to={area === "ADMINISTRAÇÃO" ? "/aluno" : "/admin"}
+                className="flex items-center justify-center gap-2 rounded-xl border border-gold/40 bg-gold/10 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold/20"
+              >
+                <ShieldCheck className="h-4 w-4" />
+                {area === "ADMINISTRAÇÃO" ? "Área do aluno" : "Área admin"}
+              </Link>
+            </div>
+          )}
           <div className="rounded-2xl bg-white/5 p-1 mb-4">
              <Button
               variant="ghost"
